@@ -20,7 +20,7 @@ Generate data and install required packages
 	$ ./setup.sh
 
 
-# Compile and Run all applications
+# Compile and run all applications
 
 Compile all applications
 
