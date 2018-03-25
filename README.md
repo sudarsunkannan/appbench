@@ -33,7 +33,7 @@ To use Quartz:
 
 1. Download the tool to shared_libs folder
 
-	$ cd $APPBENCH/shared_libs   (APPBENCHSRC is APPBENCH's root folder)
+	$ cd $APPBENCH/shared_libs 
 	$ git clone https://github.com/HewlettPackard/quartz
 
 2. Install the tool 
