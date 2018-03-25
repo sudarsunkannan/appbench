@@ -34,16 +34,12 @@ Installing Quartz and execute the following steps:
 
     cd $SHARED_LIBS
     git clone https://github.com/HewlettPackard/quartz
+	cd $APPBENCH && ./install_quartz.sh
 
-2. Install the tool 
+Enable the Quartz scripts (QUARTZSCRIPTS) and APPPREFIX environmental variables in setvars.sh
 
-	$ cd $APPBENCH && ./install_quartz.sh
-
-3. Enable the Quartz scripts (QUARTZSCRIPTS) and APPPREFIX environmental variables in setvars.sh
-
-	$ export QUARTZSCRIPTS=$SHARED_LIBS/quartz/scripts
-	$ export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
-
+	export QUARTZSCRIPTS=$SHARED_LIBS/quartz/scripts
+	export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
 
 
 # Compile and run all applications
