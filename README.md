@@ -1,29 +1,30 @@
 # appbench
 A mix of CPU, memory, and IO intensive benchmark
 
-#Setup 
+# Setup 
 
 Setup environmental variables
 
-$ . ./setvars.sh
+
+	$ . ./setvars.sh
 
 Generate data and install required packages
 
-$ ./setup.sh
+	$ ./setup.sh
 
 
 #Compile and Run all applications
 
 Compile all applications
 
-$ ./compile_all.sh
+	$ ./compile_all.sh
 
 Run all apps
 
-$ ./runapps.sh
+	$ ./runapps.sh
 
 # Collect results
 
 See all the application results in output directory
 
-$ cd output
+	$ cd output
