@@ -1,0 +1,103 @@
+<html>
+<head>
+<link rel=stylesheet href="style.css" type="text/css">
+<title>collectl - Network Info</title>
+</head>
+
+<body>
+<center><h1>Network Monitoring</h1></center>
+<p>
+<h3>Introduction</h3>
+
+As with other subsystems which contain instance data, you can monitor both <a href=WhySummary.html>summary</a>
+(in brief and verbose modes) and detail data.  Like disk data, the key brief mode values are bytes and packets
+(rather than iops).  The actual data comes from /proc/net/dev.
+<p>
+The one key thing to keep in mind with network data is that not all networks are the same.  Just like there are
+device mapper disks that shouldn't be included in the summary data the same is true for network devices.  Those that
+are not included in the summary are the <i>loopback, sit, bond</i> and <i>vmnet</i> devices, 
+<p>
+Since most lan networks run fairly cleanly and errors are rare, one is usually not interested in seeing long columns
+of zeros that never change and so by default brief mode does not include any error information.  Adding 
+<i>--netopts e</i> will add an additional column with a total error count.  To see specific errors one would have to
+run in summary more and do identify the specific networks on which those errors were occurring you would have to
+run in detail mode.
+<p>
+<b>What about IB over IP?</b>
+<br>
+Good question.  When using Infiniband networking you typically get an IB network device created.  So does this mean
+IB traffice gets counted twice when you monitor both it and network data?  As they say, it depends.  
+Some Infiniband data will indeed go over the native IB interface and never show up as network data.  This includes 
+MPI traffic or lustre which uses the native IB transport.  However, other uses of Infiniband may in fact be counted
+as network traffic.  BUT this is actually a good thing because if you're a heavy user of IB/IP and want to be able
+to differentiate the native IB traffic from it, simply look at the network detail data and subtract any IB network
+numbers from the native values.
+<p>
+<b>Tips and Tricks</b>
+<br>
+Ever try looking for a needle in a haystack, in this case maybe it's network errors? <i>--network E</i> works just
+like its lowercase cousin except it tells collectl to only report intervals that have network errors in them.  While
+this can be extremely boring in real-time mode, consider what happens during playback.  During the course of a day
+you'll have 8640 samples but this switch will allow you to see the one that recorded the network error!
+
+<p><b>Filtering</b>
+<br>Before describing how filtering works, let's quickly review the difference between summary and detail
+data.  When looking at summary data collectl reports the totals across all network interfaces except
+for those it knows have already been accounted for.  For example, if your machine has eth0 and eth1 bonded
+together, the bond shows up as a third interface and if collectl were to report the totals across all
+three, the numbers would be twice that expected.  For this reason, collectl only looks at specific
+types of interfaces, which at time of this writing are limited to <i>eth, ib, em</i> and <i>p1p</i>,
+though no doubt there will be others in the future.
+<p>
+You can change the set of interfaces collectl includes in its summary totals with <i>--netfilt</i>,
+the target of which is actually one or more comma separated perl expressions, but if you don't know
+perl all you really need to know is these are strings that are compared to each network name and
+only those that match will be included in the summary.  This not only makes it possible to reduce
+those network you wish to summarize (say you want to summarize ethernet networks but not infiniband
+ones) OR include new ones that are not currently known by collectl.
+<p>
+A second form of the switch, in which the first character is a ^ cause all names that match the
+expression to be excluded from the summary data.  Whether to use the first or second form may be more
+a matter of which is less complex for the particular form of summarization you're looking for, but
+if you're trying to extend the list of those interfaces recognized as being summarizable, your only
+choice is the first form.
+<p>
+In addition to controlling how network data is summarized, this switch also controls which
+interfaces are reported as detail data.  However, be careful when using this switch during playback
+because you may not wish to see detailed and summary data filtered the same way.  If this is the case,
+you will need to play back the data twice, once with -sn using the <i>--netfilt</i> to control the
+summary data and a second time with -sN and a different value for <i>--netfilt</i> to control the
+detail listing.  It would certainly be possible to introduce separate filtering switches for
+summary and detail data, but it is felt that this situation is uncommon enough to not make things
+more confising than they already are.
+
+<a name="dynamic"></a>
+<p><b>Dynamic Network Discovery</b>
+<br>
+Network devices typically don't change unless you install a new network card and reboot the machine,
+in which case <i>collectl</i> when the list of known networks is created it's simply correct.
+However, especially when running on a host that creates virtual machines, networks can come and go.
+The way collectl does this is to simply maintain a dynamic list of the active networks and make sure
+the statistics get associated with the correct network.  As a way to preserve network details in plot
+format, collectl further retains a list of all the networks ever seen since system boot and uses that
+list to record the statistics, thereby keeping the columnar data consistent.  In many cases where
+hypervisors reuse the virtual network names, the list of unique names remains relatively low.
+<p>
+However it was recently discovered that the OpenStack Quantum service for handling dynamic networks actually
+uses a new network name every time a VM is created.  If a particular host has dozens of VMs and they come
+and go many times, the result can be a very long list of network names which not only show up in all the
+headers of all the files collectl generates, they will also show up as unique sets of data in the network
+detail file if one is generated.  On one long running host, over 500 unique network names were generated!
+<p>
+The way collectl has chosen to deal with this is with <i>--netopts o</i>, which tells collectl to <i>not</i>
+preserve the ordered list of all the networks that have been seen and will in fact cause collectl to prune
+that list whenever a network is found to have been removed.  While this solves the immediate need to keep
+only the active networks in the headers of the output files it creates a different problem with the detail
+files in that the data will no longer be consistent.  In fact, it is probably best to not even try to
+generate detail files for dynamic network when using this switch.  As of this writing I'm still trying
+to think of ways to improve the situation.
+
+<table width=100%><tr><td align=right><i>updated April 21, 2014</i></td></tr></colgroup></table>
+
+</body>
+</html>

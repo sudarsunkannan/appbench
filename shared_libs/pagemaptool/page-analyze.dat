@@ -1,0 +1,28 @@
+
+                                                  :     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18
+PID  - PROCESS NAME        :   USS      PSS   RSS : 00:00 libc- redis libst ld-2.  ANON libpt libho local libm- libgc 00:00 libdl libmi 00:00 00:00 00:00 00000
+---- - ------------------- - ----- -------- ----- - ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+2305 - ./redis-server *:63 : 270925 270931.00 270937 : 270448   152   108   101    29    21    20    18    10     8     6     4     4     3     2     2     1     0
+---- - ------------------- - ----- -------- ----- - ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+                                                  : 00:00 libc- redis libst ld-2.  ANON libpt libho local libm- libgc 00:00 libdl libmi 00:00 00:00 00:00 00000
+
+    SNAME : LONG NAME
+  1 00:00 : 00:00 0 
+  2 libc- : ca:00 585490                     /lib/x86_64-linux-gnu/libc-2.13.so
+  3 redis : /root/codes/apps/redis-3.0.0/src/redis-server
+  4 libst : ca:00 166916                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16
+  5 ld-2. : ca:00 585488                     /lib/x86_64-linux-gnu/ld-2.13.so
+  6  ANON : 
+  7 libpt : ca:00 585481                     /lib/x86_64-linux-gnu/libpthread-2.13.so
+  8 libho : ca:00 854648                     /usr/lib64/libhoard.so
+  9 local : ca:00 165186                     /usr/lib/locale/locale-archive
+ 10 libm- : ca:00 585484                     /lib/x86_64-linux-gnu/libm-2.13.so
+ 11 libgc : ca:00 584809                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+ 12 00:00 : 00:00 0                          [stack]
+ 13 libdl : ca:00 585483                     /lib/x86_64-linux-gnu/libdl-2.13.so
+ 14 libmi : ca:00 195881                     /usr/lib/libmigration.so
+ 15 00:00 : 00:00 0                          [stack:2307]
+ 16 00:00 : 00:00 0                          [stack:2306]
+ 17 00:00 : 00:00 0                          [vdso]
+ 18 00000 : 00000000 00:00 0                  [vsyscall]
+

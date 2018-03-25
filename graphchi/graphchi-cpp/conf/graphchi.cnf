@@ -1,0 +1,34 @@
+
+# GraphChi configuration.
+# Commandline parameters override values in the configuration file.
+#execthreads=4
+#loadthreads =2
+#niothreads = 1 #2
+
+# Good for 8gigs
+#membudget_mb = 512
+#cachesize_mb = 1000
+
+# Good for 4 gigs
+membudget_mb = 1024
+cachesize_mb = 0
+#
+#membudget_mb = 1024
+#cachesize_mb = 1000
+
+
+# I/O settings
+io.blocksize = 64000
+#io.blocksize = 1048576
+mmap = 0  # Use mmaped files where applicable
+
+
+# Comma-delimited list of metrics output reporters.
+# Can be "console", "file" or "html"
+metrics.reporter = console,file,html
+metrics.reporter.filename = graphchi_metrics.txt
+metrics.reporter.htmlfile = graphchi_metrics.html
+
+
+
+

@@ -1,0 +1,2153 @@
+[  362.075751] hetero_getnxt_page: Frame mfn 1ee7d4 pfn 10a74f used pagecount 10000 
+[  362.113351] hetero_getnxt_page: Frame mfn 1f0ee4 pfn 10ce5f used pagecount 20000 
+[  362.148157] hetero_getnxt_page: Frame mfn 1f35f4 pfn 10f56f used pagecount 30000 
+[  362.161510] hetero_getnxt_page: Frame mfn 1f5d04 pfn 111c7f used pagecount 40000 
+[  362.366065] hetero_getnxt_page: Frame mfn 1f8414 pfn 11438f used pagecount 50000 
+[  362.740260] hetero_getnxt_page: Frame mfn 1fab24 pfn 116a9f used pagecount 60000 
+[  363.045526] hetero_getnxt_page: Frame mfn 1fd234 pfn 1191af used pagecount 70000 
+[  363.306007] hetero_getnxt_page: Frame mfn 1ff944 pfn 11b8bf used pagecount 80000 
+[  363.526742] hetero_getnxt_page: Frame mfn 2c2054 pfn 11dfcf used pagecount 90000 
+[  363.547802] hetero_getnxt_page: Frame mfn 2c4764 pfn 1206df used pagecount 100000 
+[  363.566994] hetero_getnxt_page: Frame mfn 2c6e74 pfn 122def used pagecount 110000 
+[  363.586901] hetero_getnxt_page: Frame mfn 2c9584 pfn 1254ff used pagecount 120000 
+[  363.608026] hetero_getnxt_page: Frame mfn 2cbc94 pfn 127c0f used pagecount 130000 
+[  363.630532] hetero_getnxt_page: Frame mfn 2ce3a4 pfn 12a31f used pagecount 140000 
+[  363.656044] hetero_getnxt_page: Frame mfn 2d0ab4 pfn 12ca2f used pagecount 150000 
+[  363.709252] hetero_getnxt_page: Frame mfn 2d31c4 pfn 12f13f used pagecount 160000 
+[  363.767004] hetero_getnxt_page: Frame mfn 2d58d4 pfn 13184f used pagecount 170000 
+[  363.835953] hetero_getnxt_page: Frame mfn 2d7fe4 pfn 133f5f used pagecount 180000 
+[  363.847727] pages in hotlist 30992 
+[  363.893011] nr_migrate_success 15
+[  364.005379] pages in hotlist 63760 
+[  364.048684] nr_migrate_success 15
+[  364.179574] pages in hotlist 129296 
+[  364.221503] nr_migrate_success 15
+[  364.378849] pages in hotlist 173006 
+[  364.418955] nr_migrate_success 18
+[  364.565133] pages in hotlist 196614 
+[  364.603423] nr_migrate_success 19
+[  364.751464] pages in hotlist 209922 
+[  364.788665] nr_migrate_success 19
+[  364.937234] pages in hotlist 213170 
+[  364.973755] nr_migrate_success 19
+[  365.141117] pages in hotlist 214834 
+[  365.176130] nr_migrate_success 19
+[  365.322520] pages in hotlist 215494 
+[  365.356635] nr_migrate_success 19
+[  365.517682] pages in hotlist 216894 
+[  365.550895] nr_migrate_success 19
+[  365.698768] pages in hotlist 217186 
+[  365.730395] nr_migrate_success 19
+[  365.879296] pages in hotlist 217920 
+[  365.909375] nr_migrate_success 19
+[  366.074242] pages in hotlist 218166 
+[  366.104052] nr_migrate_success 19
+[  366.254905] pages in hotlist 219034 
+[  366.284406] nr_migrate_success 19
+[  366.432757] pages in hotlist 220396 
+[  366.461339] nr_migrate_success 19
+[  366.613932] pages in hotlist 221242 
+[  366.641431] nr_migrate_success 19
+[  366.788741] pages in hotlist 221472 
+[  366.815430] nr_migrate_success 19
+[  366.964983] pages in hotlist 221706 
+[  366.990250] nr_migrate_success 19
+[  367.138901] pages in hotlist 221978 
+[  367.162758] nr_migrate_success 19
+[  367.310130] pages in hotlist 222166 
+[  367.332705] nr_migrate_success 19
+[  367.483857] pages in hotlist 222504 
+[  367.505189] nr_migrate_success 19
+[  367.653215] pages in hotlist 222504 
+[  367.673031] nr_migrate_success 19
+[  367.820679] pages in hotlist 223082 
+[  367.839332] nr_migrate_success 19
+[  367.970215] hetero_getnxt_page: Frame mfn 2da6f4 pfn 13666f used pagecount 190000 
+[  367.974481] pages in hotlist 223082 
+[  368.003017] nr_migrate_success 21
+[  368.142733] pages in hotlist 223422 
+[  368.158348] nr_migrate_success 21
+[  368.309146] pages in hotlist 223610 
+[  368.324605] nr_migrate_success 65
+[  368.462173] pages in hotlist 223610 
+[  368.475155] nr_migrate_success 65
+[  368.529785] hetero_getnxt_page: Frame mfn 2dce04 pfn 138d7f used pagecount 200000 
+[  368.611695] pages in hotlist 223610 
+[  368.624464] nr_migrate_success 65
+[  368.704011] hetero_getnxt_page: Frame mfn 2df514 pfn 13b48f used pagecount 210000 
+[  368.743315] hetero_getnxt_page: Frame mfn 2e1c24 pfn 13db9f used pagecount 220000 
+[  368.767108] pages in hotlist 223610 
+[  368.777376] nr_migrate_success 65
+[  368.786553] hetero_getnxt_page: Frame mfn 2e4334 pfn 1402af used pagecount 230000 
+[  368.830534] hetero_getnxt_page: Frame mfn 2e6a44 pfn 1429bf used pagecount 240000 
+[  368.871905] hetero_getnxt_page: Frame mfn 2e9154 pfn 1450cf used pagecount 250000 
+[  368.911099] hetero_getnxt_page: Frame mfn 2eb864 pfn 1477df used pagecount 260000 
+[  368.921480] pages in hotlist 223664 
+[  368.930691] nr_migrate_success 70
+[  368.953626] hetero_getnxt_page: Frame mfn 2edf74 pfn 149eef used pagecount 270000 
+[  369.083166] pages in hotlist 223688 
+[  369.092680] nr_migrate_success 91
+[  369.230704] pages in hotlist 223712 
+[  369.243701] nr_migrate_success 91
+[  369.379655] pages in hotlist 223712 
+[  369.388342] nr_migrate_success 91
+[  369.478305] hetero_getnxt_page: Frame mfn 2f0684 pfn 14c5ff used pagecount 280000 
+[  369.523932] pages in hotlist 223712 
+[  369.532350] nr_migrate_success 91
+[  369.669864] pages in hotlist 223712 
+[  369.678033] nr_migrate_success 91
+[  369.818510] pages in hotlist 223712 
+[  369.826796] nr_migrate_success 91
+[  369.857761] hetero_getnxt_page: Frame mfn 2f2d94 pfn 14ed0f used pagecount 290000 
+[  369.968781] pages in hotlist 223712 
+[  369.977022] nr_migrate_success 91
+[  370.112893] pages in hotlist 223712 
+[  370.120870] nr_migrate_success 91
+[  370.206624] hetero_getnxt_page: Frame mfn 2f54a4 pfn 15141f used pagecount 300000 
+[  370.272739] pages in hotlist 256001 
+[  370.280643] nr_migrate_success 91
+[  370.425392] pages in hotlist 256001 
+[  370.433276] nr_migrate_success 91
+[  370.481170] hetero_getnxt_page: Frame mfn 2f7bb4 pfn 153b2f used pagecount 310000 
+[  370.576619] pages in hotlist 256001 
+[  370.584701] nr_migrate_success 91
+[  370.726280] pages in hotlist 256001 
+[  370.739158] nr_migrate_success 91
+[  370.790617] hetero_getnxt_page: Frame mfn 2fa2c4 pfn 15623f used pagecount 320000 
+[  370.882856] pages in hotlist 256001 
+[  370.890285] nr_migrate_success 91
+[  371.037693] pages in hotlist 256001 
+[  371.045127] nr_migrate_success 91
+[  371.076991] hetero_getnxt_page: Frame mfn 2fc9d4 pfn 15894f used pagecount 330000 
+[  371.189090] pages in hotlist 256001 
+[  371.196432] nr_migrate_success 91
+[  371.301846] hetero_getnxt_page: Frame mfn 2ff0e4 pfn 15b05f used pagecount 340000 
+[  371.324344] hetero_getnxt_page: Frame mfn 2817f4 pfn 15d76f used pagecount 350000 
+[  371.350393] pages in hotlist 256001 
+[  371.353831] hetero_getnxt_page: Frame mfn 283f04 pfn 15fe7f used pagecount 360000 
+[  371.357763] nr_migrate_success 91
+[  371.376188] hetero_getnxt_page: Frame mfn 286614 pfn 16258f used pagecount 370000 
+[  371.399704] hetero_getnxt_page: Frame mfn 288d24 pfn 164c9f used pagecount 380000 
+[  371.427453] hetero_getnxt_page: Frame mfn 28b434 pfn 1673af used pagecount 390000 
+[  371.463419] hetero_getnxt_page: Frame mfn 28db44 pfn 169abf used pagecount 400000 
+[  371.510548] pages in hotlist 256001 
+[  371.529383] hetero_getnxt_page: Frame mfn 290254 pfn 16c1cf used pagecount 410000 
+[  371.533131] nr_migrate_success 91
+[  371.725419] pages in hotlist 256001 
+[  371.732573] nr_migrate_success 91
+[  371.896800] pages in hotlist 256001 
+[  371.902375] hetero_getnxt_page: Frame mfn 292964 pfn 16e8df used pagecount 420000 
+[  371.912839] nr_migrate_success 91
+[  372.078723] pages in hotlist 256001 
+[  372.085697] nr_migrate_success 91
+[  372.251041] pages in hotlist 256001 
+[  372.258042] nr_migrate_success 91
+[  372.422521] pages in hotlist 256001 
+[  372.429362] nr_migrate_success 91
+[  372.461300] hetero_getnxt_page: Frame mfn 295074 pfn 170fef used pagecount 430000 
+[  372.595826] pages in hotlist 256001 
+[  372.602795] nr_migrate_success 92
+[  372.769970] pages in hotlist 256001 
+[  372.777077] nr_migrate_success 95
+[  372.941750] pages in hotlist 256001 
+[  372.948786] nr_migrate_success 104
+[  373.111688] pages in hotlist 256001 
+[  373.118313] nr_migrate_success 104
+[  373.276171] pages in hotlist 256001 
+[  373.282836] nr_migrate_success 104
+[  373.442758] pages in hotlist 256001 
+[  373.449475] nr_migrate_success 104
+[  373.613181] pages in hotlist 256001 
+[  373.619808] nr_migrate_success 104
+[  373.781700] pages in hotlist 256001 
+[  373.788217] nr_migrate_success 104
+[  373.946141] pages in hotlist 256001 
+[  373.952610] nr_migrate_success 104
+[  374.111609] pages in hotlist 256001 
+[  374.118091] nr_migrate_success 104
+[  374.292952] pages in hotlist 256001 
+[  374.299605] nr_migrate_success 104
+[  374.473725] pages in hotlist 256001 
+[  374.480123] nr_migrate_success 104
+[  374.638264] pages in hotlist 256001 
+[  374.644740] nr_migrate_success 104
+[  374.801596] pages in hotlist 256001 
+[  374.808069] nr_migrate_success 104
+[  374.964327] pages in hotlist 256001 
+[  374.970756] nr_migrate_success 104
+[  375.132468] pages in hotlist 256001 
+[  375.138868] nr_migrate_success 104
+[  375.298492] pages in hotlist 256001 
+[  375.304817] nr_migrate_success 104
+[  375.462303] pages in hotlist 256001 
+[  375.468695] nr_migrate_success 104
+[  375.628198] pages in hotlist 256001 
+[  375.634555] nr_migrate_success 104
+[  375.793032] pages in hotlist 256001 
+[  375.799337] nr_migrate_success 104
+[  375.976703] pages in hotlist 256001 
+[  375.983072] nr_migrate_success 104
+[  376.080150] hetero_getnxt_page: Frame mfn 297784 pfn 1736ff used pagecount 440000 
+[  376.148399] pages in hotlist 256001 
+[  376.171553] nr_migrate_success 104
+[  376.314891] pages in hotlist 256001 
+[  376.321153] nr_migrate_success 104
+[  376.599806] pages in hotlist 256001 
+[  376.606440] nr_migrate_success 104
+[  376.751576] pages in hotlist 256001 
+[  376.767930] nr_migrate_success 104
+[  376.913216] pages in hotlist 256001 
+[  376.919379] nr_migrate_success 104
+[  377.066426] hetero_getnxt_page: Frame mfn 299e94 pfn 175e0f used pagecount 450000 
+[  377.092725] hetero_getnxt_page: Frame mfn 29c5a4 pfn 17851f used pagecount 460000 
+[  377.099477] pages in hotlist 256001 
+[  377.106078] nr_migrate_success 104
+[  377.118049] hetero_getnxt_page: Frame mfn 29ecb4 pfn 17ac2f used pagecount 470000 
+[  377.145363] hetero_getnxt_page: Frame mfn 2a13c4 pfn 17d33f used pagecount 480000 
+[  377.169701] hetero_getnxt_page: Frame mfn 2a3ad4 pfn 17fa4f used pagecount 490000 
+[  377.192844] hetero_getnxt_page: Frame mfn 2a61e4 pfn 18215f used pagecount 500000 
+[  377.215168] hetero_getnxt_page: Frame mfn 2a88f4 pfn 18486f used pagecount 510000 
+[  377.240753] hetero_getnxt_page: Frame mfn 2ab004 pfn 186f7f used pagecount 520000 
+[  377.257785] pages in hotlist 256001 
+[  377.264301] nr_migrate_success 104
+[  377.266742] hetero_getnxt_page: Frame mfn 2ad714 pfn 18968f used pagecount 530000 
+[  377.294232] hetero_getnxt_page: Frame mfn 2afe24 pfn 18bd9f used pagecount 540000 
+[  377.335832] hetero_getnxt_page: Frame mfn 2b2534 pfn 18e4af used pagecount 550000 
+[  377.406977] hetero_getnxt_page: Frame mfn 2b4c44 pfn 190bbf used pagecount 560000 
+[  377.419820] pages in hotlist 256001 
+[  377.426202] nr_migrate_success 104
+[  377.459375] hetero_getnxt_page: Frame mfn 2b7354 pfn 1932cf used pagecount 570000 
+[  377.619260] pages in hotlist 256001 
+[  377.625926] nr_migrate_success 108
+[  377.807278] pages in hotlist 256001 
+[  377.813777] nr_migrate_success 109
+[  377.975488] pages in hotlist 256001 
+[  377.981706] nr_migrate_success 109
+[  378.154964] pages in hotlist 256001 
+[  378.161201] nr_migrate_success 109
+[  378.320295] pages in hotlist 256001 
+[  378.326554] nr_migrate_success 109
+[  378.484475] pages in hotlist 256001 
+[  378.490705] nr_migrate_success 109
+[  378.653637] pages in hotlist 256001 
+[  378.659852] nr_migrate_success 109
+[  378.830304] pages in hotlist 256001 
+[  378.836544] nr_migrate_success 109
+[  378.998521] pages in hotlist 256001 
+[  379.017676] nr_migrate_success 109
+[  379.159789] hetero_getnxt_page: Frame mfn 2b9a64 pfn 1959df used pagecount 580000 
+[  379.179007] pages in hotlist 256001 
+[  379.185239] nr_migrate_success 109
+[  379.344366] pages in hotlist 256001 
+[  379.350584] nr_migrate_success 109
+[  379.520315] pages in hotlist 256001 
+[  379.526494] nr_migrate_success 109
+[  379.685696] pages in hotlist 256001 
+[  379.691926] nr_migrate_success 109
+[  379.847678] pages in hotlist 256001 
+[  379.853867] nr_migrate_success 109
+[  380.024071] pages in hotlist 256001 
+[  380.030266] nr_migrate_success 109
+[  380.187701] pages in hotlist 256001 
+[  380.193889] nr_migrate_success 109
+[  380.349005] pages in hotlist 256001 
+[  380.355201] nr_migrate_success 109
+[  380.527716] pages in hotlist 256001 
+[  380.533867] nr_migrate_success 109
+[  380.688457] pages in hotlist 256001 
+[  380.694628] nr_migrate_success 109
+[  380.849992] pages in hotlist 256001 
+[  380.856186] nr_migrate_success 109
+[  381.014222] pages in hotlist 256001 
+[  381.020376] nr_migrate_success 109
+[  381.172628] pages in hotlist 256001 
+[  381.178770] nr_migrate_success 109
+[  381.335331] pages in hotlist 256001 
+[  381.345724] nr_migrate_success 109
+[  381.520891] pages in hotlist 256001 
+[  381.527010] nr_migrate_success 109
+[  381.685427] pages in hotlist 256001 
+[  381.691538] nr_migrate_success 109
+[  381.857224] pages in hotlist 256001 
+[  381.863506] nr_migrate_success 109
+[  382.027277] pages in hotlist 256001 
+[  382.050312] nr_migrate_success 109
+[  382.200293] pages in hotlist 256001 
+[  382.206308] nr_migrate_success 109
+[  382.354083] pages in hotlist 256001 
+[  382.360083] nr_migrate_success 109
+[  382.392602] hetero_getnxt_page: Frame mfn 2bc174 pfn 1980ef used pagecount 590000 
+[  382.441322] hetero_getnxt_page: Frame mfn 2be884 pfn 19a7ff used pagecount 600000 
+[  382.479188] hetero_getnxt_page: Frame mfn 240f94 pfn 19cf0f used pagecount 610000 
+[  382.512765] pages in hotlist 256001 
+[  382.518948] nr_migrate_success 109
+[  382.519434] hetero_getnxt_page: Frame mfn 2436a4 pfn 19f61f used pagecount 620000 
+[  382.553224] hetero_getnxt_page: Frame mfn 245db4 pfn 1a1d2f used pagecount 630000 
+[  382.589941] hetero_getnxt_page: Frame mfn 2484c4 pfn 1a443f used pagecount 640000 
+[  382.625431] hetero_getnxt_page: Frame mfn 24abd4 pfn 1a6b4f used pagecount 650000 
+[  382.679346] pages in hotlist 256001 
+[  382.685594] nr_migrate_success 109
+[  382.756901] hetero_getnxt_page: Frame mfn 24d2e4 pfn 1a925f used pagecount 660000 
+[  382.779678] hetero_getnxt_page: Frame mfn 24f9f4 pfn 1ab96f used pagecount 670000 
+[  382.807513] hetero_getnxt_page: Frame mfn 252104 pfn 1ae07f used pagecount 680000 
+[  382.846724] hetero_getnxt_page: Frame mfn 254814 pfn 1b078f used pagecount 690000 
+[  382.858608] pages in hotlist 256001 
+[  382.864852] nr_migrate_success 109
+[  382.868805] hetero_getnxt_page: Frame mfn 256f24 pfn 1b2e9f used pagecount 700000 
+[  382.889230] hetero_getnxt_page: Frame mfn 259634 pfn 1b55af used pagecount 710000 
+[  382.913369] hetero_getnxt_page: Frame mfn 25bd44 pfn 1b7cbf used pagecount 720000 
+[  382.936148] hetero_getnxt_page: Frame mfn 25e454 pfn 1ba3cf used pagecount 730000 
+[  382.990546] hetero_getnxt_page: Frame mfn 260b64 pfn 1bcadf used pagecount 740000 
+[  383.017622] pages in hotlist 256001 
+[  383.023838] nr_migrate_success 109
+[  383.036663] hetero_getnxt_page: Frame mfn 263274 pfn 1bf1ef used pagecount 750000 
+[  383.108569] hetero_getnxt_page: Frame mfn 265984 pfn 1c18ff used pagecount 760000 
+[  383.175064] pages in hotlist 256001 
+[  383.181448] nr_migrate_success 110
+[  383.336973] pages in hotlist 256001 
+[  383.343519] nr_migrate_success 110
+[  383.498204] pages in hotlist 256001 
+[  383.504500] nr_migrate_success 110
+[  383.556693] hetero_getnxt_page: Frame mfn 268094 pfn 1c400f used pagecount 770000 
+[  383.656151] pages in hotlist 256001 
+[  383.662360] nr_migrate_success 110
+[  383.813322] pages in hotlist 256001 
+[  383.819649] nr_migrate_success 110
+[  383.972777] pages in hotlist 256001 
+[  383.979089] nr_migrate_success 110
+[  384.126714] pages in hotlist 256001 
+[  384.132890] nr_migrate_success 110
+[  384.217234] hetero_getnxt_page: Frame mfn 26a7a4 pfn 1c671f used pagecount 780000 
+[  384.287035] pages in hotlist 256001 
+[  384.293250] nr_migrate_success 110
+[  384.453621] pages in hotlist 256001 
+[  384.460063] nr_migrate_success 110
+[  384.621569] pages in hotlist 256001 
+[  384.627816] nr_migrate_success 110
+[  384.794712] pages in hotlist 256001 
+[  384.800863] nr_migrate_success 110
+[  384.967242] pages in hotlist 256001 
+[  384.973417] nr_migrate_success 110
+[  385.132510] pages in hotlist 256001 
+[  385.138710] nr_migrate_success 110
+[  385.302124] pages in hotlist 256001 
+[  385.308345] nr_migrate_success 110
+[  385.486969] pages in hotlist 256001 
+[  385.493140] nr_migrate_success 110
+[  385.650666] pages in hotlist 256001 
+[  385.656838] nr_migrate_success 110
+[  385.822551] pages in hotlist 256001 
+[  385.828691] nr_migrate_success 110
+[  386.004715] pages in hotlist 256001 
+[  386.010945] nr_migrate_success 110
+[  386.169863] pages in hotlist 256001 
+[  386.176084] nr_migrate_success 110
+[  386.343455] pages in hotlist 256001 
+[  386.349727] nr_migrate_success 110
+[  386.506624] pages in hotlist 256001 
+[  386.512893] nr_migrate_success 110
+[  386.677700] pages in hotlist 256001 
+[  386.683867] nr_migrate_success 110
+[  386.839670] pages in hotlist 256001 
+[  386.845999] nr_migrate_success 110
+[  387.004719] pages in hotlist 256001 
+[  387.011055] nr_migrate_success 110
+[  387.174871] pages in hotlist 256001 
+[  387.181228] nr_migrate_success 110
+[  387.338641] pages in hotlist 256001 
+[  387.344943] nr_migrate_success 110
+[  387.506478] pages in hotlist 256001 
+[  387.512957] nr_migrate_success 110
+[  387.675658] pages in hotlist 256001 
+[  387.681886] nr_migrate_success 110
+[  387.842195] pages in hotlist 256001 
+[  387.848494] nr_migrate_success 110
+[  388.031228] pages in hotlist 256001 
+[  388.037543] nr_migrate_success 110
+[  388.188279] pages in hotlist 256001 
+[  388.194498] nr_migrate_success 110
+[  388.225444] hetero_getnxt_page: Frame mfn 26ceb4 pfn 1c8e2f used pagecount 790000 
+[  388.368750] pages in hotlist 256001 
+[  388.375590] nr_migrate_success 110
+[  388.562033] pages in hotlist 256001 
+[  388.568347] nr_migrate_success 110
+[  388.741059] pages in hotlist 256001 
+[  388.747322] nr_migrate_success 110
+[  388.906167] pages in hotlist 256001 
+[  388.912313] nr_migrate_success 110
+[  389.061756] pages in hotlist 256001 
+[  389.067915] nr_migrate_success 110
+[  389.221018] pages in hotlist 256001 
+[  389.227541] nr_migrate_success 110
+[  389.328490] hetero_getnxt_page: Frame mfn 26f5c4 pfn 1cb53f used pagecount 800000 
+[  389.352087] hetero_getnxt_page: Frame mfn 271cd4 pfn 1cdc4f used pagecount 810000 
+[  389.373844] hetero_getnxt_page: Frame mfn 2743e4 pfn 1d035f used pagecount 820000 
+[  389.404169] hetero_getnxt_page: Frame mfn 276af4 pfn 1d2a6f used pagecount 830000 
+[  389.409752] pages in hotlist 256001 
+[  389.416019] nr_migrate_success 110
+[  389.423936] hetero_getnxt_page: Frame mfn 279204 pfn 1d517f used pagecount 840000 
+[  389.442975] hetero_getnxt_page: Frame mfn 27b914 pfn 1d788f used pagecount 850000 
+[  389.462644] hetero_getnxt_page: Frame mfn 27e024 pfn 1d9f9f used pagecount 860000 
+[  389.491748] hetero_getnxt_page: Frame mfn 200734 pfn 1dc6af used pagecount 870000 
+[  389.516272] hetero_getnxt_page: Frame mfn 202e44 pfn 1dedbf used pagecount 880000 
+[  389.549203] hetero_getnxt_page: Frame mfn 205554 pfn 1e14cf used pagecount 890000 
+[  389.569138] pages in hotlist 256001 
+[  389.575331] nr_migrate_success 110
+[  389.591926] hetero_getnxt_page: Frame mfn 207c64 pfn 1e3bdf used pagecount 900000 
+[  389.645118] hetero_getnxt_page: Frame mfn 20a374 pfn 1e62ef used pagecount 910000 
+[  389.733962] pages in hotlist 256001 
+[  389.740171] nr_migrate_success 110
+[  389.762781] hetero_getnxt_page: Frame mfn 20ca84 pfn 1e89ff used pagecount 920000 
+[  389.905131] pages in hotlist 256001 
+[  389.911643] nr_migrate_success 110
+[  390.076313] pages in hotlist 256001 
+[  390.087651] nr_migrate_success 110
+[  390.246184] pages in hotlist 256001 
+[  390.252444] nr_migrate_success 110
+[  390.414179] pages in hotlist 256001 
+[  390.420372] nr_migrate_success 110
+[  390.578310] pages in hotlist 256001 
+[  390.584566] nr_migrate_success 110
+[  390.743593] pages in hotlist 256001 
+[  390.750027] nr_migrate_success 110
+[  390.926748] pages in hotlist 256001 
+[  390.933160] nr_migrate_success 110
+[  391.093286] pages in hotlist 256001 
+[  391.099447] nr_migrate_success 110
+[  391.256892] pages in hotlist 256001 
+[  391.263168] nr_migrate_success 110
+[  391.419305] pages in hotlist 256001 
+[  391.425560] nr_migrate_success 110
+[  391.582122] pages in hotlist 256001 
+[  391.588373] nr_migrate_success 110
+[  391.748860] pages in hotlist 256001 
+[  391.755100] nr_migrate_success 110
+[  391.911467] pages in hotlist 256001 
+[  391.917670] nr_migrate_success 110
+[  392.073952] pages in hotlist 256001 
+[  392.080241] nr_migrate_success 110
+[  392.236540] pages in hotlist 256001 
+[  392.242845] nr_migrate_success 110
+[  392.397964] pages in hotlist 256001 
+[  392.404248] nr_migrate_success 110
+[  392.567286] pages in hotlist 256001 
+[  392.573595] nr_migrate_success 110
+[  392.727569] pages in hotlist 256001 
+[  392.733863] nr_migrate_success 110
+[  392.890027] pages in hotlist 256001 
+[  392.896365] nr_migrate_success 110
+[  393.053956] pages in hotlist 256001 
+[  393.060196] nr_migrate_success 110
+[  393.214711] pages in hotlist 256001 
+[  393.221034] nr_migrate_success 110
+[  393.375612] pages in hotlist 256001 
+[  393.381937] nr_migrate_success 110
+[  393.538769] pages in hotlist 256001 
+[  393.558381] nr_migrate_success 110
+[  393.708714] pages in hotlist 256001 
+[  393.716028] nr_migrate_success 110
+[  393.881535] pages in hotlist 256001 
+[  393.887957] nr_migrate_success 110
+[  394.065493] pages in hotlist 256001 
+[  394.072216] nr_migrate_success 110
+[  394.225699] pages in hotlist 256001 
+[  394.231923] nr_migrate_success 110
+[  394.381601] pages in hotlist 256001 
+[  394.385734] hetero_getnxt_page: Frame mfn 20f194 pfn 1eb10f used pagecount 930000 
+[  394.389733] nr_migrate_success 110
+[  394.431126] hetero_getnxt_page: Frame mfn 2118a4 pfn 1ed81f used pagecount 940000 
+[  394.468624] hetero_getnxt_page: Frame mfn 213fb4 pfn 1eff2f used pagecount 950000 
+[  394.508296] hetero_getnxt_page: Frame mfn 2166c4 pfn 1f263f used pagecount 960000 
+[  394.544553] pages in hotlist 256001 
+[  394.545234] hetero_getnxt_page: Frame mfn 310dd4 pfn 1f4d4f used pagecount 970000 
+[  394.550895] nr_migrate_success 110
+[  394.579732] hetero_getnxt_page: Frame mfn 3134e4 pfn 1f745f used pagecount 980000 
+[  394.613982] hetero_getnxt_page: Frame mfn 309bf4 pfn 1f9b6f used pagecount 990000 
+[  394.648907] hetero_getnxt_page: Frame mfn 30a304 pfn 1fc27f used pagecount 1000000 
+[  394.741772] pages in hotlist 256001 
+[  394.748200] nr_migrate_success 110
+[  394.780588] hetero_getnxt_page: Frame mfn 33c214 pfn 1fe98f used pagecount 1010000 
+[  395.030972] pages in hotlist 256001 
+[  395.037979] nr_migrate_success 110
+[  395.312218] pages in hotlist 256001 
+[  395.318655] nr_migrate_success 110
+[  395.567761] pages in hotlist 256001 
+[  395.574203] nr_migrate_success 110
+[  395.825153] pages in hotlist 256001 
+[  395.831684] nr_migrate_success 110
+[  396.106975] pages in hotlist 256001 
+[  396.147420] nr_migrate_success 110
+[  396.456289] pages in hotlist 256001 
+[  396.510185] nr_migrate_success 110
+[  396.928203] pages in hotlist 256001 
+[  397.016235] nr_migrate_success 110
+[  397.328410] pages in hotlist 256001 
+[  397.371870] nr_migrate_success 110
+[  397.684276] pages in hotlist 256001 
+[  397.726731] nr_migrate_success 110
+[  398.002719] pages in hotlist 256001 
+[  398.040278] nr_migrate_success 110
+[  398.310588] pages in hotlist 256001 
+[  398.346274] nr_migrate_success 110
+[  398.588193] pages in hotlist 256001 
+[  398.627275] nr_migrate_success 110
+[  398.859133] pages in hotlist 256001 
+[  398.897797] nr_migrate_success 110
+[  399.143150] pages in hotlist 256001 
+[  399.177185] nr_migrate_success 110
+[  399.413602] pages in hotlist 256001 
+[  399.444890] nr_migrate_success 110
+[  399.667271] pages in hotlist 256001 
+[  399.701871] nr_migrate_success 110
+[  399.921140] pages in hotlist 256001 
+[  399.954630] nr_migrate_success 110
+[  400.198468] pages in hotlist 256001 
+[  400.232784] nr_migrate_success 110
+[  400.462842] pages in hotlist 256001 
+[  400.493868] nr_migrate_success 110
+[  400.726672] pages in hotlist 256001 
+[  400.760484] nr_migrate_success 110
+[  400.975365] pages in hotlist 256001 
+[  401.014571] nr_migrate_success 110
+[  401.230603] pages in hotlist 256001 
+[  401.264844] nr_migrate_success 110
+[  401.477068] pages in hotlist 256001 
+[  401.509421] nr_migrate_success 110
+[  401.726670] pages in hotlist 256001 
+[  401.760260] nr_migrate_success 110
+[  402.010089] pages in hotlist 256001 
+[  402.047051] nr_migrate_success 110
+[  402.267556] pages in hotlist 256001 
+[  402.301171] nr_migrate_success 110
+[  402.552302] pages in hotlist 256001 
+[  402.587795] nr_migrate_success 110
+[  402.981103] pages in hotlist 256001 
+[  403.024594] nr_migrate_success 110
+[  403.267486] pages in hotlist 256001 
+[  403.310074] nr_migrate_success 110
+[  403.523867] pages in hotlist 256001 
+[  403.556492] nr_migrate_success 110
+[  403.764983] pages in hotlist 256001 
+[  403.792705] nr_migrate_success 110
+[  403.959725] pages in hotlist 256001 
+[  403.993203] nr_migrate_success 110
+[  404.151684] pages in hotlist 256001 
+[  404.158028] nr_migrate_success 110
+[  404.325891] pages in hotlist 256001 
+[  404.332580] nr_migrate_success 110
+[  404.614680] pages in hotlist 256001 
+[  404.638710] nr_migrate_success 110
+[  404.931686] pages in hotlist 256001 
+[  404.968187] nr_migrate_success 110
+[  405.252459] pages in hotlist 256001 
+[  405.292872] nr_migrate_success 110
+[  405.547067] pages in hotlist 256001 
+[  405.581525] nr_migrate_success 110
+[  405.815837] pages in hotlist 256001 
+[  405.862744] nr_migrate_success 110
+[  406.145914] pages in hotlist 256001 
+[  406.188424] nr_migrate_success 110
+[  406.425964] pages in hotlist 256001 
+[  406.464686] nr_migrate_success 110
+[  406.690935] pages in hotlist 256001 
+[  406.725047] nr_migrate_success 110
+[  406.950153] pages in hotlist 256001 
+[  406.991380] nr_migrate_success 110
+[  407.217754] pages in hotlist 256001 
+[  407.253799] nr_migrate_success 110
+[  407.481820] pages in hotlist 256001 
+[  407.517098] nr_migrate_success 110
+[  407.750354] pages in hotlist 256001 
+[  407.788745] nr_migrate_success 110
+[  408.041414] pages in hotlist 256001 
+[  408.077114] nr_migrate_success 110
+[  408.355853] pages in hotlist 256001 
+[  408.398968] nr_migrate_success 110
+[  408.621033] pages in hotlist 256001 
+[  408.653027] nr_migrate_success 110
+[  408.874887] pages in hotlist 256001 
+[  408.925017] nr_migrate_success 110
+[  409.133052] pages in hotlist 256001 
+[  409.166276] nr_migrate_success 110
+[  409.411237] pages in hotlist 256001 
+[  409.447475] nr_migrate_success 110
+[  409.653297] pages in hotlist 256001 
+[  409.693355] nr_migrate_success 110
+[  409.942393] pages in hotlist 256001 
+[  409.986562] nr_migrate_success 110
+[  410.225397] pages in hotlist 256001 
+[  410.272176] nr_migrate_success 110
+[  410.489321] pages in hotlist 256001 
+[  410.527862] nr_migrate_success 110
+[  410.740000] pages in hotlist 256001 
+[  410.785062] nr_migrate_success 110
+[  410.993092] pages in hotlist 256001 
+[  411.070633] nr_migrate_success 110
+[  411.274064] pages in hotlist 256001 
+[  411.315460] nr_migrate_success 110
+[  411.515135] pages in hotlist 256001 
+[  411.570067] nr_migrate_success 110
+[  411.758477] pages in hotlist 256001 
+[  411.785846] nr_migrate_success 110
+[  411.938373] pages in hotlist 256001 
+[  411.952444] nr_migrate_success 110
+[  412.150093] pages in hotlist 256001 
+[  412.157188] nr_migrate_success 110
+[  412.356749] pages in hotlist 256001 
+[  412.371512] nr_migrate_success 110
+[  412.600330] pages in hotlist 256001 
+[  412.634980] nr_migrate_success 110
+[  412.915178] pages in hotlist 256001 
+[  412.957420] nr_migrate_success 110
+[  413.318365] pages in hotlist 256001 
+[  413.379334] nr_migrate_success 110
+[  413.651804] pages in hotlist 256001 
+[  413.707645] nr_migrate_success 110
+[  413.926968] pages in hotlist 256001 
+[  414.002551] nr_migrate_success 110
+[  414.208627] pages in hotlist 256001 
+[  414.284492] nr_migrate_success 110
+[  414.511993] pages in hotlist 256001 
+[  414.564445] nr_migrate_success 110
+[  414.792112] pages in hotlist 256001 
+[  414.851151] nr_migrate_success 110
+[  415.102717] pages in hotlist 256001 
+[  415.164109] nr_migrate_success 110
+[  415.455027] pages in hotlist 256001 
+[  415.521169] nr_migrate_success 110
+[  415.760931] pages in hotlist 256001 
+[  415.827631] nr_migrate_success 110
+[  416.083178] pages in hotlist 256001 
+[  416.147184] nr_migrate_success 110
+[  416.386720] pages in hotlist 256001 
+[  416.452637] nr_migrate_success 110
+[  416.688587] pages in hotlist 256001 
+[  416.752600] nr_migrate_success 110
+[  416.990603] pages in hotlist 256001 
+[  417.056796] nr_migrate_success 110
+[  417.307763] pages in hotlist 256001 
+[  417.371254] nr_migrate_success 110
+[  417.609988] pages in hotlist 256001 
+[  417.677195] nr_migrate_success 110
+[  417.934275] pages in hotlist 256001 
+[  418.001456] nr_migrate_success 110
+[  418.244984] pages in hotlist 256001 
+[  418.310590] nr_migrate_success 110
+[  418.565014] pages in hotlist 256001 
+[  418.653346] nr_migrate_success 110
+[  418.891314] pages in hotlist 256001 
+[  418.981348] nr_migrate_success 110
+[  419.217783] pages in hotlist 256001 
+[  419.281950] nr_migrate_success 110
+[  419.574353] pages in hotlist 256001 
+[  419.639390] nr_migrate_success 110
+[  419.878607] pages in hotlist 256001 
+[  419.948006] nr_migrate_success 110
+[  420.211528] pages in hotlist 256001 
+[  420.283155] nr_migrate_success 110
+[  420.525469] pages in hotlist 256001 
+[  420.622122] nr_migrate_success 110
+[  420.865560] pages in hotlist 256001 
+[  420.939987] nr_migrate_success 110
+[  421.183316] pages in hotlist 256001 
+[  421.258434] nr_migrate_success 110
+[  421.503971] pages in hotlist 256001 
+[  421.580206] nr_migrate_success 110
+[  421.841518] pages in hotlist 256001 
+[  421.927817] nr_migrate_success 110
+[  422.183584] pages in hotlist 256001 
+[  422.262137] nr_migrate_success 110
+[  422.525566] pages in hotlist 256001 
+[  422.625863] nr_migrate_success 110
+[  422.906277] pages in hotlist 256001 
+[  423.004996] nr_migrate_success 110
+[  423.275772] pages in hotlist 256001 
+[  423.354894] nr_migrate_success 110
+[  423.608504] pages in hotlist 256001 
+[  423.687473] nr_migrate_success 110
+[  423.939031] pages in hotlist 256001 
+[  424.040631] nr_migrate_success 110
+[  424.367938] pages in hotlist 256001 
+[  424.464119] nr_migrate_success 110
+[  424.760660] pages in hotlist 256001 
+[  424.850598] nr_migrate_success 110
+[  425.135431] pages in hotlist 256001 
+[  425.219078] nr_migrate_success 110
+[  425.492054] pages in hotlist 256001 
+[  425.576121] nr_migrate_success 110
+[  425.825863] pages in hotlist 256001 
+[  425.931022] nr_migrate_success 110
+[  426.187165] pages in hotlist 256001 
+[  426.267885] nr_migrate_success 110
+[  426.524205] pages in hotlist 256001 
+[  426.606352] nr_migrate_success 110
+[  426.904021] pages in hotlist 256001 
+[  426.983075] nr_migrate_success 110
+[  427.241079] pages in hotlist 256001 
+[  427.322845] nr_migrate_success 110
+[  427.580669] pages in hotlist 256001 
+[  427.663273] nr_migrate_success 110
+[  427.913587] pages in hotlist 256001 
+[  427.994703] nr_migrate_success 110
+[  428.265074] pages in hotlist 256001 
+[  428.347321] nr_migrate_success 110
+[  428.624154] pages in hotlist 256001 
+[  428.703323] nr_migrate_success 110
+[  428.981432] pages in hotlist 256001 
+[  429.086027] nr_migrate_success 110
+[  429.357552] pages in hotlist 256001 
+[  429.441672] nr_migrate_success 110
+[  429.694762] pages in hotlist 256001 
+[  429.779780] nr_migrate_success 110
+[  430.036685] pages in hotlist 256001 
+[  430.122256] nr_migrate_success 110
+[  430.382281] pages in hotlist 256001 
+[  430.467964] nr_migrate_success 110
+[  430.752698] pages in hotlist 256001 
+[  430.835507] nr_migrate_success 110
+[  431.104531] pages in hotlist 256001 
+[  431.193750] nr_migrate_success 110
+[  431.465531] pages in hotlist 256001 
+[  431.567383] nr_migrate_success 110
+[  431.879499] pages in hotlist 256001 
+[  431.952957] nr_migrate_success 110
+[  432.357756] pages in hotlist 256001 
+[  432.497750] nr_migrate_success 110
+[  432.919751] pages in hotlist 256001 
+[  433.010061] nr_migrate_success 110
+[  433.371383] pages in hotlist 256001 
+[  433.493320] nr_migrate_success 110
+[  433.816427] pages in hotlist 256001 
+[  433.946575] nr_migrate_success 110
+[  434.260978] pages in hotlist 256001 
+[  434.329494] nr_migrate_success 110
+[  434.764775] pages in hotlist 256001 
+[  434.804747] nr_migrate_success 110
+[  435.006286] pages in hotlist 256001 
+[  435.019162] nr_migrate_success 110
+[  435.346051] pages in hotlist 256001 
+[  435.374840] nr_migrate_success 110
+[  435.665545] pages in hotlist 256001 
+[  435.688635] nr_migrate_success 110
+[  435.930484] pages in hotlist 256001 
+[  435.962808] nr_migrate_success 110
+[  436.235247] pages in hotlist 256001 
+[  436.280059] nr_migrate_success 110
+[  436.552218] pages in hotlist 256001 
+[  436.603430] nr_migrate_success 110
+[  436.878176] pages in hotlist 256001 
+[  436.916205] nr_migrate_success 110
+[  437.189936] pages in hotlist 256001 
+[  437.223879] nr_migrate_success 110
+[  437.506878] pages in hotlist 256001 
+[  437.532996] nr_migrate_success 110
+[  437.852652] pages in hotlist 256001 
+[  437.881138] nr_migrate_success 110
+[  438.171163] pages in hotlist 256001 
+[  438.197050] nr_migrate_success 110
+[  438.450071] pages in hotlist 256001 
+[  438.478188] nr_migrate_success 110
+[  438.758388] pages in hotlist 256001 
+[  438.784196] nr_migrate_success 110
+[  439.051628] pages in hotlist 256001 
+[  439.103741] nr_migrate_success 110
+[  439.442874] pages in hotlist 256001 
+[  439.494984] nr_migrate_success 110
+[  439.788184] pages in hotlist 256001 
+[  439.831298] nr_migrate_success 110
+[  440.118923] pages in hotlist 256001 
+[  440.180935] nr_migrate_success 110
+[  440.511012] pages in hotlist 256001 
+[  440.544314] nr_migrate_success 110
+[  440.837029] pages in hotlist 256001 
+[  440.887529] nr_migrate_success 110
+[  441.201513] pages in hotlist 256001 
+[  441.255290] nr_migrate_success 110
+[  441.548880] pages in hotlist 256001 
+[  441.581665] nr_migrate_success 110
+[  441.883153] pages in hotlist 256001 
+[  441.917816] nr_migrate_success 110
+[  442.168654] pages in hotlist 256001 
+[  442.197951] nr_migrate_success 110
+[  442.516374] pages in hotlist 256001 
+[  442.544145] nr_migrate_success 110
+[  442.799916] pages in hotlist 256001 
+[  442.823926] nr_migrate_success 110
+[  443.003695] pages in hotlist 256001 
+[  443.024171] nr_migrate_success 110
+[  443.318401] pages in hotlist 256001 
+[  443.326612] nr_migrate_success 110
+[  443.669056] pages in hotlist 256001 
+[  443.692286] nr_migrate_success 110
+[  444.233272] pages in hotlist 256001 
+[  444.272822] nr_migrate_success 110
+[  444.590496] pages in hotlist 256001 
+[  444.620579] nr_migrate_success 110
+[  444.949121] pages in hotlist 256001 
+[  444.992375] nr_migrate_success 110
+[  445.255898] pages in hotlist 256001 
+[  445.319132] nr_migrate_success 110
+[  445.586573] pages in hotlist 256001 
+[  445.663647] nr_migrate_success 110
+[  445.921890] pages in hotlist 256001 
+[  445.970671] nr_migrate_success 110
+[  446.228954] pages in hotlist 256001 
+[  446.300973] nr_migrate_success 110
+[  446.582790] pages in hotlist 256001 
+[  446.654677] nr_migrate_success 110
+[  446.913088] pages in hotlist 256001 
+[  446.986990] nr_migrate_success 110
+[  447.248722] pages in hotlist 256001 
+[  447.301577] nr_migrate_success 110
+[  447.564879] pages in hotlist 256001 
+[  447.615372] nr_migrate_success 110
+[  447.881295] pages in hotlist 256001 
+[  447.932483] nr_migrate_success 110
+[  448.201193] pages in hotlist 256001 
+[  448.251434] nr_migrate_success 110
+[  448.523513] pages in hotlist 256001 
+[  448.577958] nr_migrate_success 110
+[  448.845435] pages in hotlist 256001 
+[  448.900352] nr_migrate_success 110
+[  449.166875] pages in hotlist 256001 
+[  449.239672] nr_migrate_success 110
+[  449.504918] pages in hotlist 256001 
+[  449.563839] nr_migrate_success 110
+[  449.855542] pages in hotlist 256001 
+[  449.932589] nr_migrate_success 110
+[  450.233895] pages in hotlist 256001 
+[  450.298534] nr_migrate_success 110
+[  450.592995] pages in hotlist 256001 
+[  450.650561] nr_migrate_success 110
+[  450.944847] pages in hotlist 256001 
+[  451.003488] nr_migrate_success 110
+[  451.323166] pages in hotlist 256001 
+[  451.380641] nr_migrate_success 110
+[  451.650119] pages in hotlist 256001 
+[  451.708995] nr_migrate_success 110
+[  451.975417] pages in hotlist 256001 
+[  452.057454] nr_migrate_success 110
+[  452.363860] pages in hotlist 256001 
+[  452.424864] nr_migrate_success 110
+[  452.702562] pages in hotlist 256001 
+[  452.763062] nr_migrate_success 110
+[  453.075152] pages in hotlist 256001 
+[  453.134982] nr_migrate_success 110
+[  453.413949] pages in hotlist 256001 
+[  453.494485] nr_migrate_success 110
+[  453.766449] pages in hotlist 256001 
+[  453.823421] nr_migrate_success 110
+[  454.116589] pages in hotlist 256001 
+[  454.178077] nr_migrate_success 110
+[  454.460922] pages in hotlist 256001 
+[  454.520053] nr_migrate_success 110
+[  454.812398] pages in hotlist 256001 
+[  454.871572] nr_migrate_success 110
+[  455.144937] pages in hotlist 256001 
+[  455.204926] nr_migrate_success 110
+[  455.483230] pages in hotlist 256001 
+[  455.540302] nr_migrate_success 110
+[  455.837144] pages in hotlist 256001 
+[  455.895011] nr_migrate_success 110
+[  456.193389] pages in hotlist 256001 
+[  456.253991] nr_migrate_success 110
+[  456.575782] pages in hotlist 256001 
+[  456.635255] nr_migrate_success 110
+[  456.917597] pages in hotlist 256001 
+[  456.978667] nr_migrate_success 110
+[  457.285005] pages in hotlist 256001 
+[  457.349045] nr_migrate_success 110
+[  457.658198] pages in hotlist 256001 
+[  457.742487] nr_migrate_success 110
+[  458.011815] pages in hotlist 256001 
+[  458.071863] nr_migrate_success 110
+[  458.384750] pages in hotlist 256001 
+[  458.443626] nr_migrate_success 110
+[  458.709544] pages in hotlist 256001 
+[  458.771214] nr_migrate_success 110
+[  459.036690] pages in hotlist 256001 
+[  459.104937] nr_migrate_success 110
+[  459.377418] pages in hotlist 256001 
+[  459.458912] nr_migrate_success 110
+[  459.732405] pages in hotlist 256001 
+[  459.810771] nr_migrate_success 110
+[  460.093942] pages in hotlist 256001 
+[  460.152997] nr_migrate_success 110
+[  460.425597] pages in hotlist 256001 
+[  460.485808] nr_migrate_success 110
+[  460.755898] pages in hotlist 256001 
+[  460.850142] nr_migrate_success 110
+[  461.120098] pages in hotlist 256001 
+[  461.182853] nr_migrate_success 110
+[  461.471785] pages in hotlist 256001 
+[  461.534811] nr_migrate_success 110
+[  461.815716] pages in hotlist 256001 
+[  461.879383] nr_migrate_success 110
+[  462.160628] pages in hotlist 256001 
+[  462.223439] nr_migrate_success 110
+[  462.516656] pages in hotlist 256001 
+[  462.611938] nr_migrate_success 110
+[  462.929756] pages in hotlist 256001 
+[  462.999614] nr_migrate_success 110
+[  463.332871] pages in hotlist 256001 
+[  463.427857] nr_migrate_success 110
+[  463.910712] pages in hotlist 256001 
+[  464.002071] nr_migrate_success 110
+[  464.314848] pages in hotlist 256001 
+[  464.384910] nr_migrate_success 110
+[  464.727547] pages in hotlist 256001 
+[  464.799080] nr_migrate_success 110
+[  465.168784] pages in hotlist 256001 
+[  465.322039] nr_migrate_success 110
+[  465.511472] pages in hotlist 256001 
+[  465.548304] nr_migrate_success 110
+[  465.906531] pages in hotlist 256001 
+[  465.923467] nr_migrate_success 110
+[  466.120139] pages in hotlist 256001 
+[  466.130246] nr_migrate_success 110
+[  466.465227] pages in hotlist 256001 
+[  466.476978] nr_migrate_success 110
+[  466.867881] pages in hotlist 256001 
+[  466.884325] nr_migrate_success 110
+[  467.209789] pages in hotlist 256001 
+[  467.242855] nr_migrate_success 110
+[  467.551658] pages in hotlist 256001 
+[  467.592713] nr_migrate_success 110
+[  467.968437] pages in hotlist 256001 
+[  468.002972] nr_migrate_success 110
+[  468.309429] pages in hotlist 256001 
+[  468.344478] nr_migrate_success 110
+[  468.676342] pages in hotlist 256001 
+[  468.725912] nr_migrate_success 110
+[  469.047783] pages in hotlist 256001 
+[  469.086298] nr_migrate_success 110
+[  469.366539] pages in hotlist 256001 
+[  469.411597] nr_migrate_success 110
+[  469.705092] pages in hotlist 256001 
+[  469.748028] nr_migrate_success 110
+[  470.144868] pages in hotlist 256001 
+[  470.182793] nr_migrate_success 110
+[  470.462109] pages in hotlist 256001 
+[  470.519950] nr_migrate_success 110
+[  470.835483] pages in hotlist 256001 
+[  470.867645] nr_migrate_success 110
+[  471.142720] pages in hotlist 256001 
+[  471.185531] nr_migrate_success 110
+[  471.486965] pages in hotlist 256001 
+[  471.518821] nr_migrate_success 110
+[  471.817640] pages in hotlist 256001 
+[  471.851405] nr_migrate_success 110
+[  472.175963] pages in hotlist 256001 
+[  362.075751] hetero_getnxt_page: Frame mfn 1ee7d4 pfn 10a74f used pagecount 10000 
+[  362.113351] hetero_getnxt_page: Frame mfn 1f0ee4 pfn 10ce5f used pagecount 20000 
+[  362.148157] hetero_getnxt_page: Frame mfn 1f35f4 pfn 10f56f used pagecount 30000 
+[  362.161510] hetero_getnxt_page: Frame mfn 1f5d04 pfn 111c7f used pagecount 40000 
+[  362.366065] hetero_getnxt_page: Frame mfn 1f8414 pfn 11438f used pagecount 50000 
+[  362.740260] hetero_getnxt_page: Frame mfn 1fab24 pfn 116a9f used pagecount 60000 
+[  363.045526] hetero_getnxt_page: Frame mfn 1fd234 pfn 1191af used pagecount 70000 
+[  363.306007] hetero_getnxt_page: Frame mfn 1ff944 pfn 11b8bf used pagecount 80000 
+[  363.526742] hetero_getnxt_page: Frame mfn 2c2054 pfn 11dfcf used pagecount 90000 
+[  363.547802] hetero_getnxt_page: Frame mfn 2c4764 pfn 1206df used pagecount 100000 
+[  363.566994] hetero_getnxt_page: Frame mfn 2c6e74 pfn 122def used pagecount 110000 
+[  363.586901] hetero_getnxt_page: Frame mfn 2c9584 pfn 1254ff used pagecount 120000 
+[  363.608026] hetero_getnxt_page: Frame mfn 2cbc94 pfn 127c0f used pagecount 130000 
+[  363.630532] hetero_getnxt_page: Frame mfn 2ce3a4 pfn 12a31f used pagecount 140000 
+[  363.656044] hetero_getnxt_page: Frame mfn 2d0ab4 pfn 12ca2f used pagecount 150000 
+[  363.709252] hetero_getnxt_page: Frame mfn 2d31c4 pfn 12f13f used pagecount 160000 
+[  363.767004] hetero_getnxt_page: Frame mfn 2d58d4 pfn 13184f used pagecount 170000 
+[  363.835953] hetero_getnxt_page: Frame mfn 2d7fe4 pfn 133f5f used pagecount 180000 
+[  363.847727] pages in hotlist 30992 
+[  363.893011] nr_migrate_success 15
+[  364.005379] pages in hotlist 63760 
+[  364.048684] nr_migrate_success 15
+[  364.179574] pages in hotlist 129296 
+[  364.221503] nr_migrate_success 15
+[  364.378849] pages in hotlist 173006 
+[  364.418955] nr_migrate_success 18
+[  364.565133] pages in hotlist 196614 
+[  364.603423] nr_migrate_success 19
+[  364.751464] pages in hotlist 209922 
+[  364.788665] nr_migrate_success 19
+[  364.937234] pages in hotlist 213170 
+[  364.973755] nr_migrate_success 19
+[  365.141117] pages in hotlist 214834 
+[  365.176130] nr_migrate_success 19
+[  365.322520] pages in hotlist 215494 
+[  365.356635] nr_migrate_success 19
+[  365.517682] pages in hotlist 216894 
+[  365.550895] nr_migrate_success 19
+[  365.698768] pages in hotlist 217186 
+[  365.730395] nr_migrate_success 19
+[  365.879296] pages in hotlist 217920 
+[  365.909375] nr_migrate_success 19
+[  366.074242] pages in hotlist 218166 
+[  366.104052] nr_migrate_success 19
+[  366.254905] pages in hotlist 219034 
+[  366.284406] nr_migrate_success 19
+[  366.432757] pages in hotlist 220396 
+[  366.461339] nr_migrate_success 19
+[  366.613932] pages in hotlist 221242 
+[  366.641431] nr_migrate_success 19
+[  366.788741] pages in hotlist 221472 
+[  366.815430] nr_migrate_success 19
+[  366.964983] pages in hotlist 221706 
+[  366.990250] nr_migrate_success 19
+[  367.138901] pages in hotlist 221978 
+[  367.162758] nr_migrate_success 19
+[  367.310130] pages in hotlist 222166 
+[  367.332705] nr_migrate_success 19
+[  367.483857] pages in hotlist 222504 
+[  367.505189] nr_migrate_success 19
+[  367.653215] pages in hotlist 222504 
+[  367.673031] nr_migrate_success 19
+[  367.820679] pages in hotlist 223082 
+[  367.839332] nr_migrate_success 19
+[  367.970215] hetero_getnxt_page: Frame mfn 2da6f4 pfn 13666f used pagecount 190000 
+[  367.974481] pages in hotlist 223082 
+[  368.003017] nr_migrate_success 21
+[  368.142733] pages in hotlist 223422 
+[  368.158348] nr_migrate_success 21
+[  368.309146] pages in hotlist 223610 
+[  368.324605] nr_migrate_success 65
+[  368.462173] pages in hotlist 223610 
+[  368.475155] nr_migrate_success 65
+[  368.529785] hetero_getnxt_page: Frame mfn 2dce04 pfn 138d7f used pagecount 200000 
+[  368.611695] pages in hotlist 223610 
+[  368.624464] nr_migrate_success 65
+[  368.704011] hetero_getnxt_page: Frame mfn 2df514 pfn 13b48f used pagecount 210000 
+[  368.743315] hetero_getnxt_page: Frame mfn 2e1c24 pfn 13db9f used pagecount 220000 
+[  368.767108] pages in hotlist 223610 
+[  368.777376] nr_migrate_success 65
+[  368.786553] hetero_getnxt_page: Frame mfn 2e4334 pfn 1402af used pagecount 230000 
+[  368.830534] hetero_getnxt_page: Frame mfn 2e6a44 pfn 1429bf used pagecount 240000 
+[  368.871905] hetero_getnxt_page: Frame mfn 2e9154 pfn 1450cf used pagecount 250000 
+[  368.911099] hetero_getnxt_page: Frame mfn 2eb864 pfn 1477df used pagecount 260000 
+[  368.921480] pages in hotlist 223664 
+[  368.930691] nr_migrate_success 70
+[  368.953626] hetero_getnxt_page: Frame mfn 2edf74 pfn 149eef used pagecount 270000 
+[  369.083166] pages in hotlist 223688 
+[  369.092680] nr_migrate_success 91
+[  369.230704] pages in hotlist 223712 
+[  369.243701] nr_migrate_success 91
+[  369.379655] pages in hotlist 223712 
+[  369.388342] nr_migrate_success 91
+[  369.478305] hetero_getnxt_page: Frame mfn 2f0684 pfn 14c5ff used pagecount 280000 
+[  369.523932] pages in hotlist 223712 
+[  369.532350] nr_migrate_success 91
+[  369.669864] pages in hotlist 223712 
+[  369.678033] nr_migrate_success 91
+[  369.818510] pages in hotlist 223712 
+[  369.826796] nr_migrate_success 91
+[  369.857761] hetero_getnxt_page: Frame mfn 2f2d94 pfn 14ed0f used pagecount 290000 
+[  369.968781] pages in hotlist 223712 
+[  369.977022] nr_migrate_success 91
+[  370.112893] pages in hotlist 223712 
+[  370.120870] nr_migrate_success 91
+[  370.206624] hetero_getnxt_page: Frame mfn 2f54a4 pfn 15141f used pagecount 300000 
+[  370.272739] pages in hotlist 256001 
+[  370.280643] nr_migrate_success 91
+[  370.425392] pages in hotlist 256001 
+[  370.433276] nr_migrate_success 91
+[  370.481170] hetero_getnxt_page: Frame mfn 2f7bb4 pfn 153b2f used pagecount 310000 
+[  370.576619] pages in hotlist 256001 
+[  370.584701] nr_migrate_success 91
+[  370.726280] pages in hotlist 256001 
+[  370.739158] nr_migrate_success 91
+[  370.790617] hetero_getnxt_page: Frame mfn 2fa2c4 pfn 15623f used pagecount 320000 
+[  370.882856] pages in hotlist 256001 
+[  370.890285] nr_migrate_success 91
+[  371.037693] pages in hotlist 256001 
+[  371.045127] nr_migrate_success 91
+[  371.076991] hetero_getnxt_page: Frame mfn 2fc9d4 pfn 15894f used pagecount 330000 
+[  371.189090] pages in hotlist 256001 
+[  371.196432] nr_migrate_success 91
+[  371.301846] hetero_getnxt_page: Frame mfn 2ff0e4 pfn 15b05f used pagecount 340000 
+[  371.324344] hetero_getnxt_page: Frame mfn 2817f4 pfn 15d76f used pagecount 350000 
+[  371.350393] pages in hotlist 256001 
+[  371.353831] hetero_getnxt_page: Frame mfn 283f04 pfn 15fe7f used pagecount 360000 
+[  371.357763] nr_migrate_success 91
+[  371.376188] hetero_getnxt_page: Frame mfn 286614 pfn 16258f used pagecount 370000 
+[  371.399704] hetero_getnxt_page: Frame mfn 288d24 pfn 164c9f used pagecount 380000 
+[  371.427453] hetero_getnxt_page: Frame mfn 28b434 pfn 1673af used pagecount 390000 
+[  371.463419] hetero_getnxt_page: Frame mfn 28db44 pfn 169abf used pagecount 400000 
+[  371.510548] pages in hotlist 256001 
+[  371.529383] hetero_getnxt_page: Frame mfn 290254 pfn 16c1cf used pagecount 410000 
+[  371.533131] nr_migrate_success 91
+[  371.725419] pages in hotlist 256001 
+[  371.732573] nr_migrate_success 91
+[  371.896800] pages in hotlist 256001 
+[  371.902375] hetero_getnxt_page: Frame mfn 292964 pfn 16e8df used pagecount 420000 
+[  371.912839] nr_migrate_success 91
+[  372.078723] pages in hotlist 256001 
+[  372.085697] nr_migrate_success 91
+[  372.251041] pages in hotlist 256001 
+[  372.258042] nr_migrate_success 91
+[  372.422521] pages in hotlist 256001 
+[  372.429362] nr_migrate_success 91
+[  372.461300] hetero_getnxt_page: Frame mfn 295074 pfn 170fef used pagecount 430000 
+[  372.595826] pages in hotlist 256001 
+[  372.602795] nr_migrate_success 92
+[  372.769970] pages in hotlist 256001 
+[  372.777077] nr_migrate_success 95
+[  372.941750] pages in hotlist 256001 
+[  372.948786] nr_migrate_success 104
+[  373.111688] pages in hotlist 256001 
+[  373.118313] nr_migrate_success 104
+[  373.276171] pages in hotlist 256001 
+[  373.282836] nr_migrate_success 104
+[  373.442758] pages in hotlist 256001 
+[  373.449475] nr_migrate_success 104
+[  373.613181] pages in hotlist 256001 
+[  373.619808] nr_migrate_success 104
+[  373.781700] pages in hotlist 256001 
+[  373.788217] nr_migrate_success 104
+[  373.946141] pages in hotlist 256001 
+[  373.952610] nr_migrate_success 104
+[  374.111609] pages in hotlist 256001 
+[  374.118091] nr_migrate_success 104
+[  374.292952] pages in hotlist 256001 
+[  374.299605] nr_migrate_success 104
+[  374.473725] pages in hotlist 256001 
+[  374.480123] nr_migrate_success 104
+[  374.638264] pages in hotlist 256001 
+[  374.644740] nr_migrate_success 104
+[  374.801596] pages in hotlist 256001 
+[  374.808069] nr_migrate_success 104
+[  374.964327] pages in hotlist 256001 
+[  374.970756] nr_migrate_success 104
+[  375.132468] pages in hotlist 256001 
+[  375.138868] nr_migrate_success 104
+[  375.298492] pages in hotlist 256001 
+[  375.304817] nr_migrate_success 104
+[  375.462303] pages in hotlist 256001 
+[  375.468695] nr_migrate_success 104
+[  375.628198] pages in hotlist 256001 
+[  375.634555] nr_migrate_success 104
+[  375.793032] pages in hotlist 256001 
+[  375.799337] nr_migrate_success 104
+[  375.976703] pages in hotlist 256001 
+[  375.983072] nr_migrate_success 104
+[  376.080150] hetero_getnxt_page: Frame mfn 297784 pfn 1736ff used pagecount 440000 
+[  376.148399] pages in hotlist 256001 
+[  376.171553] nr_migrate_success 104
+[  376.314891] pages in hotlist 256001 
+[  376.321153] nr_migrate_success 104
+[  376.599806] pages in hotlist 256001 
+[  376.606440] nr_migrate_success 104
+[  376.751576] pages in hotlist 256001 
+[  376.767930] nr_migrate_success 104
+[  376.913216] pages in hotlist 256001 
+[  376.919379] nr_migrate_success 104
+[  377.066426] hetero_getnxt_page: Frame mfn 299e94 pfn 175e0f used pagecount 450000 
+[  377.092725] hetero_getnxt_page: Frame mfn 29c5a4 pfn 17851f used pagecount 460000 
+[  377.099477] pages in hotlist 256001 
+[  377.106078] nr_migrate_success 104
+[  377.118049] hetero_getnxt_page: Frame mfn 29ecb4 pfn 17ac2f used pagecount 470000 
+[  377.145363] hetero_getnxt_page: Frame mfn 2a13c4 pfn 17d33f used pagecount 480000 
+[  377.169701] hetero_getnxt_page: Frame mfn 2a3ad4 pfn 17fa4f used pagecount 490000 
+[  377.192844] hetero_getnxt_page: Frame mfn 2a61e4 pfn 18215f used pagecount 500000 
+[  377.215168] hetero_getnxt_page: Frame mfn 2a88f4 pfn 18486f used pagecount 510000 
+[  377.240753] hetero_getnxt_page: Frame mfn 2ab004 pfn 186f7f used pagecount 520000 
+[  377.257785] pages in hotlist 256001 
+[  377.264301] nr_migrate_success 104
+[  377.266742] hetero_getnxt_page: Frame mfn 2ad714 pfn 18968f used pagecount 530000 
+[  377.294232] hetero_getnxt_page: Frame mfn 2afe24 pfn 18bd9f used pagecount 540000 
+[  377.335832] hetero_getnxt_page: Frame mfn 2b2534 pfn 18e4af used pagecount 550000 
+[  377.406977] hetero_getnxt_page: Frame mfn 2b4c44 pfn 190bbf used pagecount 560000 
+[  377.419820] pages in hotlist 256001 
+[  377.426202] nr_migrate_success 104
+[  377.459375] hetero_getnxt_page: Frame mfn 2b7354 pfn 1932cf used pagecount 570000 
+[  377.619260] pages in hotlist 256001 
+[  377.625926] nr_migrate_success 108
+[  377.807278] pages in hotlist 256001 
+[  377.813777] nr_migrate_success 109
+[  377.975488] pages in hotlist 256001 
+[  377.981706] nr_migrate_success 109
+[  378.154964] pages in hotlist 256001 
+[  378.161201] nr_migrate_success 109
+[  378.320295] pages in hotlist 256001 
+[  378.326554] nr_migrate_success 109
+[  378.484475] pages in hotlist 256001 
+[  378.490705] nr_migrate_success 109
+[  378.653637] pages in hotlist 256001 
+[  378.659852] nr_migrate_success 109
+[  378.830304] pages in hotlist 256001 
+[  378.836544] nr_migrate_success 109
+[  378.998521] pages in hotlist 256001 
+[  379.017676] nr_migrate_success 109
+[  379.159789] hetero_getnxt_page: Frame mfn 2b9a64 pfn 1959df used pagecount 580000 
+[  379.179007] pages in hotlist 256001 
+[  379.185239] nr_migrate_success 109
+[  379.344366] pages in hotlist 256001 
+[  379.350584] nr_migrate_success 109
+[  379.520315] pages in hotlist 256001 
+[  379.526494] nr_migrate_success 109
+[  379.685696] pages in hotlist 256001 
+[  379.691926] nr_migrate_success 109
+[  379.847678] pages in hotlist 256001 
+[  379.853867] nr_migrate_success 109
+[  380.024071] pages in hotlist 256001 
+[  380.030266] nr_migrate_success 109
+[  380.187701] pages in hotlist 256001 
+[  380.193889] nr_migrate_success 109
+[  380.349005] pages in hotlist 256001 
+[  380.355201] nr_migrate_success 109
+[  380.527716] pages in hotlist 256001 
+[  380.533867] nr_migrate_success 109
+[  380.688457] pages in hotlist 256001 
+[  380.694628] nr_migrate_success 109
+[  380.849992] pages in hotlist 256001 
+[  380.856186] nr_migrate_success 109
+[  381.014222] pages in hotlist 256001 
+[  381.020376] nr_migrate_success 109
+[  381.172628] pages in hotlist 256001 
+[  381.178770] nr_migrate_success 109
+[  381.335331] pages in hotlist 256001 
+[  381.345724] nr_migrate_success 109
+[  381.520891] pages in hotlist 256001 
+[  381.527010] nr_migrate_success 109
+[  381.685427] pages in hotlist 256001 
+[  381.691538] nr_migrate_success 109
+[  381.857224] pages in hotlist 256001 
+[  381.863506] nr_migrate_success 109
+[  382.027277] pages in hotlist 256001 
+[  382.050312] nr_migrate_success 109
+[  382.200293] pages in hotlist 256001 
+[  382.206308] nr_migrate_success 109
+[  382.354083] pages in hotlist 256001 
+[  382.360083] nr_migrate_success 109
+[  382.392602] hetero_getnxt_page: Frame mfn 2bc174 pfn 1980ef used pagecount 590000 
+[  382.441322] hetero_getnxt_page: Frame mfn 2be884 pfn 19a7ff used pagecount 600000 
+[  382.479188] hetero_getnxt_page: Frame mfn 240f94 pfn 19cf0f used pagecount 610000 
+[  382.512765] pages in hotlist 256001 
+[  382.518948] nr_migrate_success 109
+[  382.519434] hetero_getnxt_page: Frame mfn 2436a4 pfn 19f61f used pagecount 620000 
+[  382.553224] hetero_getnxt_page: Frame mfn 245db4 pfn 1a1d2f used pagecount 630000 
+[  382.589941] hetero_getnxt_page: Frame mfn 2484c4 pfn 1a443f used pagecount 640000 
+[  382.625431] hetero_getnxt_page: Frame mfn 24abd4 pfn 1a6b4f used pagecount 650000 
+[  382.679346] pages in hotlist 256001 
+[  382.685594] nr_migrate_success 109
+[  382.756901] hetero_getnxt_page: Frame mfn 24d2e4 pfn 1a925f used pagecount 660000 
+[  382.779678] hetero_getnxt_page: Frame mfn 24f9f4 pfn 1ab96f used pagecount 670000 
+[  382.807513] hetero_getnxt_page: Frame mfn 252104 pfn 1ae07f used pagecount 680000 
+[  382.846724] hetero_getnxt_page: Frame mfn 254814 pfn 1b078f used pagecount 690000 
+[  382.858608] pages in hotlist 256001 
+[  382.864852] nr_migrate_success 109
+[  382.868805] hetero_getnxt_page: Frame mfn 256f24 pfn 1b2e9f used pagecount 700000 
+[  382.889230] hetero_getnxt_page: Frame mfn 259634 pfn 1b55af used pagecount 710000 
+[  382.913369] hetero_getnxt_page: Frame mfn 25bd44 pfn 1b7cbf used pagecount 720000 
+[  382.936148] hetero_getnxt_page: Frame mfn 25e454 pfn 1ba3cf used pagecount 730000 
+[  382.990546] hetero_getnxt_page: Frame mfn 260b64 pfn 1bcadf used pagecount 740000 
+[  383.017622] pages in hotlist 256001 
+[  383.023838] nr_migrate_success 109
+[  383.036663] hetero_getnxt_page: Frame mfn 263274 pfn 1bf1ef used pagecount 750000 
+[  383.108569] hetero_getnxt_page: Frame mfn 265984 pfn 1c18ff used pagecount 760000 
+[  383.175064] pages in hotlist 256001 
+[  383.181448] nr_migrate_success 110
+[  383.336973] pages in hotlist 256001 
+[  383.343519] nr_migrate_success 110
+[  383.498204] pages in hotlist 256001 
+[  383.504500] nr_migrate_success 110
+[  383.556693] hetero_getnxt_page: Frame mfn 268094 pfn 1c400f used pagecount 770000 
+[  383.656151] pages in hotlist 256001 
+[  383.662360] nr_migrate_success 110
+[  383.813322] pages in hotlist 256001 
+[  383.819649] nr_migrate_success 110
+[  383.972777] pages in hotlist 256001 
+[  383.979089] nr_migrate_success 110
+[  384.126714] pages in hotlist 256001 
+[  384.132890] nr_migrate_success 110
+[  384.217234] hetero_getnxt_page: Frame mfn 26a7a4 pfn 1c671f used pagecount 780000 
+[  384.287035] pages in hotlist 256001 
+[  384.293250] nr_migrate_success 110
+[  384.453621] pages in hotlist 256001 
+[  384.460063] nr_migrate_success 110
+[  384.621569] pages in hotlist 256001 
+[  384.627816] nr_migrate_success 110
+[  384.794712] pages in hotlist 256001 
+[  384.800863] nr_migrate_success 110
+[  384.967242] pages in hotlist 256001 
+[  384.973417] nr_migrate_success 110
+[  385.132510] pages in hotlist 256001 
+[  385.138710] nr_migrate_success 110
+[  385.302124] pages in hotlist 256001 
+[  385.308345] nr_migrate_success 110
+[  385.486969] pages in hotlist 256001 
+[  385.493140] nr_migrate_success 110
+[  385.650666] pages in hotlist 256001 
+[  385.656838] nr_migrate_success 110
+[  385.822551] pages in hotlist 256001 
+[  385.828691] nr_migrate_success 110
+[  386.004715] pages in hotlist 256001 
+[  386.010945] nr_migrate_success 110
+[  386.169863] pages in hotlist 256001 
+[  386.176084] nr_migrate_success 110
+[  386.343455] pages in hotlist 256001 
+[  386.349727] nr_migrate_success 110
+[  386.506624] pages in hotlist 256001 
+[  386.512893] nr_migrate_success 110
+[  386.677700] pages in hotlist 256001 
+[  386.683867] nr_migrate_success 110
+[  386.839670] pages in hotlist 256001 
+[  386.845999] nr_migrate_success 110
+[  387.004719] pages in hotlist 256001 
+[  387.011055] nr_migrate_success 110
+[  387.174871] pages in hotlist 256001 
+[  387.181228] nr_migrate_success 110
+[  387.338641] pages in hotlist 256001 
+[  387.344943] nr_migrate_success 110
+[  387.506478] pages in hotlist 256001 
+[  387.512957] nr_migrate_success 110
+[  387.675658] pages in hotlist 256001 
+[  387.681886] nr_migrate_success 110
+[  387.842195] pages in hotlist 256001 
+[  387.848494] nr_migrate_success 110
+[  388.031228] pages in hotlist 256001 
+[  388.037543] nr_migrate_success 110
+[  388.188279] pages in hotlist 256001 
+[  388.194498] nr_migrate_success 110
+[  388.225444] hetero_getnxt_page: Frame mfn 26ceb4 pfn 1c8e2f used pagecount 790000 
+[  388.368750] pages in hotlist 256001 
+[  388.375590] nr_migrate_success 110
+[  388.562033] pages in hotlist 256001 
+[  388.568347] nr_migrate_success 110
+[  388.741059] pages in hotlist 256001 
+[  388.747322] nr_migrate_success 110
+[  388.906167] pages in hotlist 256001 
+[  388.912313] nr_migrate_success 110
+[  389.061756] pages in hotlist 256001 
+[  389.067915] nr_migrate_success 110
+[  389.221018] pages in hotlist 256001 
+[  389.227541] nr_migrate_success 110
+[  389.328490] hetero_getnxt_page: Frame mfn 26f5c4 pfn 1cb53f used pagecount 800000 
+[  389.352087] hetero_getnxt_page: Frame mfn 271cd4 pfn 1cdc4f used pagecount 810000 
+[  389.373844] hetero_getnxt_page: Frame mfn 2743e4 pfn 1d035f used pagecount 820000 
+[  389.404169] hetero_getnxt_page: Frame mfn 276af4 pfn 1d2a6f used pagecount 830000 
+[  389.409752] pages in hotlist 256001 
+[  389.416019] nr_migrate_success 110
+[  389.423936] hetero_getnxt_page: Frame mfn 279204 pfn 1d517f used pagecount 840000 
+[  389.442975] hetero_getnxt_page: Frame mfn 27b914 pfn 1d788f used pagecount 850000 
+[  389.462644] hetero_getnxt_page: Frame mfn 27e024 pfn 1d9f9f used pagecount 860000 
+[  389.491748] hetero_getnxt_page: Frame mfn 200734 pfn 1dc6af used pagecount 870000 
+[  389.516272] hetero_getnxt_page: Frame mfn 202e44 pfn 1dedbf used pagecount 880000 
+[  389.549203] hetero_getnxt_page: Frame mfn 205554 pfn 1e14cf used pagecount 890000 
+[  389.569138] pages in hotlist 256001 
+[  389.575331] nr_migrate_success 110
+[  389.591926] hetero_getnxt_page: Frame mfn 207c64 pfn 1e3bdf used pagecount 900000 
+[  389.645118] hetero_getnxt_page: Frame mfn 20a374 pfn 1e62ef used pagecount 910000 
+[  389.733962] pages in hotlist 256001 
+[  389.740171] nr_migrate_success 110
+[  389.762781] hetero_getnxt_page: Frame mfn 20ca84 pfn 1e89ff used pagecount 920000 
+[  389.905131] pages in hotlist 256001 
+[  389.911643] nr_migrate_success 110
+[  390.076313] pages in hotlist 256001 
+[  390.087651] nr_migrate_success 110
+[  390.246184] pages in hotlist 256001 
+[  390.252444] nr_migrate_success 110
+[  390.414179] pages in hotlist 256001 
+[  390.420372] nr_migrate_success 110
+[  390.578310] pages in hotlist 256001 
+[  390.584566] nr_migrate_success 110
+[  390.743593] pages in hotlist 256001 
+[  390.750027] nr_migrate_success 110
+[  390.926748] pages in hotlist 256001 
+[  390.933160] nr_migrate_success 110
+[  391.093286] pages in hotlist 256001 
+[  391.099447] nr_migrate_success 110
+[  391.256892] pages in hotlist 256001 
+[  391.263168] nr_migrate_success 110
+[  391.419305] pages in hotlist 256001 
+[  391.425560] nr_migrate_success 110
+[  391.582122] pages in hotlist 256001 
+[  391.588373] nr_migrate_success 110
+[  391.748860] pages in hotlist 256001 
+[  391.755100] nr_migrate_success 110
+[  391.911467] pages in hotlist 256001 
+[  391.917670] nr_migrate_success 110
+[  392.073952] pages in hotlist 256001 
+[  392.080241] nr_migrate_success 110
+[  392.236540] pages in hotlist 256001 
+[  392.242845] nr_migrate_success 110
+[  392.397964] pages in hotlist 256001 
+[  392.404248] nr_migrate_success 110
+[  392.567286] pages in hotlist 256001 
+[  392.573595] nr_migrate_success 110
+[  392.727569] pages in hotlist 256001 
+[  392.733863] nr_migrate_success 110
+[  392.890027] pages in hotlist 256001 
+[  392.896365] nr_migrate_success 110
+[  393.053956] pages in hotlist 256001 
+[  393.060196] nr_migrate_success 110
+[  393.214711] pages in hotlist 256001 
+[  393.221034] nr_migrate_success 110
+[  393.375612] pages in hotlist 256001 
+[  393.381937] nr_migrate_success 110
+[  393.538769] pages in hotlist 256001 
+[  393.558381] nr_migrate_success 110
+[  393.708714] pages in hotlist 256001 
+[  393.716028] nr_migrate_success 110
+[  393.881535] pages in hotlist 256001 
+[  393.887957] nr_migrate_success 110
+[  394.065493] pages in hotlist 256001 
+[  394.072216] nr_migrate_success 110
+[  394.225699] pages in hotlist 256001 
+[  394.231923] nr_migrate_success 110
+[  394.381601] pages in hotlist 256001 
+[  394.385734] hetero_getnxt_page: Frame mfn 20f194 pfn 1eb10f used pagecount 930000 
+[  394.389733] nr_migrate_success 110
+[  394.431126] hetero_getnxt_page: Frame mfn 2118a4 pfn 1ed81f used pagecount 940000 
+[  394.468624] hetero_getnxt_page: Frame mfn 213fb4 pfn 1eff2f used pagecount 950000 
+[  394.508296] hetero_getnxt_page: Frame mfn 2166c4 pfn 1f263f used pagecount 960000 
+[  394.544553] pages in hotlist 256001 
+[  394.545234] hetero_getnxt_page: Frame mfn 310dd4 pfn 1f4d4f used pagecount 970000 
+[  394.550895] nr_migrate_success 110
+[  394.579732] hetero_getnxt_page: Frame mfn 3134e4 pfn 1f745f used pagecount 980000 
+[  394.613982] hetero_getnxt_page: Frame mfn 309bf4 pfn 1f9b6f used pagecount 990000 
+[  394.648907] hetero_getnxt_page: Frame mfn 30a304 pfn 1fc27f used pagecount 1000000 
+[  394.741772] pages in hotlist 256001 
+[  394.748200] nr_migrate_success 110
+[  394.780588] hetero_getnxt_page: Frame mfn 33c214 pfn 1fe98f used pagecount 1010000 
+[  395.030972] pages in hotlist 256001 
+[  395.037979] nr_migrate_success 110
+[  395.312218] pages in hotlist 256001 
+[  395.318655] nr_migrate_success 110
+[  395.567761] pages in hotlist 256001 
+[  395.574203] nr_migrate_success 110
+[  395.825153] pages in hotlist 256001 
+[  395.831684] nr_migrate_success 110
+[  396.106975] pages in hotlist 256001 
+[  396.147420] nr_migrate_success 110
+[  396.456289] pages in hotlist 256001 
+[  396.510185] nr_migrate_success 110
+[  396.928203] pages in hotlist 256001 
+[  397.016235] nr_migrate_success 110
+[  397.328410] pages in hotlist 256001 
+[  397.371870] nr_migrate_success 110
+[  397.684276] pages in hotlist 256001 
+[  397.726731] nr_migrate_success 110
+[  398.002719] pages in hotlist 256001 
+[  398.040278] nr_migrate_success 110
+[  398.310588] pages in hotlist 256001 
+[  398.346274] nr_migrate_success 110
+[  398.588193] pages in hotlist 256001 
+[  398.627275] nr_migrate_success 110
+[  398.859133] pages in hotlist 256001 
+[  398.897797] nr_migrate_success 110
+[  399.143150] pages in hotlist 256001 
+[  399.177185] nr_migrate_success 110
+[  399.413602] pages in hotlist 256001 
+[  399.444890] nr_migrate_success 110
+[  399.667271] pages in hotlist 256001 
+[  399.701871] nr_migrate_success 110
+[  399.921140] pages in hotlist 256001 
+[  399.954630] nr_migrate_success 110
+[  400.198468] pages in hotlist 256001 
+[  400.232784] nr_migrate_success 110
+[  400.462842] pages in hotlist 256001 
+[  400.493868] nr_migrate_success 110
+[  400.726672] pages in hotlist 256001 
+[  400.760484] nr_migrate_success 110
+[  400.975365] pages in hotlist 256001 
+[  401.014571] nr_migrate_success 110
+[  401.230603] pages in hotlist 256001 
+[  401.264844] nr_migrate_success 110
+[  401.477068] pages in hotlist 256001 
+[  401.509421] nr_migrate_success 110
+[  401.726670] pages in hotlist 256001 
+[  401.760260] nr_migrate_success 110
+[  402.010089] pages in hotlist 256001 
+[  402.047051] nr_migrate_success 110
+[  402.267556] pages in hotlist 256001 
+[  402.301171] nr_migrate_success 110
+[  402.552302] pages in hotlist 256001 
+[  402.587795] nr_migrate_success 110
+[  402.981103] pages in hotlist 256001 
+[  403.024594] nr_migrate_success 110
+[  403.267486] pages in hotlist 256001 
+[  403.310074] nr_migrate_success 110
+[  403.523867] pages in hotlist 256001 
+[  403.556492] nr_migrate_success 110
+[  403.764983] pages in hotlist 256001 
+[  403.792705] nr_migrate_success 110
+[  403.959725] pages in hotlist 256001 
+[  403.993203] nr_migrate_success 110
+[  404.151684] pages in hotlist 256001 
+[  404.158028] nr_migrate_success 110
+[  404.325891] pages in hotlist 256001 
+[  404.332580] nr_migrate_success 110
+[  404.614680] pages in hotlist 256001 
+[  404.638710] nr_migrate_success 110
+[  404.931686] pages in hotlist 256001 
+[  404.968187] nr_migrate_success 110
+[  405.252459] pages in hotlist 256001 
+[  405.292872] nr_migrate_success 110
+[  405.547067] pages in hotlist 256001 
+[  405.581525] nr_migrate_success 110
+[  405.815837] pages in hotlist 256001 
+[  405.862744] nr_migrate_success 110
+[  406.145914] pages in hotlist 256001 
+[  406.188424] nr_migrate_success 110
+[  406.425964] pages in hotlist 256001 
+[  406.464686] nr_migrate_success 110
+[  406.690935] pages in hotlist 256001 
+[  406.725047] nr_migrate_success 110
+[  406.950153] pages in hotlist 256001 
+[  406.991380] nr_migrate_success 110
+[  407.217754] pages in hotlist 256001 
+[  407.253799] nr_migrate_success 110
+[  407.481820] pages in hotlist 256001 
+[  407.517098] nr_migrate_success 110
+[  407.750354] pages in hotlist 256001 
+[  407.788745] nr_migrate_success 110
+[  408.041414] pages in hotlist 256001 
+[  408.077114] nr_migrate_success 110
+[  408.355853] pages in hotlist 256001 
+[  408.398968] nr_migrate_success 110
+[  408.621033] pages in hotlist 256001 
+[  408.653027] nr_migrate_success 110
+[  408.874887] pages in hotlist 256001 
+[  408.925017] nr_migrate_success 110
+[  409.133052] pages in hotlist 256001 
+[  409.166276] nr_migrate_success 110
+[  409.411237] pages in hotlist 256001 
+[  409.447475] nr_migrate_success 110
+[  409.653297] pages in hotlist 256001 
+[  409.693355] nr_migrate_success 110
+[  409.942393] pages in hotlist 256001 
+[  409.986562] nr_migrate_success 110
+[  410.225397] pages in hotlist 256001 
+[  410.272176] nr_migrate_success 110
+[  410.489321] pages in hotlist 256001 
+[  410.527862] nr_migrate_success 110
+[  410.740000] pages in hotlist 256001 
+[  410.785062] nr_migrate_success 110
+[  410.993092] pages in hotlist 256001 
+[  411.070633] nr_migrate_success 110
+[  411.274064] pages in hotlist 256001 
+[  411.315460] nr_migrate_success 110
+[  411.515135] pages in hotlist 256001 
+[  411.570067] nr_migrate_success 110
+[  411.758477] pages in hotlist 256001 
+[  411.785846] nr_migrate_success 110
+[  411.938373] pages in hotlist 256001 
+[  411.952444] nr_migrate_success 110
+[  412.150093] pages in hotlist 256001 
+[  412.157188] nr_migrate_success 110
+[  412.356749] pages in hotlist 256001 
+[  412.371512] nr_migrate_success 110
+[  412.600330] pages in hotlist 256001 
+[  412.634980] nr_migrate_success 110
+[  412.915178] pages in hotlist 256001 
+[  412.957420] nr_migrate_success 110
+[  413.318365] pages in hotlist 256001 
+[  413.379334] nr_migrate_success 110
+[  413.651804] pages in hotlist 256001 
+[  413.707645] nr_migrate_success 110
+[  413.926968] pages in hotlist 256001 
+[  414.002551] nr_migrate_success 110
+[  414.208627] pages in hotlist 256001 
+[  414.284492] nr_migrate_success 110
+[  414.511993] pages in hotlist 256001 
+[  414.564445] nr_migrate_success 110
+[  414.792112] pages in hotlist 256001 
+[  414.851151] nr_migrate_success 110
+[  415.102717] pages in hotlist 256001 
+[  415.164109] nr_migrate_success 110
+[  415.455027] pages in hotlist 256001 
+[  415.521169] nr_migrate_success 110
+[  415.760931] pages in hotlist 256001 
+[  415.827631] nr_migrate_success 110
+[  416.083178] pages in hotlist 256001 
+[  416.147184] nr_migrate_success 110
+[  416.386720] pages in hotlist 256001 
+[  416.452637] nr_migrate_success 110
+[  416.688587] pages in hotlist 256001 
+[  416.752600] nr_migrate_success 110
+[  416.990603] pages in hotlist 256001 
+[  417.056796] nr_migrate_success 110
+[  417.307763] pages in hotlist 256001 
+[  417.371254] nr_migrate_success 110
+[  417.609988] pages in hotlist 256001 
+[  417.677195] nr_migrate_success 110
+[  417.934275] pages in hotlist 256001 
+[  418.001456] nr_migrate_success 110
+[  418.244984] pages in hotlist 256001 
+[  418.310590] nr_migrate_success 110
+[  418.565014] pages in hotlist 256001 
+[  418.653346] nr_migrate_success 110
+[  418.891314] pages in hotlist 256001 
+[  418.981348] nr_migrate_success 110
+[  419.217783] pages in hotlist 256001 
+[  419.281950] nr_migrate_success 110
+[  419.574353] pages in hotlist 256001 
+[  419.639390] nr_migrate_success 110
+[  419.878607] pages in hotlist 256001 
+[  419.948006] nr_migrate_success 110
+[  420.211528] pages in hotlist 256001 
+[  420.283155] nr_migrate_success 110
+[  420.525469] pages in hotlist 256001 
+[  420.622122] nr_migrate_success 110
+[  420.865560] pages in hotlist 256001 
+[  420.939987] nr_migrate_success 110
+[  421.183316] pages in hotlist 256001 
+[  421.258434] nr_migrate_success 110
+[  421.503971] pages in hotlist 256001 
+[  421.580206] nr_migrate_success 110
+[  421.841518] pages in hotlist 256001 
+[  421.927817] nr_migrate_success 110
+[  422.183584] pages in hotlist 256001 
+[  422.262137] nr_migrate_success 110
+[  422.525566] pages in hotlist 256001 
+[  422.625863] nr_migrate_success 110
+[  422.906277] pages in hotlist 256001 
+[  423.004996] nr_migrate_success 110
+[  423.275772] pages in hotlist 256001 
+[  423.354894] nr_migrate_success 110
+[  423.608504] pages in hotlist 256001 
+[  423.687473] nr_migrate_success 110
+[  423.939031] pages in hotlist 256001 
+[  424.040631] nr_migrate_success 110
+[  424.367938] pages in hotlist 256001 
+[  424.464119] nr_migrate_success 110
+[  424.760660] pages in hotlist 256001 
+[  424.850598] nr_migrate_success 110
+[  425.135431] pages in hotlist 256001 
+[  425.219078] nr_migrate_success 110
+[  425.492054] pages in hotlist 256001 
+[  425.576121] nr_migrate_success 110
+[  425.825863] pages in hotlist 256001 
+[  425.931022] nr_migrate_success 110
+[  426.187165] pages in hotlist 256001 
+[  426.267885] nr_migrate_success 110
+[  426.524205] pages in hotlist 256001 
+[  426.606352] nr_migrate_success 110
+[  426.904021] pages in hotlist 256001 
+[  426.983075] nr_migrate_success 110
+[  427.241079] pages in hotlist 256001 
+[  427.322845] nr_migrate_success 110
+[  427.580669] pages in hotlist 256001 
+[  427.663273] nr_migrate_success 110
+[  427.913587] pages in hotlist 256001 
+[  427.994703] nr_migrate_success 110
+[  428.265074] pages in hotlist 256001 
+[  428.347321] nr_migrate_success 110
+[  428.624154] pages in hotlist 256001 
+[  428.703323] nr_migrate_success 110
+[  428.981432] pages in hotlist 256001 
+[  429.086027] nr_migrate_success 110
+[  429.357552] pages in hotlist 256001 
+[  429.441672] nr_migrate_success 110
+[  429.694762] pages in hotlist 256001 
+[  429.779780] nr_migrate_success 110
+[  430.036685] pages in hotlist 256001 
+[  430.122256] nr_migrate_success 110
+[  430.382281] pages in hotlist 256001 
+[  430.467964] nr_migrate_success 110
+[  430.752698] pages in hotlist 256001 
+[  430.835507] nr_migrate_success 110
+[  431.104531] pages in hotlist 256001 
+[  431.193750] nr_migrate_success 110
+[  431.465531] pages in hotlist 256001 
+[  431.567383] nr_migrate_success 110
+[  431.879499] pages in hotlist 256001 
+[  431.952957] nr_migrate_success 110
+[  432.357756] pages in hotlist 256001 
+[  432.497750] nr_migrate_success 110
+[  432.919751] pages in hotlist 256001 
+[  433.010061] nr_migrate_success 110
+[  433.371383] pages in hotlist 256001 
+[  433.493320] nr_migrate_success 110
+[  433.816427] pages in hotlist 256001 
+[  433.946575] nr_migrate_success 110
+[  434.260978] pages in hotlist 256001 
+[  434.329494] nr_migrate_success 110
+[  434.764775] pages in hotlist 256001 
+[  434.804747] nr_migrate_success 110
+[  435.006286] pages in hotlist 256001 
+[  435.019162] nr_migrate_success 110
+[  435.346051] pages in hotlist 256001 
+[  435.374840] nr_migrate_success 110
+[  435.665545] pages in hotlist 256001 
+[  435.688635] nr_migrate_success 110
+[  435.930484] pages in hotlist 256001 
+[  435.962808] nr_migrate_success 110
+[  436.235247] pages in hotlist 256001 
+[  436.280059] nr_migrate_success 110
+[  436.552218] pages in hotlist 256001 
+[  436.603430] nr_migrate_success 110
+[  436.878176] pages in hotlist 256001 
+[  436.916205] nr_migrate_success 110
+[  437.189936] pages in hotlist 256001 
+[  437.223879] nr_migrate_success 110
+[  437.506878] pages in hotlist 256001 
+[  437.532996] nr_migrate_success 110
+[  437.852652] pages in hotlist 256001 
+[  437.881138] nr_migrate_success 110
+[  438.171163] pages in hotlist 256001 
+[  438.197050] nr_migrate_success 110
+[  438.450071] pages in hotlist 256001 
+[  438.478188] nr_migrate_success 110
+[  438.758388] pages in hotlist 256001 
+[  438.784196] nr_migrate_success 110
+[  439.051628] pages in hotlist 256001 
+[  439.103741] nr_migrate_success 110
+[  439.442874] pages in hotlist 256001 
+[  439.494984] nr_migrate_success 110
+[  439.788184] pages in hotlist 256001 
+[  439.831298] nr_migrate_success 110
+[  440.118923] pages in hotlist 256001 
+[  440.180935] nr_migrate_success 110
+[  440.511012] pages in hotlist 256001 
+[  440.544314] nr_migrate_success 110
+[  440.837029] pages in hotlist 256001 
+[  440.887529] nr_migrate_success 110
+[  441.201513] pages in hotlist 256001 
+[  441.255290] nr_migrate_success 110
+[  441.548880] pages in hotlist 256001 
+[  441.581665] nr_migrate_success 110
+[  441.883153] pages in hotlist 256001 
+[  441.917816] nr_migrate_success 110
+[  442.168654] pages in hotlist 256001 
+[  442.197951] nr_migrate_success 110
+[  442.516374] pages in hotlist 256001 
+[  442.544145] nr_migrate_success 110
+[  442.799916] pages in hotlist 256001 
+[  442.823926] nr_migrate_success 110
+[  443.003695] pages in hotlist 256001 
+[  443.024171] nr_migrate_success 110
+[  443.318401] pages in hotlist 256001 
+[  443.326612] nr_migrate_success 110
+[  443.669056] pages in hotlist 256001 
+[  443.692286] nr_migrate_success 110
+[  444.233272] pages in hotlist 256001 
+[  444.272822] nr_migrate_success 110
+[  444.590496] pages in hotlist 256001 
+[  444.620579] nr_migrate_success 110
+[  444.949121] pages in hotlist 256001 
+[  444.992375] nr_migrate_success 110
+[  445.255898] pages in hotlist 256001 
+[  445.319132] nr_migrate_success 110
+[  445.586573] pages in hotlist 256001 
+[  445.663647] nr_migrate_success 110
+[  445.921890] pages in hotlist 256001 
+[  445.970671] nr_migrate_success 110
+[  446.228954] pages in hotlist 256001 
+[  446.300973] nr_migrate_success 110
+[  446.582790] pages in hotlist 256001 
+[  446.654677] nr_migrate_success 110
+[  446.913088] pages in hotlist 256001 
+[  446.986990] nr_migrate_success 110
+[  447.248722] pages in hotlist 256001 
+[  447.301577] nr_migrate_success 110
+[  447.564879] pages in hotlist 256001 
+[  447.615372] nr_migrate_success 110
+[  447.881295] pages in hotlist 256001 
+[  447.932483] nr_migrate_success 110
+[  448.201193] pages in hotlist 256001 
+[  448.251434] nr_migrate_success 110
+[  448.523513] pages in hotlist 256001 
+[  448.577958] nr_migrate_success 110
+[  448.845435] pages in hotlist 256001 
+[  448.900352] nr_migrate_success 110
+[  449.166875] pages in hotlist 256001 
+[  449.239672] nr_migrate_success 110
+[  449.504918] pages in hotlist 256001 
+[  449.563839] nr_migrate_success 110
+[  449.855542] pages in hotlist 256001 
+[  449.932589] nr_migrate_success 110
+[  450.233895] pages in hotlist 256001 
+[  450.298534] nr_migrate_success 110
+[  450.592995] pages in hotlist 256001 
+[  450.650561] nr_migrate_success 110
+[  450.944847] pages in hotlist 256001 
+[  451.003488] nr_migrate_success 110
+[  451.323166] pages in hotlist 256001 
+[  451.380641] nr_migrate_success 110
+[  451.650119] pages in hotlist 256001 
+[  451.708995] nr_migrate_success 110
+[  451.975417] pages in hotlist 256001 
+[  452.057454] nr_migrate_success 110
+[  452.363860] pages in hotlist 256001 
+[  452.424864] nr_migrate_success 110
+[  452.702562] pages in hotlist 256001 
+[  452.763062] nr_migrate_success 110
+[  453.075152] pages in hotlist 256001 
+[  453.134982] nr_migrate_success 110
+[  453.413949] pages in hotlist 256001 
+[  453.494485] nr_migrate_success 110
+[  453.766449] pages in hotlist 256001 
+[  453.823421] nr_migrate_success 110
+[  454.116589] pages in hotlist 256001 
+[  454.178077] nr_migrate_success 110
+[  454.460922] pages in hotlist 256001 
+[  454.520053] nr_migrate_success 110
+[  454.812398] pages in hotlist 256001 
+[  454.871572] nr_migrate_success 110
+[  455.144937] pages in hotlist 256001 
+[  455.204926] nr_migrate_success 110
+[  455.483230] pages in hotlist 256001 
+[  455.540302] nr_migrate_success 110
+[  455.837144] pages in hotlist 256001 
+[  455.895011] nr_migrate_success 110
+[  456.193389] pages in hotlist 256001 
+[  456.253991] nr_migrate_success 110
+[  456.575782] pages in hotlist 256001 
+[  456.635255] nr_migrate_success 110
+[  456.917597] pages in hotlist 256001 
+[  456.978667] nr_migrate_success 110
+[  457.285005] pages in hotlist 256001 
+[  457.349045] nr_migrate_success 110
+[  457.658198] pages in hotlist 256001 
+[  457.742487] nr_migrate_success 110
+[  458.011815] pages in hotlist 256001 
+[  458.071863] nr_migrate_success 110
+[  458.384750] pages in hotlist 256001 
+[  458.443626] nr_migrate_success 110
+[  458.709544] pages in hotlist 256001 
+[  458.771214] nr_migrate_success 110
+[  459.036690] pages in hotlist 256001 
+[  459.104937] nr_migrate_success 110
+[  459.377418] pages in hotlist 256001 
+[  459.458912] nr_migrate_success 110
+[  459.732405] pages in hotlist 256001 
+[  459.810771] nr_migrate_success 110
+[  460.093942] pages in hotlist 256001 
+[  460.152997] nr_migrate_success 110
+[  460.425597] pages in hotlist 256001 
+[  460.485808] nr_migrate_success 110
+[  460.755898] pages in hotlist 256001 
+[  460.850142] nr_migrate_success 110
+[  461.120098] pages in hotlist 256001 
+[  461.182853] nr_migrate_success 110
+[  461.471785] pages in hotlist 256001 
+[  461.534811] nr_migrate_success 110
+[  461.815716] pages in hotlist 256001 
+[  461.879383] nr_migrate_success 110
+[  462.160628] pages in hotlist 256001 
+[  462.223439] nr_migrate_success 110
+[  462.516656] pages in hotlist 256001 
+[  462.611938] nr_migrate_success 110
+[  462.929756] pages in hotlist 256001 
+[  462.999614] nr_migrate_success 110
+[  463.332871] pages in hotlist 256001 
+[  463.427857] nr_migrate_success 110
+[  463.910712] pages in hotlist 256001 
+[  464.002071] nr_migrate_success 110
+[  464.314848] pages in hotlist 256001 
+[  464.384910] nr_migrate_success 110
+[  464.727547] pages in hotlist 256001 
+[  464.799080] nr_migrate_success 110
+[  465.168784] pages in hotlist 256001 
+[  465.322039] nr_migrate_success 110
+[  465.511472] pages in hotlist 256001 
+[  465.548304] nr_migrate_success 110
+[  465.906531] pages in hotlist 256001 
+[  465.923467] nr_migrate_success 110
+[  466.120139] pages in hotlist 256001 
+[  466.130246] nr_migrate_success 110
+[  466.465227] pages in hotlist 256001 
+[  466.476978] nr_migrate_success 110
+[  466.867881] pages in hotlist 256001 
+[  466.884325] nr_migrate_success 110
+[  467.209789] pages in hotlist 256001 
+[  467.242855] nr_migrate_success 110
+[  467.551658] pages in hotlist 256001 
+[  467.592713] nr_migrate_success 110
+[  467.968437] pages in hotlist 256001 
+[  468.002972] nr_migrate_success 110
+[  468.309429] pages in hotlist 256001 
+[  468.344478] nr_migrate_success 110
+[  468.676342] pages in hotlist 256001 
+[  468.725912] nr_migrate_success 110
+[  469.047783] pages in hotlist 256001 
+[  469.086298] nr_migrate_success 110
+[  469.366539] pages in hotlist 256001 
+[  469.411597] nr_migrate_success 110
+[  469.705092] pages in hotlist 256001 
+[  469.748028] nr_migrate_success 110
+[  470.144868] pages in hotlist 256001 
+[  470.182793] nr_migrate_success 110
+[  470.462109] pages in hotlist 256001 
+[  470.519950] nr_migrate_success 110
+[  470.835483] pages in hotlist 256001 
+[  470.867645] nr_migrate_success 110
+[  471.142720] pages in hotlist 256001 
+[  471.185531] nr_migrate_success 110
+[  471.486965] pages in hotlist 256001 
+[  471.518821] nr_migrate_success 110
+[  471.817640] pages in hotlist 256001 
+[  471.851405] nr_migrate_success 110
+[  472.175963] pages in hotlist 256001 
+[  472.218516] nr_migrate_success 110
+[  472.545091] pages in hotlist 256001 
+[  472.584703] nr_migrate_success 110
+[  472.848007] pages in hotlist 256001 
+[  472.878098] nr_migrate_success 110
+[  473.180528] pages in hotlist 256001 
+[  473.211029] nr_migrate_success 110
+[  473.502087] pages in hotlist 256001 
+[  473.534538] nr_migrate_success 110
+[  473.714268] pages in hotlist 256001 
+[  473.738144] nr_migrate_success 110
+[  473.924882] pages in hotlist 256001 
+[  473.936428] nr_migrate_success 110
+[  474.211160] pages in hotlist 256001 
+[  474.220299] nr_migrate_success 110
+[  474.706844] pages in hotlist 256001 
+[  474.746091] nr_migrate_success 110
+[  475.257446] pages in hotlist 256001 
+[  475.283708] nr_migrate_success 110
+[  475.618371] pages in hotlist 256001 
+[  475.660866] nr_migrate_success 110
+[  475.954796] pages in hotlist 256001 
+[  476.013698] nr_migrate_success 110
+[  476.361178] pages in hotlist 256001 
+[  476.428813] nr_migrate_success 110
+[  476.744220] pages in hotlist 256001 
+[  476.810572] nr_migrate_success 110
+[  477.095684] pages in hotlist 256001 
+[  477.156894] nr_migrate_success 110
+[  477.454873] pages in hotlist 256001 
+[  477.522371] nr_migrate_success 110
+[  477.814906] pages in hotlist 256001 
+[  477.879492] nr_migrate_success 110
+[  478.158917] pages in hotlist 256001 
+[  478.218781] nr_migrate_success 110
+[  478.512802] pages in hotlist 256001 
+[  478.574992] nr_migrate_success 110
+[  478.952898] pages in hotlist 256001 
+[  479.045982] nr_migrate_success 110
+[  479.380945] pages in hotlist 256001 
+[  479.474757] nr_migrate_success 110
+[  479.827599] pages in hotlist 256001 
+[  479.901838] nr_migrate_success 110
+[  480.238293] pages in hotlist 256001 
+[  480.318073] nr_migrate_success 110
+[  480.681026] pages in hotlist 256001 
+[  480.751185] nr_migrate_success 110
+[  481.089421] pages in hotlist 256001 
+[  481.173710] nr_migrate_success 110
+[  481.489499] pages in hotlist 256001 
+[  481.571871] nr_migrate_success 110
+[  481.911309] pages in hotlist 256001 
+[  482.006541] nr_migrate_success 110
+[  482.334807] pages in hotlist 256001 
+[  482.412140] nr_migrate_success 110
+[  482.747233] pages in hotlist 256001 
+[  482.826837] nr_migrate_success 110
+[  483.203641] pages in hotlist 256001 
+[  483.274452] nr_migrate_success 110
+[  483.588140] pages in hotlist 256001 
+[  483.650016] nr_migrate_success 110
+[  483.976430] pages in hotlist 256001 
+[  484.041877] nr_migrate_success 110
+[  484.332887] pages in hotlist 256001 
+[  484.407188] nr_migrate_success 110
+[  484.788387] pages in hotlist 256001 
+[  484.859612] nr_migrate_success 110
+[  485.215549] pages in hotlist 256001 
+[  485.286857] nr_migrate_success 110
+[  485.635877] pages in hotlist 256001 
+[  485.722122] nr_migrate_success 110
+[  486.047023] pages in hotlist 256001 
+[  486.142710] nr_migrate_success 110
+[  486.498150] pages in hotlist 256001 
+[  486.579310] nr_migrate_success 110
+[  486.956391] pages in hotlist 256001 
+[  487.051420] nr_migrate_success 110
+[  487.384622] pages in hotlist 256001 
+[  487.462602] nr_migrate_success 110
+[  487.831523] pages in hotlist 256001 
+[  487.904743] nr_migrate_success 110
+[  488.238544] pages in hotlist 256001 
+[  488.317187] nr_migrate_success 110
+[  488.633838] pages in hotlist 256001 
+[  488.712123] nr_migrate_success 110
+[  489.025043] pages in hotlist 256001 
+[  489.104918] nr_migrate_success 110
+[  489.420057] pages in hotlist 256001 
+[  489.503193] nr_migrate_success 110
+[  489.791110] pages in hotlist 256001 
+[  489.856445] nr_migrate_success 110
+[  490.138802] pages in hotlist 256001 
+[  490.205185] nr_migrate_success 110
+[  490.489008] pages in hotlist 256001 
+[  490.556537] nr_migrate_success 110
+[  490.843226] pages in hotlist 256001 
+[  490.934280] nr_migrate_success 110
+[  491.217890] pages in hotlist 256001 
+[  491.293946] nr_migrate_success 110
+[  491.582486] pages in hotlist 256001 
+[  491.649294] nr_migrate_success 110
+[  491.930434] pages in hotlist 256001 
+[  492.018106] nr_migrate_success 110
+[  492.300972] pages in hotlist 256001 
+[  492.365007] nr_migrate_success 110
+[  492.685393] pages in hotlist 256001 
+[  492.754522] nr_migrate_success 110
+[  493.067387] pages in hotlist 256001 
+[  493.139370] nr_migrate_success 110
+[  493.556057] pages in hotlist 256001 
+[  493.657447] nr_migrate_success 110
+[  494.002003] pages in hotlist 256001 
+[  494.146552] nr_migrate_success 110
+[  494.630887] pages in hotlist 256001 
+[  494.723712] nr_migrate_success 110
+[  495.072691] pages in hotlist 256001 
+[  495.143662] nr_migrate_success 110
+[  495.518831] pages in hotlist 256001 
+[  495.597488] nr_migrate_success 110
+[  496.097963] pages in hotlist 256001 
+[  496.146798] nr_migrate_success 110
+[  496.331261] pages in hotlist 256001 
+[  496.389926] nr_migrate_success 110
+[  496.809342] pages in hotlist 256001 
+[  496.827994] nr_migrate_success 110
+[  497.001858] pages in hotlist 256001 
+[  497.012319] nr_migrate_success 110
+[  497.385704] pages in hotlist 256001 
+[  497.400858] nr_migrate_success 110
+[  497.715461] pages in hotlist 256001 
+[  497.729425] nr_migrate_success 110
+[  498.051954] pages in hotlist 256001 
+[  498.079778] nr_migrate_success 110
+[  498.375871] pages in hotlist 256001 
+[  498.405725] nr_migrate_success 110
+[  498.702166] pages in hotlist 256001 
+[  498.730493] nr_migrate_success 110
+[  499.013530] pages in hotlist 256001 
+[  499.041071] nr_migrate_success 110
+[  499.328833] pages in hotlist 256001 
+[  499.356234] nr_migrate_success 110
+[  499.616227] pages in hotlist 256001 
+[  499.650913] nr_migrate_success 110
+[  499.950773] pages in hotlist 256001 
+[  499.985169] nr_migrate_success 110
+[  500.268034] pages in hotlist 256001 
+[  500.302630] nr_migrate_success 110
+[  500.595143] pages in hotlist 256001 
+[  500.625710] nr_migrate_success 110
+[  500.967871] pages in hotlist 256001 
+[  501.001733] nr_migrate_success 110
+[  501.269928] pages in hotlist 256001 
+[  501.305040] nr_migrate_success 110
+[  501.625016] pages in hotlist 256001 
+[  501.684461] nr_migrate_success 110
+[  501.969318] pages in hotlist 256001 
+[  501.996954] nr_migrate_success 110
+[  502.253743] pages in hotlist 256001 
+[  502.306989] nr_migrate_success 110
+[  502.592177] pages in hotlist 256001 
+[  502.627117] nr_migrate_success 110
+[  502.904546] pages in hotlist 256001 
+[  502.936038] nr_migrate_success 110
+[  503.238989] pages in hotlist 256001 
+[  503.266152] nr_migrate_success 110
+[  503.557953] pages in hotlist 256001 
+[  503.612687] nr_migrate_success 110
+[  503.878603] pages in hotlist 256001 
+[  503.914036] nr_migrate_success 110
+[  504.182798] pages in hotlist 256001 
+[  504.207629] nr_migrate_success 110
+[  504.468789] pages in hotlist 256001 
+[  504.497071] nr_migrate_success 110
+[  504.772021] pages in hotlist 256001 
+[  504.800325] nr_migrate_success 110
+[  505.002368] pages in hotlist 256001 
+[  505.024351] nr_migrate_success 110
+[  505.202053] pages in hotlist 256001 
+[  505.216802] nr_migrate_success 110
+[  505.491048] pages in hotlist 256001 
+[  505.498989] nr_migrate_success 110
+[  505.781708] pages in hotlist 256001 
+[  505.795342] nr_migrate_success 110
+[  506.207273] pages in hotlist 256001 
+[  506.231252] nr_migrate_success 110
+[  506.634922] pages in hotlist 256001 
+[  506.660027] nr_migrate_success 110
+[  506.969525] pages in hotlist 256001 
+[  507.007541] nr_migrate_success 110
+[  507.347377] pages in hotlist 256001 
+[  507.404347] nr_migrate_success 110
+[  507.710195] pages in hotlist 256001 
+[  507.774130] nr_migrate_success 110
+[  508.076493] pages in hotlist 256001 
+[  508.140632] nr_migrate_success 110
+[  508.441520] pages in hotlist 256001 
+[  508.507287] nr_migrate_success 110
+[  508.852479] pages in hotlist 256001 
+[  508.918156] nr_migrate_success 110
+[  509.223248] pages in hotlist 256001 
+[  509.288695] nr_migrate_success 110
+[  509.593331] pages in hotlist 256001 
+[  509.664639] nr_migrate_success 110
+[  509.978322] pages in hotlist 256001 
+[  510.072477] nr_migrate_success 110
+[  510.380150] pages in hotlist 256001 
+[  510.451161] nr_migrate_success 110
+[  510.765228] pages in hotlist 256001 
+[  510.840371] nr_migrate_success 110
+[  511.230970] pages in hotlist 256001 
+[  511.320671] nr_migrate_success 110
+[  511.715853] pages in hotlist 256001 
+[  511.791888] nr_migrate_success 110
+[  512.178480] pages in hotlist 256001 
+[  512.258269] nr_migrate_success 110
+[  512.605691] pages in hotlist 256001 
+[  512.676426] nr_migrate_success 110
+[  513.059342] pages in hotlist 256001 
+[  513.132435] nr_migrate_success 110
+[  513.471979] pages in hotlist 256001 
+[  513.534770] nr_migrate_success 110
+[  513.850398] pages in hotlist 256001 
+[  513.912747] nr_migrate_success 110
+[  514.261129] pages in hotlist 256001 
+[  514.324124] nr_migrate_success 110
+[  514.682482] pages in hotlist 256001 
+[  514.771722] nr_migrate_success 110
+[  515.099836] pages in hotlist 256001 
+[  515.164606] nr_migrate_success 110
+[  515.487192] pages in hotlist 256001 
+[  515.548326] nr_migrate_success 110
+[  515.880456] pages in hotlist 256001 
+[  515.944485] nr_migrate_success 110
+[  516.332825] pages in hotlist 256001 
+[  516.405124] nr_migrate_success 110
+[  516.765363] pages in hotlist 256001 
+[  516.849884] nr_migrate_success 110
+[  517.188030] pages in hotlist 256001 
+[  517.255551] nr_migrate_success 110
+[  517.599672] pages in hotlist 256001 
+[  517.662481] nr_migrate_success 110
+[  517.992154] pages in hotlist 256001 
+[  518.079941] nr_migrate_success 110
+[  518.421237] pages in hotlist 256001 
+[  518.485347] nr_migrate_success 110
+[  518.855516] pages in hotlist 256001 
+[  518.921781] nr_migrate_success 110
+[  519.260055] pages in hotlist 256001 
+[  519.328606] nr_migrate_success 110
+[  519.663106] pages in hotlist 256001 
+[  519.729952] nr_migrate_success 110
+[  520.046445] pages in hotlist 256001 
+[  520.109849] nr_migrate_success 110
+[  520.448438] pages in hotlist 256001 
+[  520.513918] nr_migrate_success 110
+[  520.833955] pages in hotlist 256001 
+[  520.925380] nr_migrate_success 110
+[  521.246730] pages in hotlist 256001 
+[  521.336173] nr_migrate_success 110
+[  521.679900] pages in hotlist 256001 
+[  521.768893] nr_migrate_success 110
+[  522.087220] pages in hotlist 256001 
+[  522.155136] nr_migrate_success 110
+[  522.490946] pages in hotlist 256001 
+[  522.587475] nr_migrate_success 110
+[  522.902498] pages in hotlist 256001 
+[  522.966816] nr_migrate_success 110
+[  523.305692] pages in hotlist 256001 
+[  523.372944] nr_migrate_success 110
+[  523.709380] pages in hotlist 256001 
+[  523.776626] nr_migrate_success 110
+[  524.097173] pages in hotlist 256001 
+[  524.164385] nr_migrate_success 110
