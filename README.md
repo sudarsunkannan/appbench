@@ -32,6 +32,8 @@ use HP Lab's Quartz tool. Please read the documentation of Quartz tool to unders
 
 1. Installing Quartz
 
+and execute the following steps:
+
     cd $SHARED_LIBS
     git clone https://github.com/HewlettPackard/quartz
 
