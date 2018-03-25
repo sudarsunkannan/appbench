@@ -6,9 +6,9 @@ applications.
 
 Current list of applications:
 
-- graphchi - graph computing application
+- Graphchi - graph compute engine
 - Metis - in-memory map-reduce
-- redis-3.0.0 - in-memory key-value store
+- Redis - in-memory key-value store
 
 *More applications will be added shortly*
 
@@ -39,7 +39,8 @@ Installing Quartz and execute the following steps:
     git clone https://github.com/HewlettPackard/quartz
 
 Make sure to set the right read/write latency and bandwidth values in shared_libs/quartz/nvmemul.ini
-Typical DRAM Read/Write latency - 100-150ns. By default, Quartz uses 1000ns; as a result, some applications can be really slow unless you change the read/write latency values.
+Typical DRAM read/write latency is around 100ns. By default, Quartz uses 1000ns; as a result, some applications 
+can be really slow unless you change the read/write latency values (say 200ns)
 
     cd $APPBENCH && ./install_quartz.sh
 
