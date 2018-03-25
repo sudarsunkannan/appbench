@@ -5,6 +5,9 @@ A mix of CPU, memory, and IO intensive benchmark which includes:
 - Metis - in-memory map-reduce
 - redis-3.0.0 - in-memory key-value store
 
+More applications to be added with Quartz (https://github.com/HewlettPackard/quartz) support
+
+
 # Setup 
 
 Setup environmental variables
