@@ -32,9 +32,6 @@ use HP Lab's Quartz tool. Please read the documentation of Quartz tool to unders
 
 1. Installing Quartz
 
-After installing the dependencies, go to the emulator's source code root folder
-and execute the following steps:
-
     make clean all
     cd $SHARED_LIBS
     git clone https://github.com/HewlettPackard/quartz
