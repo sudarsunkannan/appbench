@@ -16,9 +16,9 @@ alias rm=rm
 /bin/rm *.rdb
 killall redis-server
 sleep 5
-taskset --cpu-list 1,2,3,4,5,6,7 $APPBASE/redis-server &
+$APPPREFIX $APPBASE/redis-server &
 sleep 5
-taskset --cpu-list 0,1,2 $APPBASE/redis-benchmark -r 500000 -n 2000000 -c 50 -t get,set -P 16 -q  -h 127.0.0.1 -p 6379 -d 2048 &> $OUTPUT
+$APPPREFIX $APPBASE/redis-benchmark -r 500000 -n 2000000 -c 50 -t get,set -P 16 -q  -h 127.0.0.1 -p 6379 -d 2048 &> $OUTPUT
 killall redis-server
 
 

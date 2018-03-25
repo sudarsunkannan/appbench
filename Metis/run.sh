@@ -29,5 +29,6 @@ cd $APPBASE
 FlushDisk
 #PerformMigration
 #LD_PRELOAD=/usr/lib/libmigration.so 
-/usr/bin/time -v $APP $DATA 
+#/usr/bin/time -v 
+$APPPREFIX $APP $DATA 
 exit

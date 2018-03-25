@@ -35,6 +35,8 @@ if [ -z "$4" ]
 	echo "running $APP..."
 	RUNAPP
 
+	exit
+
 	APPBASE=$BASE/graphchi
 	APP=graphchi
 	echo "running $APP ..."
@@ -52,7 +54,6 @@ if [ -z "$4" ]
 	#APP=memcached
 	#echo "running $APP ..."
 	#RUNAPP
-	exit
 
 	APPBASE=$BASE/xstream_release
 	APP=xstream_release

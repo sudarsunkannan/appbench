@@ -16,5 +16,5 @@ FlushDisk()
 
 cd $CODEBASE/graphchi 
 FlushDisk
-echo "edgelist" | /usr/bin/time -v  taskset --cpu-list 1,2,3,4,5,6,7 $APP file $INPUT niters 8 
+echo "edgelist" | $APPPREFIX $APP file $INPUT niters 8 
 
