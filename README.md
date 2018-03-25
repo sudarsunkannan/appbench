@@ -42,21 +42,23 @@ Enable the Quartz scripts (QUARTZSCRIPTS) and APPPREFIX environmental variables 
 	export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
 
 
-# Compile and run all applications
+Compile and run all applications
+--------------------------------
 
 Compile all required shared libraries, allocators (Hoard), and applications
 
-	$ ./compile_all.sh
+	./compile_all.sh
 
 Run all apps
 
-	$ ./runapps.sh
+	./runapps.sh
 
-# Collect results
+Collect results
+---------------
 
 See all the application results in output directory
 
-	$ cd output
+	cd output
 
 
 
