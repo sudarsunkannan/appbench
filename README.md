@@ -50,14 +50,14 @@ Compile all required shared libraries, allocators (Hoard), and applications
 
 	./compile_all.sh
 
-Run all apps
+Run all applications
 
 	./runapps.sh
 
 Collect results
 ---------------
 
-See all the application results in output directory
+See all application results in output directory
 
 	cd output
 
