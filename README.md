@@ -37,6 +37,10 @@ Installing Quartz and execute the following steps:
 
     cd $SHARED_LIBS
     git clone https://github.com/HewlettPackard/quartz
+
+Make sure to set the right read/write latency and bandwidth values in shared_libs/quartz/nvmemul.ini
+Typical DRAM Read/Write latency - 100-150ns. By default, Quartz uses 1000ns; as a result, some applications can be really slow unless you change the read/write latency values.
+
     cd $APPBENCH && ./install_quartz.sh
 
 Note: Quartz requires your kernel's headers and modules. To install headers and modules:
