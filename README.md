@@ -22,7 +22,8 @@ Generate data and install required packages
 	$ ./setup.sh
 
 
-# Emulating heterogeneous memory 
+Emulating heterogeneous memory 
+------------------------------
 
 *Skip this part and go to compile and run step if you do not want to modify memory access speed*
 
@@ -32,6 +33,12 @@ use HP Lab's Quartz tool. Please read the documentation of Quartz tool to unders
 To use Quartz:
 
 1. Download the tool to shared_libs folder
+
+
+    mkdir build
+    cd build
+    cmake ..
+    make clean all
 
 
     cd $SHARED_LIBS
