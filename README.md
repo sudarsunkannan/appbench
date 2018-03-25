@@ -63,6 +63,5 @@ See all application results in output directory
 
 	cd output
 
-
-
+*TO DO: Adding a script to extract results of application*
 
