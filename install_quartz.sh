@@ -7,3 +7,6 @@ mkdir build
 cd build
 cmake ..
 make clean all
+sudo $SHARED_LIBS/quartz/scripts/setupdev.sh load
+echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+echo 2 | sudo tee /sys/devices/cpu/rdpmc
