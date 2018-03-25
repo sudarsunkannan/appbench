@@ -22,7 +22,7 @@ Generate data and install required packages
 
 # Compile and run all applications
 
-Compile all applications
+Compile all required shared libraries, allocators (Hoard), and applications
 
 	$ ./compile_all.sh
 
