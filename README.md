@@ -33,9 +33,8 @@ To use Quartz:
 
 1. Download the tool to shared_libs folder
 
-	$ cd $SHARED_LIBS
-
-	$ git clone https://github.com/HewlettPackard/quartz
+	cd $SHARED_LIBS
+	git clone https://github.com/HewlettPackard/quartz
 
 2. Install the tool 
 
