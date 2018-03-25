@@ -10,6 +10,8 @@ Current list of applications:
 - Metis - in-memory map-reduce
 - redis-3.0.0 - in-memory key-value store
 
+*More applications will be added shortly*
+
 Setup 
 ------
 
