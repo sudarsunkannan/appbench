@@ -34,6 +34,16 @@ To use Quartz:
 
 1. Download the tool to shared_libs folder
 
+Building
+--------
+After installing the dependencies, go to the emulator's source code root folder
+and execute the following steps:
+
+    mkdir build
+    cd build
+    cmake ..
+    make clean all
+
 
     mkdir build
     cd build
