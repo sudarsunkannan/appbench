@@ -30,9 +30,7 @@ Emulating heterogeneous memory
 To emulate different latency and bandwidth characteristics on commodity hardware, you can 
 use HP Lab's Quartz tool. Please read the documentation of Quartz tool to understand how it works!
 
-1. Installing Quartz
-
-and execute the following steps:
+1. Installing Quartz and execute the following steps:
 
     cd $SHARED_LIBS
     git clone https://github.com/HewlettPackard/quartz
