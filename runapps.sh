@@ -30,24 +30,24 @@ RUNAPP(){
 if [ -z "$4" ]
   then
 
+	APPBASE=$BASE/Metis
+	APP=Metis
+	echo "running $APP..."
+	RUNAPP
+
 	APPBASE=$BASE/graphchi
 	APP=graphchi
 	echo "running $APP ..."
 	RUNAPP
 	/bin/rm -rf com-orkut.ungraph.txt.*
-	exit
 
 
 	APPBASE=$BASE/redis-3.0.0/src
 	APP=redis
 	echo "running $APP..."
 	RUNAPP
-
-	APPBASE=$BASE/Metis
-	APP=Metis
-	echo "running $APP..."
-	RUNAPP
 	exit
+
 
 	#APPBASE=$BASE/memcached
 	#APP=memcached

@@ -12,6 +12,7 @@
  * summary of the Metis LICENSE file; the license in that file is legally
  * binding.
  */
+#define __STDC_FORMAT_MACROS
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -40,7 +41,7 @@ void static_appbase::internal_reduce_emit(keyvals_t &p) {
 
 namespace {
 void pprint(const char *key, uint64_t v, const char *delim) {
-    std::cout << key << "\t" << v << delim;
+    std::cout << key << "\t" << v << std::endl;
 }
 
 void cprint(const char *key, uint64_t v, const char *delim) {
@@ -286,13 +287,14 @@ void mapreduce_appbase::print_stats(void) {
                         total_reduce_time_ + total_merge_time_;
 
     std::cout << "Runtime in millisecond [" << ncore_ << " cores]\n\t";
+
 #define SEP "\t"
     cprint("Sample:", total_sample_time_, SEP);
     cprint("Map:", total_map_time_, SEP);
     cprint("Reduce:", total_reduce_time_, SEP);
     cprint("Merge:", total_merge_time_, SEP);
     cprint("Sum:", sum_time, SEP);
-    cprint("Real:", total_real_time_, "\n");
+    cprint("\n Real:", total_real_time_, "\n");
 
     std::cout << "Number of Tasks of last Metis run\n\t";
     if (application_type() == atype_maponly) {
