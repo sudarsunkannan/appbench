@@ -68,9 +68,9 @@ Run all applications
 Collect results
 ---------------
 
-See all application results in output directory
+Application results in the output directory. To simply extract results, use the following command:
 
-	cd output
+        $APPBENCH/extract_result.sh
 
-*TO DO: Adding a script to extract results of application*
+For application-specific output information, just look at the output file including errors in execution.
 
