@@ -25,6 +25,27 @@ Generate data and install required packages
 	$ ./setup.sh
 
 
+Compile and run all applications
+--------------------------------
+
+Compile all required shared libraries, allocators (Hoard), and applications
+
+	./compile_all.sh
+
+Run all applications
+
+	./runapps.sh
+
+Collect results
+---------------
+
+Application results are in the output directory. To simply extract results, use the following command:
+
+        $APPBENCH/extract_result.sh
+
+For application-specific output information, just look at the output file including errors in execution.
+
+
 Emulating heterogeneous memory 
 ------------------------------
 
@@ -52,25 +73,4 @@ Enable the Quartz scripts (QUARTZSCRIPTS) and APPPREFIX environmental variables 
 
      export QUARTZSCRIPTS=$SHARED_LIBS/quartz/scripts
      export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
-
-
-Compile and run all applications
---------------------------------
-
-Compile all required shared libraries, allocators (Hoard), and applications
-
-	./compile_all.sh
-
-Run all applications
-
-	./runapps.sh
-
-Collect results
----------------
-
-Application results are in the output directory. To simply extract results, use the following command:
-
-        $APPBENCH/extract_result.sh
-
-For application-specific output information, just look at the output file including errors in execution.
 
