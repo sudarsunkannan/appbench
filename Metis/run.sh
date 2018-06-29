@@ -1,5 +1,6 @@
 #!/bin/sh
-DATA=$SHARED_DATA/crime2GB.data
+set -x
+DATA=$SHARED_DATA/crime32GB.data
 BASE=$CODEBASE/Metis
 APPBASE=$BASE/obj
 APP=$APPBASE/wc
@@ -31,4 +32,5 @@ FlushDisk
 #LD_PRELOAD=/usr/lib/libmigration.so 
 #/usr/bin/time -v 
 $APPPREFIX $APP $DATA 
+set +x
 exit

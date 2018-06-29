@@ -7,4 +7,5 @@ export OUTPUTDIR=$CODEBASE/output
 export GRAPHCHI_ROOT=$CODEBASE/graphchi/graphchi-cpp
 mkdir $OUTPUTDIR
 export QUARTZSCRIPTS=$SHARED_LIBS/quartz/scripts
-export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
+export APPPREFIX=""
+#export APPPREFIX=$QUARTZSCRIPTS/runenv.sh

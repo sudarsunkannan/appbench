@@ -1,6 +1,8 @@
-DATA=com-orkut.ungraph.txt
+#!/bin/bash
+set -x
+#DATA=com-orkut.ungraph.txt
+DATA=com-friendster.ungraph.txt
 INPUT=$SHARED_DATA/$DATA
-BASE=$CODEBASE/phoenix-2.0
 APPBASE=$CODEBASE/graphchi/graphchi-cpp/bin/example_apps
 APP=$APPBASE/pagerank
 PARAM=$1
@@ -16,5 +18,6 @@ FlushDisk()
 
 cd $CODEBASE/graphchi 
 FlushDisk
-echo "edgelist" | $APPPREFIX $APP file $INPUT niters 8 
+echo "edgelist" | $APPPREFIX $APP file $INPUT niters 8
+set +x
 

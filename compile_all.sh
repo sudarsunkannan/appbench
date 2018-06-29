@@ -7,15 +7,14 @@ BASE=$CODEBASE
 touch $BASE/dummy.txt
 
 INSTALL_SHAREDLIB() {
-  cd $CODEBASE/hoardlib
+  cd $SHARED_LIBS/hoardlib
   ./compile_install_hoard.sh
-  cd $CODEBASE/mmap_lib
+  cd $SHARED_LIBS/mmap_lib
   make clean && make && sudo make install
 }
 
 
 INSTALL_SHAREDLIB
-
 
 cd $BASE
 cd phoenix-2.0/
