@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 # Simple thermal throttling script for Intel Xeon (Nehalem-based) 
 # Authors Sudarsun Kannan (sudarsun@gatech,edu), Vishal Gupta
 
@@ -122,6 +122,7 @@ PERFORM_THROTTLE_QUARTZ() {
      fi
 }
 
+cd $APPBENCH
 
 RUNSTREAM
 echo " "
