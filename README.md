@@ -55,7 +55,7 @@ To emulate different latency and bandwidth characteristics on commodity hardware
 use HP Lab's Quartz tool. Please read the documentation of Quartz tool to understand how it works!
 
 Installing Quartz and execute the following steps:
-    sudo apt-get install libconfig-dev
+    sudo apt-get install libconfig-dev libmpich-dev uthash-dev
     cd $SHARED_LIBS
     git clone https://github.com/HewlettPackard/quartz
 
@@ -73,4 +73,13 @@ Enable the Quartz scripts (QUARTZSCRIPTS) and APPPREFIX environmental variables 
 
      export QUARTZSCRIPTS=$SHARED_LIBS/quartz/scripts
      export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
+     # First time to generate the bandwidth model and PCI model of your machine
+     $APPPREFIX /bin/ls
+     
+    # Now copy the files to your APPBENCH folder
+    cp /tmp/bandwidth_model $APPBENCH/
+    cp /tmp/mc_pci_bus $APPBENCH/
+
+For subsequent runs, you can copy the bandwidth and the PCI file to /tmp to avoid generating them again
+   
 
