@@ -55,7 +55,7 @@ To emulate different latency and bandwidth characteristics on commodity hardware
 use HP Lab's Quartz tool. Please read the documentation of Quartz tool to understand how it works!
 
 Installing Quartz and execute the following steps:
-
+    sudo apt-get install libconfig-dev
     cd $SHARED_LIBS
     git clone https://github.com/HewlettPackard/quartz
 
