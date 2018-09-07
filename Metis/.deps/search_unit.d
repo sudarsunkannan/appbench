@@ -1,5 +1,5 @@
 obj/search_unit.o: micro/search_unit.cc /usr/include/stdc-predef.h \
- config.h /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh \
+ config.h /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh \
  /usr/include/assert.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -35,7 +35,7 @@ obj/search_unit.o: micro/search_unit.cc /usr/include/stdc-predef.h \
 
 config.h:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh:
 
 /usr/include/assert.h:
 

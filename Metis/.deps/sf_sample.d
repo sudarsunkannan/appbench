@@ -39,7 +39,7 @@ obj/sf_sample.o: micro/sf_sample.cc /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string3.h \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/unistd.h \
@@ -254,7 +254,7 @@ config.h:
 
 /usr/include/x86_64-linux-gnu/bits/string3.h:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h:
 

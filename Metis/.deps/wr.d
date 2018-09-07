@@ -46,12 +46,12 @@ obj/wr.o: app/wr.cc /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h app/wr.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/application.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/mr-types.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/application.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/mr-types.hh \
  /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/array.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/array.hh \
  /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/utility \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
@@ -143,20 +143,20 @@ obj/wr.o: app/wr.cc /usr/include/stdc-predef.h config.h \
  /usr/include/c++/4.8/typeinfo /usr/include/c++/4.8/tuple \
  /usr/include/c++/4.8/array /usr/include/c++/4.8/stdexcept \
  /usr/include/c++/4.8/bits/uses_allocator.h \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/profile.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/profile.hh \
  /usr/include/x86_64-linux-gnu/sys/resource.h \
  /usr/include/x86_64-linux-gnu/bits/resource.h \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/predictor.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/reduce_bucket_manager.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/psrs.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/mergesort.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/cpumap.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/appbase.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/threadinfo.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/defsplitter.hh \
- /users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/predictor.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/reduce_bucket_manager.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/psrs.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/mergesort.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/cpumap.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/appbase.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/threadinfo.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/defsplitter.hh \
+ /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh
 
 /usr/include/stdc-predef.h:
 
@@ -290,9 +290,9 @@ config.h:
 
 app/wr.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/application.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/application.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/mr-types.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/mr-types.hh:
 
 /usr/include/inttypes.h:
 
@@ -302,7 +302,7 @@ app/wr.hh:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/array.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/array.hh:
 
 /usr/include/c++/4.8/algorithm:
 
@@ -532,30 +532,30 @@ app/wr.hh:
 
 /usr/include/c++/4.8/bits/uses_allocator.h:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bsearch.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/profile.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/profile.hh:
 
 /usr/include/x86_64-linux-gnu/sys/resource.h:
 
 /usr/include/x86_64-linux-gnu/bits/resource.h:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/predictor.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/predictor.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/reduce_bucket_manager.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/reduce_bucket_manager.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/psrs.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/psrs.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/mergesort.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/mergesort.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/cpumap.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/cpumap.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/appbase.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/appbase.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/threadinfo.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/threadinfo.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/defsplitter.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/defsplitter.hh:
 
-/users/skannan/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh:
+/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh:
