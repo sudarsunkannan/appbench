@@ -1,5 +1,5 @@
 obj/misc.o: micro/misc.cc /usr/include/stdc-predef.h config.h \
- /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh \
+ /users/kannan11/ssd/NVM/appbench/Metis/lib/bench.hh \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -135,7 +135,7 @@ obj/misc.o: micro/misc.cc /usr/include/stdc-predef.h config.h \
  /usr/include/c++/4.8/typeinfo /usr/include/c++/4.8/tuple \
  /usr/include/c++/4.8/array /usr/include/c++/4.8/stdexcept \
  /usr/include/c++/4.8/bits/uses_allocator.h \
- /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/test_util.hh \
+ /users/kannan11/ssd/NVM/appbench/Metis/lib/test_util.hh \
  /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
  /usr/include/c++/4.8/ios /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/bits/locale_classes.h \
@@ -156,7 +156,7 @@ obj/misc.o: micro/misc.cc /usr/include/stdc-predef.h config.h \
 
 config.h:
 
-/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/bench.hh:
+/users/kannan11/ssd/NVM/appbench/Metis/lib/bench.hh:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h:
 
@@ -510,7 +510,7 @@ config.h:
 
 /usr/include/c++/4.8/bits/uses_allocator.h:
 
-/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/test_util.hh:
+/users/kannan11/ssd/NVM/appbench/Metis/lib/test_util.hh:
 
 /usr/include/c++/4.8/iostream:
 

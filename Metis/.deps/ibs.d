@@ -38,8 +38,8 @@ obj/ibs.o: lib/ibs.cc /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/sys/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/cpumap.hh \
- /users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/ibs.hh \
+ /users/kannan11/ssd/NVM/appbench/Metis/lib/cpumap.hh \
+ /users/kannan11/ssd/NVM/appbench/Metis/lib/ibs.hh \
  /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h
@@ -146,9 +146,9 @@ config.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-linux.h:
 
-/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/cpumap.hh:
+/users/kannan11/ssd/NVM/appbench/Metis/lib/cpumap.hh:
 
-/users/kannan11/ssd/schedsp/NVM/appbench/Metis/lib/ibs.hh:
+/users/kannan11/ssd/NVM/appbench/Metis/lib/ibs.hh:
 
 /usr/include/inttypes.h:
 

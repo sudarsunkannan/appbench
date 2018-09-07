@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-DATA=$SHARED_DATA/crime32GB.data
+DATA=$SHARED_DATA/crime.data
 BASE=$CODEBASE/Metis
 APPBASE=$BASE/obj
 APP=$APPBASE/wc
