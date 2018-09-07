@@ -16,3 +16,7 @@ APP=Metis
 echo "   "
 grep "Real:" $OUTPUTDIR/$APP | awk '{print "Metis runtime: "  $2 " msec"}'
 echo "________________________"
+APP=leveldb
+echo "   "
+grep "micros/op" $OUTPUTDIR/$APP
+echo "________________________"

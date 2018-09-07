@@ -13,7 +13,6 @@ INSTALL_SHAREDLIB() {
   make clean && make && sudo make install
 }
 
-
 INSTALL_SHAREDLIB
 
 cd $BASE
@@ -37,6 +36,11 @@ cd $BASE
 cd Metis
 make clean 
 ./configure && make -j8
+
+cd $BASE
+cd leveldb
+make clean
+make -j8
 
 exit
 
