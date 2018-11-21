@@ -32,7 +32,6 @@
 #include <cmath>
 //#include <nv_map.h>
 //#include <c_io.h>
-#include <migration.h>
 
 #define GRAPHCHI_DISABLE_COMPRESSION
 
@@ -156,12 +155,8 @@ struct PagerankProgramInmem : public GraphChiProgram<VertexDataType, EdgeDataTyp
 int main(int argc, const char ** argv) {
 
 #ifdef _USE_DIRECTED_ALLOC
-	//nvinit_(1);
-	//xxmalloc(1);
-	fprintf(stderr,"calling init_allocs for migration \n");
 #endif
 
-    init_allocs();
     graphchi_init(argc, argv);
     metrics m("pagerank");
     global_logger().set_log_level(LOG_DEBUG);

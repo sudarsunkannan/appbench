@@ -36,6 +36,7 @@ Run all applications
 	./runapps.sh
 ```
 
+
 Collect results
 ---------------
 
@@ -48,7 +49,7 @@ For application-specific output information, just look at the output file includ
 
 Emulating heterogeneous memory 
 ------------------------------
-Skip this part and go to compile and run step if you do not want to modify memory access speed*
+Skip this part and go to compile and run step if you do not want to modify memory access speed
 
 To emulate different latency and bandwidth characteristics on commodity hardware, you can 
 use HP Lab's Quartz tool. Please read the documentation of Quartz tool to understand how it works!
@@ -110,7 +111,15 @@ Change the read and write to same bandwidth values
    ```  
 
 
+Graphchi: running large dataset
+--------------------------------
+To run page rank on a large dataset from Friendster (a now-defunct gaming social network), 
+from appbench base directory, run following commands:
 
-
-   
-
+```
+        source ./setvars.sh
+        cd $APPBENCH/graphchi
+        ./run_large.sh
+```
+NOTE: First run would involve creating graph shards which could take quite sometime before running the
+page rank iterations.
