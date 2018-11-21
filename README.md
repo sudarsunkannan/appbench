@@ -17,12 +17,12 @@ Setup
 
 Setup environmental variables
 ```
-	$ . ./setvars.sh
+	source ./setvars.sh
 ```
 
 Generate data and install required packages
 ```
-	$ ./setup.sh
+	./setup.sh
 ```
 
 Compile and run all applications
