@@ -1,3 +1,3 @@
-#define REDIS_GIT_SHA1 "db4c7137"
-#define REDIS_GIT_DIRTY "583"
-#define REDIS_BUILD_ID "node-0.wisctest.lsm-pg0.wisc.cloudlab.us-1536331119"
+#define REDIS_GIT_SHA1 "c16c6b17"
+#define REDIS_GIT_DIRTY "16298"
+#define REDIS_BUILD_ID "tenansix-1551196561"
