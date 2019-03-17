@@ -48,9 +48,6 @@
 #include <map>
 #include <string>
 
-//#include <nv_map.h>
-//#include <c_io.h>
-
 #include "graphchi_basic_includes.hpp"
 #include "util/labelanalysis.hpp"
 
@@ -204,12 +201,6 @@ struct CommunityDetectionProgram : public GraphChiProgram<VertexDataType, EdgeDa
 };
 
 int main(int argc, const char ** argv) {
-
-
-#ifdef _USE_DIRECTED_ALLOC
-	nvinit_(1);
-#endif
-
     /* GraphChi initialization will read the command line 
      arguments and the configuration file. */
     graphchi_init(argc, argv);

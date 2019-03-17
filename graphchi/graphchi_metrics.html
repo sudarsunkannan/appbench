@@ -3,17 +3,17 @@ table {  border: 1px solid #999999; font: normal 80%/140% arial, helvetica, sans
 <!-- Round 0 -->
 
 <p><table><tr><th>Key</th><th>Value</th><th>Count</th><th>Min</th><th>Max</th><th>Average</th></tr><tr><td>cachesize_mb</td>
-<td>8192</td>
+<td>0</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>compression</td>
 <td>0</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>execthreads</td>
-<td>40</td>
+<td>32</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>loadthreads</td>
-<td>2</td>
+<td>4</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>membudget_mb</td>
-<td>8192</td>
+<td>800</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>niothreads</td>
-<td>1</td>
+<td>2</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>niters</td>
 <td>8</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>nshards</td>
@@ -38,28 +38,36 @@ table {  border: 1px solid #999999; font: normal 80%/140% arial, helvetica, sans
 
 <p><table><tr><th>Key</th><th>Value (sec)</th><th>Count</th><th>Min (sec)</th><th>Max (sec)</th><th>Average (sec)</th></tr>
 <tr><td>execute-updates</td>
-<td>5.853789</td>
+<td>5.790047</td>
 <td>8</td>
-<td>0.216</td>
-<td>0.957</td>
-<td>0.732</td>
+<td>0.062</td>
+<td>0.910</td>
+<td>0.724</td>
+</tr><tr><td>inmem-exec</td>
+<td>5.790116</td>
+<td>8</td>
+<td>0.062</td>
+<td>0.910</td>
+<td>0.724</td>
 </tr><tr><td>iomgr_init</td>
-<td>0.000108</td>
+<td>0.000167</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>memoryshard_create_edges</td>
-<td>7.992312</td>
+<td>5.936702</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>preada_now</td>
-<td>0.215796</td>
-<td>29</td>
-<td>0.001</td>
-<td>0.008</td>
-<td>0.007</td>
-</tr><tr><td>runtime</td>
-<td>14.163857</td>
+<td>13.408938</td>
+<td>31</td>
+<td>0.011</td>
+<td>0.758</td>
+<td>0.433</td>
+</tr><tr><td>pwritea_now</td>
+<td>0.008156</td>
+<td colspan=4>&nbsp;</td></tr><tr><td>runtime</td>
+<td>15.688133</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>stripedio_wait_for_reads</td>
-<td>0.000001</td>
+<td>0.000002</td>
 <td colspan=4>&nbsp;</td></tr><tr><td>stripedio_wait_for_writes</td>
-<td>0.000006</td>
-<td>2</td>
+<td>0.000007</td>
+<td>3</td>
 <td>0.000</td>
 <td>0.000</td>
 <td>0.000</td>
@@ -68,7 +76,7 @@ table {  border: 1px solid #999999; font: normal 80%/140% arial, helvetica, sans
 <p><table><tr><th>Key</th><th>Value</th></tr>
 <tr><td>app</td><td width=400>pagerank</td>
 </tr><tr><td>engine</td><td width=400>default</td>
-</tr><tr><td>file</td><td width=400>/users/kannan11/ssd/NVM/appbench/shared_data/com-orkut.ungraph.txt</td>
+</tr><tr><td>file</td><td width=400>/gauls/sudarsun/appbench/shared_data/com-orkut.ungraph.txt</td>
 </tr></table> </p><!-- Round 3 -->
 
 <p> </p></body></html>

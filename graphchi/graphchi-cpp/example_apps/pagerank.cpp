@@ -30,19 +30,12 @@
 #include <string>
 #include <fstream>
 #include <cmath>
-//#include <nv_map.h>
-//#include <c_io.h>
 
 #define GRAPHCHI_DISABLE_COMPRESSION
 
 
 #include "graphchi_basic_includes.hpp"
 #include "util/toplist.hpp"
-
-//#define _USE_DIRECTED_ALLOC
-//#ifdef _USE_DIRECTED_ALLOC
-//#include "/root/graphchi/graphchi-cpp/src/util/gnuwrapper.h"
-//#endif
 
 using namespace graphchi;
  
@@ -153,10 +146,6 @@ struct PagerankProgramInmem : public GraphChiProgram<VertexDataType, EdgeDataTyp
 };
 
 int main(int argc, const char ** argv) {
-
-#ifdef _USE_DIRECTED_ALLOC
-#endif
-
     graphchi_init(argc, argv);
     metrics m("pagerank");
     global_logger().set_log_level(LOG_DEBUG);

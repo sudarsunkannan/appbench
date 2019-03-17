@@ -48,9 +48,6 @@
 #include <string>
 #include <vector>
 
-//#include <c_io.h>
-//#include <nv_map.h>
-
 /**
   * Need to define prior to including GraphChi
   * headers. This enabled edge-deletion in the vertex object.
@@ -430,11 +427,6 @@ struct TriangleCountingProgram : public GraphChiProgram<VertexDataType, EdgeData
 
 
 int main(int argc, const char ** argv) {
-
-#ifdef _USE_DIRECTED_ALLOC
-	nvinit_(10);
-#endif
-
     /* GraphChi initialization will read the command line 
        arguments and the configuration file. */
     graphchi_init(argc, argv);

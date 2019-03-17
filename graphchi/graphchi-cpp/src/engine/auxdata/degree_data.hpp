@@ -38,7 +38,6 @@
 
 #include "graphchi_types.hpp"
 #include "io/stripedio.hpp"
-#include "util/ioutil.hpp"
 
 namespace graphchi {
     
@@ -79,7 +78,7 @@ namespace graphchi {
             } else {
                 mmap_length = get_filesize(filename);
                 filedesc = open(filename.c_str(), O_RDWR);
-                mmap_file = (degree *)mymmap(NULL, mmap_length, PROT_READ | PROT_WRITE, MAP_SHARED, filedesc, 0);
+                mmap_file = (degree *) mmap(NULL, mmap_length, PROT_READ | PROT_WRITE, MAP_SHARED, filedesc, 0);
                 assert(mmap_file);
             }
         }

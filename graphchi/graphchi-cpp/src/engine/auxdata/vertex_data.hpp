@@ -78,7 +78,7 @@ namespace graphchi {
             } else {
                 mmap_length = get_filesize(filename);
                 filedesc = open(filename.c_str(), O_RDWR);
-                mmap_file = (VertexDataType *) mymmap(NULL, mmap_length, PROT_WRITE | PROT_READ, MAP_SHARED, filedesc, 0);
+                mmap_file = (VertexDataType *) mmap(NULL, mmap_length, PROT_WRITE | PROT_READ, MAP_SHARED, filedesc, 0);
                 assert(mmap_file);
             }
         }

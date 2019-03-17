@@ -65,64 +65,6 @@
 #ifdef DYNAMICEDATA
 #include "util/qsort.hpp"
 #endif 
-
-
-//#define _USE_DIRECTED_ALLOC
-
-#ifdef _USE_DIRECTED_ALLOC
-#include "util/gnuwrapper.h"
-#endif
-
-/*
-void myfree(void *ptr) {
-#ifdef _USE_DIRECTED_ALLOC
-   xxfree(ptr);
-#else
-    free(ptr);
-#endif
-}
-
-void *mymalloc(size_t size){
-
-    //total_sz += size;
-     //Jannu kutti ponnu, chella ponnu unchu papa
-    fprintf(stdout,"mymalloc %zu total alloc %zu\n", size, total_sz);
-#ifdef _USE_DIRECTED_ALLOC
-    //fprintf(stdout,"using _USE_DIRECTED_ALLOC \n");
-    return xxmalloc(size);
-#else
-    return malloc(size);
-#endif
-}
-
-void *mycalloc(size_t size, size_t units){
-
-    //total_sz += size;
-    fprintf(stdout,"mymalloc %zu total alloc %zu\n", size, total_sz);
-#ifdef _USE_DIRECTED_ALLOC
-    //fprintf(stdout,"using _USE_DIRECTED_ALLOC \n");
-	void *ptr = (void *)xxmalloc(size*units);
-	memset(ptr,0,size*units);
-    return ptr;
-#else
-    return calloc(size,units);
-#endif
-}
-
-
-void *myrealloc(void *ptr, size_t size){
-    //total_sz += size;
-    fprintf(stdout,"mymalloc %zu total alloc %zu\n", size, total_sz);
-#ifdef _USE_DIRECTED_ALLOC
-    return xxrealloc(ptr,size);
-#else
-    return realloc(ptr, size);
-#endif
-}
-*/
-
-
-
 namespace graphchi {
     template <typename VT, typename ET, typename ETFinal> class sharded_graph_output;
     
@@ -226,7 +168,7 @@ namespace graphchi {
                 iSort(buffer, (intT)numedges, intT(max_vertex)*intT(max_vertex)+intT(max_vertex), dstSrcF<EdgeDataType>(max_vertex));
                 logstream(LOG_INFO) << "Sort done." << shovelname << std::endl;
            
-                edge_with_value<EdgeDataType> * tmpbuf = (edge_with_value<EdgeDataType> *) mycalloc(sizeof(edge_with_value<EdgeDataType>), numedges);
+                edge_with_value<EdgeDataType> * tmpbuf = (edge_with_value<EdgeDataType> *) calloc(sizeof(edge_with_value<EdgeDataType>), numedges);
                 size_t i = 1;
                 tmpbuf[0] = buffer[0];
                 for(size_t j=1; j<numedges; j++) {
@@ -243,7 +185,7 @@ namespace graphchi {
                 }
                 std::cout << "Pre-duplicate filter while shoveling: " << numedges << " --> " << i << std::endl;
                 numedges = i;
-                myfree(buffer);
+                free(buffer);
                 buffer = tmpbuf;
             } else {
                 logstream(LOG_INFO) << "Sorting shovel: " << shovelname << ", max:" << max_vertex << std::endl;
@@ -256,7 +198,7 @@ namespace graphchi {
             int f = open(shovelname.c_str(), O_WRONLY | O_CREAT, S_IROTH | S_IWOTH | S_IWUSR | S_IRUSR);
             writea(f, buffer, numedges * sizeof(edge_with_value<EdgeDataType>));
             close(f);
-            myfree(buffer);
+            free(buffer);
         }
     };
     
@@ -293,14 +235,14 @@ namespace graphchi {
             
             assert(f>=0);
             
-            buffer = (edge_with_value<EdgeDataType> *) mymalloc(bufsize_bytes);
+            buffer = (edge_with_value<EdgeDataType> *) malloc(bufsize_bytes);
             numedges =   (get_filesize(shovelfile) / sizeof(edge_with_value<EdgeDataType> ));
             bufsize_edges =   (bufsize_bytes / sizeof(edge_with_value<EdgeDataType>));
             load_next();
         }
         
         virtual ~shovel_merge_source() {
-            if (buffer != NULL) myfree(buffer);
+            if (buffer != NULL) free(buffer);
             buffer = NULL;
         }
         
@@ -308,7 +250,7 @@ namespace graphchi {
             close(f);
             remove(shovelfile.c_str());
 
-            myfree(buffer);
+            free(buffer);
             buffer = NULL;
         }
         
@@ -401,7 +343,7 @@ namespace graphchi {
         
         
         virtual ~sharder() {
-            if (curshovel_buffer == NULL) myfree(curshovel_buffer);
+            if (curshovel_buffer == NULL) free(curshovel_buffer);
         }
         
         void set_duplicate_filter(DuplicateEdgeFilter<EdgeDataType> * filter) {
@@ -427,7 +369,7 @@ namespace graphchi {
             
             logstream(LOG_INFO) << "Starting preprocessing, shovel size: " << shovelsize << std::endl;
             
-            curshovel_buffer = (edge_with_value<EdgeDataType> *) mycalloc(shovelsize, sizeof(edge_with_value<EdgeDataType>));
+            curshovel_buffer = (edge_with_value<EdgeDataType> *) calloc(shovelsize, sizeof(edge_with_value<EdgeDataType>));
             
             assert(curshovel_buffer != NULL);
             
@@ -469,7 +411,7 @@ namespace graphchi {
                     }
                     shovelthreads.clear();
                 }
-                curshovel_buffer = (edge_with_value<EdgeDataType> *) mycalloc(shovelsize, sizeof(edge_with_value<EdgeDataType>));
+                curshovel_buffer = (edge_with_value<EdgeDataType> *) calloc(shovelsize, sizeof(edge_with_value<EdgeDataType>));
                 pthread_t t;
                 int ret = pthread_create(&t, NULL, shard_flush_run<EdgeDataType>, (void*)flushinfo);
                 shovelthreads.push_back(t);
@@ -576,7 +518,7 @@ namespace graphchi {
                 ebuffer_size *= 2;
                 logstream(LOG_DEBUG) << "Increased buffer size to: " << ebuffer_size << std::endl;
                 size_t ptroff = bufptr - buf; // Remember the offset
-                buf = (char *) myrealloc(buf, ebuffer_size);
+                buf = (char *) realloc(buf, ebuffer_size);
                 bufptr = buf + ptroff;
             }
             
@@ -703,7 +645,7 @@ namespace graphchi {
 
             // Remove duplicates
             if (duplicate_edge_filter != NULL && numedges > 0) {
-                edge_t * tmpbuf = (edge_t*) mycalloc(numedges, sizeof(edge_t));
+                edge_t * tmpbuf = (edge_t*) calloc(numedges, sizeof(edge_t));
                 size_t i = 1;
                 tmpbuf[0] = shovelbuf[0];
                 for(size_t j=1; j<numedges; j++) {
@@ -721,7 +663,7 @@ namespace graphchi {
                 }
                 numedges = i;
                 logstream(LOG_DEBUG) << "After duplicate elimination: " << numedges << " edges" << std::endl;
-                myfree(shovelbuf);
+                free(shovelbuf);
                 shovelbuf = tmpbuf; tmpbuf = NULL;
             }
             
@@ -740,10 +682,10 @@ namespace graphchi {
             int trerr = ftruncate(f, 0);
             assert(trerr == 0);
             
-            char * buf = (char*) mymalloc(SHARDER_BUFSIZE);
+            char * buf = (char*) malloc(SHARDER_BUFSIZE);
             char * bufptr = buf;
             
-            char * ebuf = (char*) mymalloc(compressed_block_size);
+            char * ebuf = (char*) malloc(compressed_block_size);
             ebuffer_size = compressed_block_size;
             char * ebufptr = ebuf;
             
@@ -881,8 +823,8 @@ namespace graphchi {
             
             /* Flush buffers and free memory */
             writea(f, buf, bufptr - buf);
-            myfree(buf);
-            myfree(shovelbuf);
+            free(buf);
+            free(shovelbuf);
             close(f);
             close(idxf);
             
@@ -900,7 +842,7 @@ namespace graphchi {
                 
                 ofs.close();
             }
-            myfree(ebuf);
+            free(ebuf);
             
             m.stop_time("shard_final");
         }
@@ -925,7 +867,7 @@ namespace graphchi {
                 /* Really should have a way to limit shard sizes, but probably not needed in practice */
                 logstream(LOG_WARNING) << "Shard " << shardnum << " overflowing! " << cur_shard_counter << " / " << shard_capacity << std::endl;
                 shard_capacity = (size_t) (1.2 * shard_capacity);
-                sinkbuffer = (edge_with_value<EdgeDataType>*) myrealloc(sinkbuffer, shard_capacity * sizeof(edge_with_value<EdgeDataType>));
+                sinkbuffer = (edge_with_value<EdgeDataType>*) realloc(sinkbuffer, shard_capacity * sizeof(edge_with_value<EdgeDataType>));
             }
             
             sinkbuffer[cur_shard_counter++] = val;
@@ -938,7 +880,7 @@ namespace graphchi {
             intervals.push_back(std::pair<vid_t, vid_t>(this_interval_start, (shardnum == nshards - 1 ? max_vertex_id : prevvid)));
             this_interval_start = prevvid + 1;
             finish_shard(shardnum++, sinkbuffer, cur_shard_counter * sizeof(edge_with_value<EdgeDataType>));
-            sinkbuffer = (edge_with_value<EdgeDataType> *) mymalloc(shard_capacity * sizeof(edge_with_value<EdgeDataType>));
+            sinkbuffer = (edge_with_value<EdgeDataType> *) malloc(shard_capacity * sizeof(edge_with_value<EdgeDataType>));
             cur_shard_counter = 0;
             
             // Adjust edges per hard so that it takes into account how many edges have been spilled now
@@ -960,7 +902,7 @@ namespace graphchi {
             
             logstream(LOG_INFO) << "Created " << shardnum << " shards, for " << sharded_edges << " edges";
             assert(shardnum <= nshards);
-            myfree(sinkbuffer);
+            free(sinkbuffer);
             sinkbuffer = NULL;
             
             /* Write intervals */
@@ -1012,7 +954,7 @@ namespace graphchi {
             }
 #endif
             if (count_degrees_inmem) {
-                degrees = (degree *) mycalloc(1 + max_vertex_id, sizeof(degree));
+                degrees = (degree *) calloc(1 + max_vertex_id, sizeof(degree));
             }
             
             // KWAY MERGE
@@ -1021,7 +963,7 @@ namespace graphchi {
             shard_capacity = edges_per_shard / 2 * 3;  // Shard can go 50% over
             shardnum = 0;
             this_interval_start = 0;
-            sinkbuffer = (edge_with_value<EdgeDataType> *) mycalloc(shard_capacity, sizeof(edge_with_value<EdgeDataType>));
+            sinkbuffer = (edge_with_value<EdgeDataType> *) calloc(shard_capacity, sizeof(edge_with_value<EdgeDataType>));
             logstream(LOG_INFO) << "Edges per shard: " << edges_per_shard << " nshards=" << nshards << " total: " << shoveled_edges << std::endl;
             cur_shard_counter = 0;
             
@@ -1059,7 +1001,7 @@ namespace graphchi {
                 }
                 
                 writea(degreeOutF, degrees, sizeof(degree) * (1 + max_vertex_id));
-                myfree(degrees);
+                free(degrees);
                 close(degreeOutF);
             }
             
@@ -1172,7 +1114,7 @@ namespace graphchi {
                     metrics_entry mev = m.start_time();
                     // Read first current values
                     
-                    int * vbuf = (int*) mymalloc(nvertices * sizeof(int) * 2);
+                    int * vbuf = (int*) malloc(nvertices * sizeof(int) * 2);
                     
                     for(int i=0; i<nvertices; i++) {
                         vbuf[2 * i] = vertices[i].num_inedges();
@@ -1180,7 +1122,7 @@ namespace graphchi {
                     }
                     pwritea(degreeOutF, vbuf, nvertices * sizeof(int) * 2, subinterval_st * sizeof(int) * 2);
                     
-                    myfree(vbuf);
+                    free(vbuf);
                     
                     // Move window
                     subinterval_st = subinterval_en+1;

@@ -203,8 +203,11 @@ struct  MMOutputter_mat{
       for(int j=0; j < actual_Size; j++) {
         if (R_output_format)
           fprintf(outf, "%d %d %12.8g\n", i-start+input_file_offset, j+input_file_offset, latent_factors_inmem[i].get_val(j));
-        else
-          fprintf(outf, "%1.12e\n", latent_factors_inmem[i].get_val(j));
+        else {
+          fprintf(outf, "%1.12e ", latent_factors_inmem[i].get_val(j));
+          if (j == actual_Size -1)
+	    fprintf(outf, "\n");
+        }
       }
       }
     fclose(outf);
@@ -260,7 +263,9 @@ int convert_matrixmarket4(std::string base_filename, bool add_time_edges = false
       logstream(LOG_INFO) << "File " << base_filename << " was already preprocessed, won't do it again. " << std::endl;
       read_global_mean(base_filename, type);
     }
-    return nshards;
+    if (type == TRAINING)
+      time_nodes_offset = M+N;
+     return nshards;
   }
 
   sharder<als_edge_type> sharderobj(base_filename);
@@ -277,7 +282,10 @@ int convert_matrixmarket4(std::string base_filename, bool add_time_edges = false
       logstream(LOG_FATAL)<<"Failed to open training input file: " << base_filename << std::endl;
   }
 
-  compute_matrix_size(nz, type); 
+  if (type == TRAINING)
+     time_nodes_offset = M+N;
+ 
+ compute_matrix_size(nz, type); 
 
   uint I, J;
   double val, time;
@@ -299,7 +307,13 @@ int convert_matrixmarket4(std::string base_filename, bool add_time_edges = false
       K = std::max((int)time, (int)K);
       time -= matlab_time_offset;
       if (time < 0 && add_time_edges)
-        logstream(LOG_FATAL)<<"Time bins should be >= 1 in row " << i << std::endl;
+        logstream(LOG_FATAL)<<"Time bins should be >= " << matlab_time_offset << " in row " << i << std::endl;
+
+      //only for tensor ALS we add edges between user and time bin and also item and time bin
+      //time bins are numbered beteen M+N to M+N+K
+      if (!weighted_als)
+         time += time_nodes_offset;
+
       //avoid self edges
       if (square && I == J)
         continue;
@@ -310,13 +324,13 @@ int convert_matrixmarket4(std::string base_filename, bool add_time_edges = false
         if (type == TRAINING)
         globalMean += val;
         else globalMean2 += val;
-        sharderobj.preprocessing_add_edge(I, (square? J : (M + J)), als_edge_type(val, time+M+N));
+        sharderobj.preprocessing_add_edge(I, (square? J : (M + J)), als_edge_type(val, time));
       }
       //in case of a tensor, add besides of the user-> movie edge also
       //time -> user and time-> movie edges
       if (add_time_edges){
-        sharderobj.preprocessing_add_edge((uint)time + M + N, I, als_edge_type(val, M+J));
-        sharderobj.preprocessing_add_edge((uint)time + M + N, M+J , als_edge_type(val, I));
+        sharderobj.preprocessing_add_edge((uint)time, I, als_edge_type(val, M+J));
+        sharderobj.preprocessing_add_edge((uint)time, M+J , als_edge_type(val, I));
       }
     }
 
@@ -343,6 +357,7 @@ int convert_matrixmarket4(std::string base_filename, bool add_time_edges = false
 
   // Shard with a specified number of shards, or determine automatically if not defined
   nshards = sharderobj.execute_sharding(get_option_string("nshards", "auto"));
+  logstream(LOG_INFO) << "Successfully finished sharding for " << base_filename<< std::endl;
 
   return nshards;
 }
@@ -353,7 +368,7 @@ int convert_matrixmarket4(std::string base_filename, bool add_time_edges = false
  * have id + num-rows.
  */
 template <typename als_edge_type>
-int convert_matrixmarket_and_item_similarity(std::string base_filename, std::string similarity_file, int tokens_per_row = 3) {
+int convert_matrixmarket_and_item_similarity(std::string base_filename, std::string similarity_file, int tokens_per_row, vec & degrees) {
   FILE *f = NULL, *fsim = NULL;
   size_t nz, nz_sim;
   /**
@@ -376,15 +391,18 @@ int convert_matrixmarket_and_item_similarity(std::string base_filename, std::str
     logstream(LOG_FATAL)<<"Failed to open training input file: " << base_filename << std::endl;
   uint N_row = 0 ,N_col = 0;
   detect_matrix_size(similarity_file, fsim, N_row, N_col, nz_sim);
-  if (fsim == NULL)
+  if (fsim == NULL || nz_sim == 0)
     logstream(LOG_FATAL)<<"Failed to open item similarity input file: " << similarity_file << std::endl;
   if (N_row != N || N_col != N)
     logstream(LOG_FATAL)<<"Wrong item similarity file matrix size: " << N_row <<" x " << N_col << "  Instead of " << N << " x " << N << std::endl;
   L=nz + nz_sim;
 
+  degrees.resize(M+N);
+
   uint I, J;
   double val = 1.0;
   int zero_entries = 0;
+  unsigned int actual_edges = 0;
     logstream(LOG_INFO) << "Starting to read matrix-market input. Matrix dimensions: "
       << M << " x " << N << ", non-zeros: " << nz << std::endl;
 
@@ -410,10 +428,17 @@ int convert_matrixmarket_and_item_similarity(std::string base_filename, std::str
         logstream(LOG_FATAL)<<"Row index larger than the matrix row size " << I << " > " << M << " in line: " << i << std::endl;
       if (J >= N)
         logstream(LOG_FATAL)<<"Col index larger than the matrix col size " << J << " > " << N << " in line; " << i << std::endl;
-      sharderobj.preprocessing_add_edge(I, M==N?J:M + J, als_edge_type((float)val, 0));
+      degrees[J+M]++;
+      degrees[I]++;
+      if (I< (uint)start_user || I >= (uint)end_user){
+         continue;
+      }
+      sharderobj.preprocessing_add_edge(I, M + J, als_edge_type((float)val, 0));
+      //std::cout<<"adding an edge: " <<I << " -> " << M+J << std::endl;
+      actual_edges++;
     }
 
-    logstream(LOG_DEBUG)<<"Finished loading " << nz << " ratings from file: " << base_filename << std::endl;
+    logstream(LOG_DEBUG)<<"Finished loading " << actual_edges << " ratings from file: " << base_filename << std::endl;
 
     for (size_t i=0; i<nz_sim; i++){
       if (tokens_per_row == 3){
@@ -438,8 +463,10 @@ int convert_matrixmarket_and_item_similarity(std::string base_filename, std::str
         logstream(LOG_FATAL)<<"Item similarity to itself found for item " << I << " in line; " << i << std::endl;
       //std::cout<<"Adding an edge between "<<M+I<< " : " << M+J << "  " << (I<J)  << " " << val << std::endl; 
       sharderobj.preprocessing_add_edge(M+I, M+J, als_edge_type(I < J? val: 0, I>J? val: 0));
+      actual_edges++;
     }
 
+    L = actual_edges;
     logstream(LOG_DEBUG)<<"Finished loading " << nz_sim << " ratings from file: " << similarity_file << std::endl;
     write_global_mean(base_filename, TRAINING);
     sharderobj.end_preprocessing();

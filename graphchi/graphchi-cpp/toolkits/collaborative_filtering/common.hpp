@@ -37,6 +37,8 @@
 #include "../../example_apps/matrix_factorization/matrixmarket/mmio.c"
 
 #include <stdio.h>
+#include <limits.h>
+
 #ifdef __APPLE__
 //#include "getline.hpp" //fix for missing getline() function on MAC OS
 #endif 
@@ -70,6 +72,12 @@ int R_output_format = 0; // if set to 1, all matrices and vectors are written in
                          // R does not currently support array format (dense format).
 int tokens_per_row = 3; //number of columns per input row
 int allow_zeros;
+int start_user=0; //start offset of user 
+int end_user=INT_MAX; //end offset of user
+int binary_relevance_threshold = -1; // if set, all edge values above this number will treated as binary 1
+int exact_training_rmse = 0; //if 1, will compute training RMSE explicitly exact computation, this will slow down the run
+int time_nodes_offset = 0; //time nodes position are starting at this offset (optional, only for tensor algos)
+int weighted_als = 0; //1 if this algorithm is weighted als
 
 /* support for different loss types (for SGD variants) */
 std::string loss = "square";
@@ -91,6 +99,8 @@ void remove_cached_files(){
   int rc;
   assert(training != "");
   rc = system((std::string("rm -fR ") + training + std::string(".*")).c_str()); 
+  assert(!rc);
+  rc = system((std::string("rm -fR ") + training + std::string("_degs.bin")).c_str()); 
   assert(!rc);
   if (validation != ""){
     rc = system((std::string("rm -fR ") + validation + std::string(".*")).c_str()); 
@@ -119,13 +129,14 @@ void parse_command_line_args(){
   assert(valrange > 0);
   quiet    = get_option_int("quiet", 0);
   if (quiet)
-    global_logger().set_log_level(LOG_ERROR);
+    global_logger().set_log_level(LOG_WARNING);
   halt_on_rmse_increase = get_option_int("halt_on_rmse_increase", 0);
 
   load_factors_from_file = get_option_int("load_factors_from_file", 0);
   input_file_offset = get_option_int("input_file_offset", input_file_offset);
   tokens_per_row = get_option_int("tokens_per_row", tokens_per_row);
   allow_zeros = get_option_int("allow_zeros", 0);
+  binary_relevance_threshold = get_option_int("binary_relevance_threshold", -1);
   /* find out loss type (optional, for SGD variants only) */
   loss              = get_option_string("loss", loss);
   if (loss == "square")
@@ -150,10 +161,25 @@ void parse_command_line_args(){
   }
   if (kfold_cross_validation != 0){
     logstream(LOG_WARNING)<<"Activating kfold cross vlidation with K="<< kfold_cross_validation << std::endl;
-    if (training == validation)
-      logstream(LOG_FATAL)<<"Using cross validation, validation file (--validation=filename) should have a different name than training" << std::endl;
-    if (validation == "")
-      logstream(LOG_FATAL)<<"You must provide validation input file name (--validation=filename) when using k-fold cross validation" << std::endl;
+    if (validation != "" || test != "")
+      logstream(LOG_FATAL)<<"Using cross validation, validation file (--validation) and test file (--test) should be empty/" << std::endl;
+    //removing tmp file (if present)
+    int rc = system(("rm -fR " + training + "_kfold_tmp_file").c_str());
+    if (rc != 0)
+      logstream(LOG_FATAL)<<"Failed to delete temp file. Please check permissions." << std::endl;
+    rc = system(("rm -fR " + training + "_kfold_tmp_file:info").c_str());
+    //linking training to validation
+    rc = system(("ln -s " + training + " " + training + "_kfold_tmp_file").c_str());
+    if (rc != 0)  
+      logstream(LOG_FATAL)<<"Failed to link temp file. Please check permissions." << std::endl;
+    validation = training + "_kfold_tmp_file";
+    if (access((training + ":info").c_str(), F_OK ) != -1 ) {
+      rc = system(("ln -s " + training + ":info " + training + "_kfold_tmp_file:info").c_str());
+      if (rc != 0)  
+      logstream(LOG_FATAL)<<"Failed to link temp file. Please check permissions." << std::endl;
+    }
+
+
     clean_cache = 1;
   }
   regnormal = get_option_int("regnormal", regnormal);
@@ -163,6 +189,9 @@ void parse_command_line_args(){
     remove_cached_files();
 
   R_output_format = get_option_int("R_output_format", R_output_format);
+  start_user = get_option_int("start_user", start_user);
+  end_user   = get_option_int("end_user",   end_user);
+  exact_training_rmse = get_option_int("exact_training_rmse", 0);
 }
 
 template<typename T>

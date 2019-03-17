@@ -127,7 +127,7 @@ struct WALSVerticesInMemProgram : public GraphChiProgram<VertexDataType, EdgeDat
     }
     double regularization = lambda;
     if (regnormal)
-      lambda *= vertex.num_edges();
+      regularization *= vertex.num_edges();
     for(int i=0; i < D; i++) XtX(i,i) += regularization;
 
     // Solve the least squares problem with eigen using Cholesky decomposition
@@ -176,6 +176,8 @@ int main(int argc, const char ** argv) {
   metrics m("als-inmemory-factors");
 
   lambda        = get_option_float("lambda", 0.065);
+  //tell the parser to treat the time values as weights
+  weighted_als = 1;
 
   parse_command_line_args();
   parse_implicit_command_line();

@@ -12,9 +12,16 @@ In-edges are now loaded in parallel, improving performance on multicore machines
 
 Read about graph contraction technique, which we used to implemented efficient minimum spanning forest computation [ Graph Contraction Algorithms ](https://github.com/GraphChi/graphchi-cpp/wiki/Graph-Contraction-Algorithms).
  
+ 
 ### Discussion group
 
 http://groups.google.com/group/graphchi-discuss
+
+### License
+
+GraphChi is licensed under the Apache License, Version 2.0.
+Each source code file has full license information.
+
 
 ## Introduction
 
@@ -36,7 +43,7 @@ Java-version of GraphChi: https://github.com/GraphChi/graphchi-java
 
 ### Publication
 
-GraphChi is part of the OSDI'12 proceedings. PDF of the paper can be downloaded here: http://select.cs.cmu.edu/publications/paperdir/osdi2012-kyrola-blelloch-guestrin.pdf
+GraphChi is part of the OSDI'12 proceedings. PDF of the paper can be downloaded here: https://www.usenix.org/system/files/conference/osdi12/osdi12-final-126.pdf
 
 Slides (OSDI talk): http://www.cs.cmu.edu/~akyrola/files/osditalk-graphchi.pptx
 
@@ -48,7 +55,6 @@ http://bickson.blogspot.com/2012/12/collaborative-filtering-with-graphchi.html
 ## Features
 
 - Vertex-centric computation model (similar to GraphLab, Pregel or Giraph)
-  ** Wrapper for GraphLab 2.1 API (Gather-Apply-Scatter model)
 - Asynchronous, parallel execution, with (optional) deterministic scheduling (see semantics section at [Creating-GraphChi-Applications](https://github.com/GraphChi/graphchi-cpp/wiki/Creating-GraphChi-Applications) )
 
 - Can run graphs with billions of edges, with linear scalability, on a standard consumer grade machine
@@ -63,7 +69,7 @@ http://bickson.blogspot.com/2012/12/collaborative-filtering-with-graphchi.html
 
 ## Getting Started
 
-Best way to get started is to start from the ExampleApps page.
+Best way to get started is to start from the https://github.com/GraphChi/graphchi-cpp/wiki/Example-Apps page.
 Prior to that, you need to download the source code (no configuration
 or installation is required).
 
@@ -71,8 +77,19 @@ For an introduction on writing your own applications, read  [Creating-GraphChi-A
 
 ### Problems compiling on Mac
 
+First, try:
+  xcode-select --install
+
+
+
 If compiler complains about missing "omp.h" (OpenMP library), here is a way you can install it:
 
+A) Direct installation of binary (on Yosemite)
+
+See intructions in https://wiki.helsinki.fi/display/HUGG/Installing+the+GNU+compilers+on+Mac+OS+X#InstallingtheGNUcompilersonMacOSX-InstructionsforMacOS10.10(Yosemite)withXcode6
+
+
+B) Using Homebrew
 (Contributed by Jose Pablo Gonzalez):
 1) Install homebrew ( http://brew.sh )
 2) brew tap homebrew/versions 
@@ -81,6 +98,8 @@ brew install apple-gcc42
 4) Modify the Makefile to use the new compiler:
 CPP = g++-4.2
 5) make
+
+NOTE: you might want to use newer compiler version.
 
 
 ## How GraphChi works
@@ -111,10 +130,6 @@ While distributed clusters can solve the same problems faster than GraphChi on a
   <tr><td>5</td><td> S. Suri and S. Vassilvitskii. Counting triangles and the curse of the last reducer. In Proceedings of the 20th international conference on World wide web, pages 607–614. ACM, 2011. </td></tr>
 </table>
 
-### Comparison to Giraph 
-
-Apache [Giraph](http://giraph.apache.org/) is an open-source implementation of the Pregel graph engine, built on top of Hadoop. Based on a recent talk by the main developer of Giraph ( http://www.youtube.com/watch?v=b5Qmz4zPj-M ), Giraph running with 20 workers can run five iterations of !PageRank  on a graph with 5 billion edges in approx. 75 minutes. Estimated from our results above, GraphChi can execute similar task in roughly the same time on just one machine. The structure of the input graph affects the runtime, so a direct comparison is not possible without using the same input.  
-
 ### Preprocessing times
 
 <table>
@@ -124,3 +139,6 @@ Apache [Giraph](http://giraph.apache.org/) is an open-source implementation of t
   <tr><td>uk-union</td><td>33 min</td></tr>
   <tr><td>yahoo-web</td><td>37 min</td></tr>
 </table>
+
+
+

@@ -54,7 +54,7 @@
 
 
 namespace graphchi {
-
+    
     static size_t get_filesize(std::string filename);
     
     /**
@@ -620,7 +620,7 @@ namespace graphchi {
         
         template<typename T>
         void managed_malloc(int session, T ** tbuf, size_t nbytes, size_t noff) {
-            *tbuf = (T*) mymalloc(nbytes);
+            *tbuf = (T*) malloc(nbytes);
         }
         
         /**
@@ -634,7 +634,7 @@ namespace graphchi {
         template <typename T>
         void managed_release(int session, T ** ptr) {
             assert(*ptr != NULL);
-            myfree(*ptr);
+            free(*ptr);
             *ptr = NULL;
         }
         
@@ -701,7 +701,7 @@ namespace graphchi {
                 /* Not mmaped yet, so open */
                 size_t mmap_length = get_filesize(filename);
                 int filedesc = open(filename.c_str(), (write ? O_RDWR : O_RDONLY));
-                ptr =  mymmap(NULL, mmap_length, (write ? PROT_READ | PROT_WRITE : PROT_READ), MAP_SHARED, filedesc, 0);
+                ptr =  mmap(NULL, mmap_length, (write ? PROT_READ | PROT_WRITE : PROT_READ), MAP_SHARED, filedesc, 0);
                 if (!ptr) {
                     logstream(LOG_FATAL) << "Could not mmap " << filename << std::endl;
                 }

@@ -30,10 +30,11 @@ IMPLICIT_RATING_DISABLED = 0,
 IMPLICIT_RATING_RANDOM = 1
 };
 
-double implicitratingweight;
+double implicitratingweight = 1;
 double implicitratingvalue = -1;
-double implicitratingpercentage;
-int    implicitratingtype;
+double implicitratingpercentage = 0;
+int    implicitratingtype = IMPLICIT_RATING_DISABLED;
+int    implicitratingnumedges = 0;
 
 template<typename als_edge_type>
 uint add_implicit_edges4(int type, sharder<als_edge_type>& shrd){
@@ -45,9 +46,10 @@ uint add_implicit_edges4(int type, sharder<als_edge_type>& shrd){
   };
 
   uint added = 0;
-  uint toadd  = (uint)(implicitratingpercentage*N*M);
+  uint toadd  = (uint)(implicitratingnumedges > 0 ? implicitratingnumedges : implicitratingpercentage*N*M);
   logstream(LOG_INFO)<<"Going to add: " << toadd << " implicit edges. " << std::endl;
-  assert(toadd >= 1);
+  if (toadd < 1)
+    logstream(LOG_FATAL)<<"Not able to add implicit edges, percentage or number of edges too small" << std::endl;
   for (uint j=0; j< toadd; j++){
     ivec item = ::randi(1,0,N-1);
     ivec user = ::randi(1,0,M-1);
@@ -68,9 +70,10 @@ uint add_implicit_edges(int type, sharder<als_edge_type>& shrd ){
   };
 
   uint added = 0;
-  uint toadd  = (uint)(implicitratingpercentage*N*M);
+  uint toadd  = (uint)(implicitratingnumedges > 0 ? implicitratingnumedges : implicitratingpercentage*N*M);
   logstream(LOG_INFO)<<"Going to add: " << toadd << " implicit edges. " << std::endl;
-  assert(toadd >= 1);
+  if (toadd < 1)
+    logstream(LOG_FATAL)<<"Not able to add implicit edges, percentage or number of edges too small" << std::endl;
   for (uint j=0; j< toadd; j++){
     ivec item = ::randi(1,0,N-1);
     ivec user = ::randi(1,0,M-1);
@@ -85,6 +88,7 @@ void parse_implicit_command_line(){
    implicitratingweight = get_option_float("implicitratingweight", implicitratingweight);
    implicitratingvalue = get_option_float("implicitratingvalue", implicitratingvalue);
    implicitratingtype = get_option_int("implicitratingtype", implicitratingtype);
+   implicitratingnumedges = get_option_int("implicitratingnumedges", implicitratingnumedges);
    if (implicitratingtype != IMPLICIT_RATING_RANDOM && implicitratingtype != IMPLICIT_RATING_DISABLED)
      logstream(LOG_FATAL)<<"Implicit rating type should be either 0 (IMPLICIT_RATING_DISABLED) or 1 (IMPLICIT_RATING_RANDOM)" << std::endl;
    implicitratingpercentage = get_option_float("implicitratingpercentage", implicitratingpercentage);

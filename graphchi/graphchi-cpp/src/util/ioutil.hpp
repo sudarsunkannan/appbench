@@ -33,79 +33,6 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <zlib.h>
-
-
-//#define _USE_DIRECTED_ALLOC
-
-#ifdef _USE_DIRECTED_ALLOC
-#include "gnuwrapper.h"
-
-static size_t allocsz;
-
-void print_stats(size_t size){
-	fprintf(stdout,"xxmalloc size %zu, total: %zu \n", size, allocsz);
-}
-#endif
-
-void myfree(void *ptr) {
-
- //fprintf(stderr,"calling myfree \n");
-#ifdef _USE_DIRECTED_ALLOC
-   xxfree(ptr);
-#else
-    free(ptr);
-#endif
-}
-
-void *mymalloc(size_t size){
-
-#ifdef _USE_DIRECTED_ALLOC
-	//print_stats(size);
-	//fprintf(stderr,"calling xxmalloc \n");
-    return xxmalloc(size);
-#else
-    return malloc(size);
-#endif
-}
-
-void *mycalloc(size_t size, size_t units){
-
-#ifdef _USE_DIRECTED_ALLOC
-	print_stats(size);
-    void *ptr = (void *)xxmalloc(size*units);
-    memset(ptr,0,size*units);
-    return ptr;
-#else
-    return calloc(size,units);
-#endif
-}
-
-
-void *myrealloc(void *ptr, size_t size){
-#ifdef _USE_DIRECTED_ALLOC
-	print_stats(size);
-    return xxrealloc(ptr,size);
-#else
-    return realloc(ptr, size);
-#endif
-}
-
-
-void *mymmap(void *addr, size_t length, int prot, int flags,
-                  int fd, off_t offset){
-	
-	void *tmp=NULL; void *addr1;
-	fprintf(stdout,"calling mmap \n");
-
-     tmp = malloc(length);
-
-	addr1 = mmap(addr,length,prot,flags,fd,offset);
-	 	
-	 memcpy(tmp, addr1, length);
-	
-	 return tmp;
-	 //return mmap(addr,length,prot,flags,fd,offset);
-}
  
 
 // Reads given number of bytes to a buffer
@@ -223,7 +150,7 @@ size_t write_compressed(int f, T * tbuf, size_t nbytes) {
     unsigned have;
     z_stream strm;
     int CHUNK = (int) std::max((size_t)1024 * 1024, nbytes);
-    unsigned char * out = (unsigned char *) mymalloc(CHUNK);
+    unsigned char * out = (unsigned char *) malloc(CHUNK);
     lseek(f, 0, SEEK_SET);
 
     /* allocate deflate state */
@@ -262,7 +189,7 @@ size_t write_compressed(int f, T * tbuf, size_t nbytes) {
     
     /* clean up and return */
     (void)deflateEnd(&strm);
-    myfree(out);
+    free(out);
     return totwritten;
 #else
     writea(f, tbuf, nbytes);
@@ -283,7 +210,7 @@ void read_compressed(int f, T * tbuf, size_t nbytes) {
 
     size_t fsize = lseek(f, 0, SEEK_END);
     
-    unsigned char * in = (unsigned char *) mymalloc(fsize);
+    unsigned char * in = (unsigned char *) malloc(fsize);
     lseek(f, 0, SEEK_SET);
 
     /* allocate inflate state */
@@ -331,7 +258,7 @@ void read_compressed(int f, T * tbuf, size_t nbytes) {
    // std::cout << "Read: " << (buf - (unsigned char*)tbuf) << std::endl;
     /* clean up and return */
     (void)inflateEnd(&strm);
-    myfree(in);
+    free(in);
 #else
     preada(f, tbuf, nbytes, 0);
 #endif

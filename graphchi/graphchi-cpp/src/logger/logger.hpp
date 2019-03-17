@@ -112,14 +112,9 @@
     (log_dispatch<(lvl >= OUTPUTLEVEL)>::exec(lvl,__FILE__,     \
                         __func__ ,__LINE__,buf,len))
 
-/*#define logstream(lvl)                      \
-  //  (log_stream_dispatch<(lvl >= OUTPUTLEVEL)>::exec(lvl,__FILE__, __func__ ,__LINE__) )
-#endif*/
-
 #define logstream(lvl)                      \
     (log_stream_dispatch<(lvl >= OUTPUTLEVEL)>::exec(lvl,__FILE__, __func__ ,__LINE__) )
 #endif
-
 
 static const char* messages[] = {  "DEBUG:    ",
     "INFO:     ",

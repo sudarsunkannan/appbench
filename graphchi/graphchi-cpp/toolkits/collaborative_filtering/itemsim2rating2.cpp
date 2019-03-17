@@ -26,7 +26,7 @@
  * the current user ratings and the item similarities.  
  *
  */
-#define GRAPHCHI_DISABLE_COMPRESSION
+//#define GRAPHCHI_DISABLE_COMPRESSION
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -38,22 +38,21 @@
 #include "util.hpp"
 #include "timer.hpp"
 #include "common.hpp"
+#include <libgen.h>
 
 
 int min_allowed_intersection = 1;
-size_t written_pairs = 0;
+vec written_pairs;
 size_t item_pairs_compared = 0;
-FILE * out_file;
+std::vector<FILE*> out_files;
 timer mytimer;
-bool * relevant_items  = NULL;
 int grabbed_edges = 0;
 int debug;
 int undirected = 1;
-double Q = 3; //the power of the weights added into the total score
 double prob_sim_normalization_constant = 0;
 bool is_item(vid_t v){ return v >= M; }
 bool is_user(vid_t v){ return v < M; }
-
+vec degrees;
 /**
  * Type definitions. Remember to create suitable graph shards using the
  * Sharder-program. 
@@ -70,8 +69,7 @@ struct edge_data{
 
 struct vertex_data{ 
   //vec pvec; 
-  int degree;
-  vertex_data(){ degree = 0; }
+  vertex_data(){}
 
   void set_val(int index, float val){
     //pvec[index] = val;
@@ -126,7 +124,8 @@ class adjlist_container {
     void extend_pivotrange(vid_t en) {
       assert(en>pivot_en);
       assert(en > pivot_st);
-      pivot_en = en; 
+      pivot_st = start_user;
+      pivot_en = std::min(end_user, (int)en); 
       adjs.resize(pivot_en - pivot_st);
       //for (uint i=0; i< pivot_en - pivot_st; i++)
       //  adjs[i].ratings = zeros(N);
@@ -190,8 +189,11 @@ class adjlist_container {
       for(int i=0; i < num_edges; i++){
         vid_t other_item = item.edge(i)->vertex_id();
         //user node, continue
-        if (other_item < M )
+        if (other_item < M ){
+          if (debug)
+            std::cout<<"skipping an edge to item " << other_item << std::endl;
           continue;
+        }
 
         //other item node
         assert(is_item(other_item));
@@ -258,16 +260,7 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
     if (debug)
       printf("Entered iteration %d with %d\n", gcontext.iteration, is_item(v.id()) ? (v.id() - M + 1): v.id()+1);
        
-   
-    if (is_user(v.id())){ 
-      latent_factors_inmem[v.id()].degree = v.num_edges();
-    }
-    else if (is_item(v.id())){
-      for (int i=0; i< v.num_edges(); i++){
-        if (is_user(v.edge(i)->vertex_id()))
-           latent_factors_inmem[v.id()].degree++;
-      }
-    }
+
     /* Even iteration numbers:
      * 1) load a subset of users into memory (pivots)
      * 2) Find which subset of items is connected to the users
@@ -297,7 +290,7 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
         item_pairs_compared++;
 
         if (item_pairs_compared % 1000000 == 0)
-          logstream(LOG_INFO)<< std::setw(10) << mytimer.current_time() << ")  " << std::setw(10) << item_pairs_compared << " pairs compared " << std::endl;
+          logstream(LOG_INFO)<< std::setw(10) << mytimer.current_time() << ")  " << std::setw(10) << item_pairs_compared << " pairs compared " << std::setw(10) << sum(written_pairs) << std::endl;
       }
     }//end of iteration % 2 == 1 
   }//end of update function
@@ -309,7 +302,10 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
    */
   void before_iteration(int iteration, graphchi_context &gcontext) {
     gcontext.scheduler->remove_tasks(0, gcontext.nvertices - 1);
-      
+   if (gcontext.iteration == 0)
+      written_pairs = zeros(gcontext.execthreads);
+
+ 
    if (gcontext.iteration % 2 == 0){
       for (vid_t i=0; i < M; i++){
         //even iterations, schedule only user nodes
@@ -325,6 +321,9 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
 
   void after_iteration(int iteration, graphchi_context &gcontext){
     if (gcontext.iteration % 2 == 1){
+#ifndef __APPLE__
+#pragma omp parallel for
+#endif
      for (int i=0; i< (int)adjcontainer->adjs.size(); i++){
           if (debug)
             logstream(LOG_DEBUG)<<"Going over user" << adjcontainer->adjs[i].vid << std::endl;
@@ -335,19 +334,19 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
             continue;
           }
           //assert(user.ratings.size() == N);
-         
-
+         assert(adjcontainer->adjs[i].vid >= (uint)start_user && adjcontainer->adjs[i].vid < (uint)end_user);
+         uint user_id = adjcontainer->adjs[i].vid;
+         assert(user_id < M);
+         int degree_k = degrees[user_id];
+         assert(degree_k > 0);
+             
          /* GO over the compu sum*/
          FOR_ITERATOR(j, user.ratings){
-           int item_id = j.index(); 
-           assert(item_id>=0 && item_id < N);
-           int user_id = adjcontainer->adjs[i].vid;
-           assert(user_id >= 0 && user_id < M);
-           int degree_k = latent_factors_inmem[user_id].degree;
-           int degree_x = latent_factors_inmem[M+item_id].degree;
-           assert(degree_k > 0);
+           uint item_id = j.index(); 
+           assert(item_id < N);
+           int degree_x = degrees[M+item_id];
            if (degree_x <= 0)
-             logstream(LOG_WARNING)<<"User degree is 0: " << user_id <<std::endl;
+             logstream(LOG_WARNING)<<"Item degree is 0: " << user_id << " -> " << item_id << std::endl;
            assert(degree_x > 0);
            double p_k_1 = 1.0 / ( 1.0 + prob_sim_normalization_constant * ((N - degree_k)/(double)degree_k) * ((M - degree_x) / (double)degree_x));
            assert(p_k_1 > 0 && p_k_1 <= 1.0);
@@ -362,7 +361,7 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
           positions.conservativeResize(std::min(nnz(user.ratings),(int)K));
           for (int j=0; j < positions.size(); j++){
             
-            if (positions[j] >= N){
+            if (positions[j] >= (int)N){
                std::cout<<"bug: user rating " << user.ratings << " pos: " << positions << std::endl;
                continue;
             }
@@ -375,11 +374,11 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
                 logstream(LOG_DEBUG)<<"Found zero in position " << j << std::endl;
               break;
             }
-            int rc = fprintf(out_file, "%u %u %lg\n", user.vid+1, positions[j]+1, get_val(user.ratings, positions[j]));//write item similarity to file
+            int rc = fprintf(out_files[omp_get_thread_num()], "%u %u %lg\n", user.vid+1, positions[j]+1, get_val(user.ratings, positions[j]));//write item similarity to file
             if (debug)
               logstream(LOG_DEBUG)<<"Writing rating from user" << user.vid+1 << " to item: " << positions[j]-M+1 << std::endl;
             assert(rc > 0);
-            written_pairs++;
+            written_pairs[omp_get_thread_num()]++;
           }
         }
       grabbed_edges = 0;
@@ -401,11 +400,11 @@ struct ItemDistanceProgram : public GraphChiProgram<VertexDataType, edge_data> {
         printf("entering iteration: %d on before_exec_interval\n", gcontext.iteration);
         printf("pivot_st is %d window_St %d, window_en %d\n", adjcontainer->pivot_st, window_st, window_en);
       //}
-      if (adjcontainer->pivot_st < std::min(M, window_en)){
+      if ((int)adjcontainer->pivot_st < std::min(std::min((int)M,end_user), (int)window_en)){
         size_t max_grab_edges = get_option_long("membudget_mb", 1024) * 1024 * 1024 / 8;
         if (grabbed_edges < max_grab_edges * 0.8) {
           logstream(LOG_DEBUG) << "Window init, grabbed: " << grabbed_edges << " edges" << " extending pivor_range to : " << window_en + 1 << std::endl;
-          adjcontainer->extend_pivotrange(std::min(M, window_en + 1));
+          adjcontainer->extend_pivotrange(std::min(std::min((int)M, end_user), (int)window_en + 1));
           logstream(LOG_DEBUG) << "Window en is: " << window_en << " vertices: " << gcontext.nvertices << std::endl;
           if (window_en+1 >= gcontext.nvertices) {
             // every user was a pivot item, so we are done
@@ -444,12 +443,12 @@ int main(int argc, const char ** argv) {
   if (similarity == "")
     logstream(LOG_FATAL)<<"Missing similarity input file. Please specify one using the --similarity=filename command line flag" << std::endl;
   undirected               = get_option_int("undirected", 0);
-  Q                        = get_option_float("Q", Q);
-  K 			   = get_option_int("K");
   
   mytimer.start();
-  int nshards          = convert_matrixmarket_and_item_similarity<edge_data>(training, similarity);
-  latent_factors_inmem.resize(M+N);
+
+  int nshards          = convert_matrixmarket_and_item_similarity<edge_data>(training, similarity, 3, degrees);
+  if (debug) for (int i=0; i< degrees.size(); i++)
+    std::cout<<"degree of node: " << i << " is: " << degrees[i]<<std::endl;
 
   assert(M > 0 && N > 0);
   prob_sim_normalization_constant = (double)L / (double)(M*N-L);
@@ -457,27 +456,41 @@ int main(int argc, const char ** argv) {
   //initialize data structure which saves a subset of the items (pivots) in memory
   adjcontainer = new adjlist_container();
 
-  //array for marking which items are conected to the pivot items via users.
-  relevant_items = new bool[N];
 
   /* Run */
   ItemDistanceProgram program;
   graphchi_engine<VertexDataType, edge_data> engine(training, nshards, true, m); 
   set_engine_flags(engine);
 
-  out_file = open_file((training + "-rec").c_str(), "w");
+  //open output files as the number of operating threads
+  out_files.resize(number_of_omp_threads());
+  for (uint i=0; i< out_files.size(); i++){
+    char buf[256];
+    sprintf(buf, "%s-rec.out%d", training.c_str(), i);
+    out_files[i] = open_file(buf, "w");
+  }
 
+
+  K 			   = get_option_int("K");
+  assert(K > 0);
   //run the program
   engine.run(program, niters);
+
+  for (uint i=0; i< out_files.size(); i++)
+    fclose(out_files[i]);
+  
+
 
   /* Report execution metrics */
   if (!quiet)
     metrics_report(m);
 
-  std::cout<<"Total item pairs compared: " << item_pairs_compared << " total written to file: " << written_pairs << std::endl;
-  std::cout<<"Created output files with the format: " << training << "-rec" << std::endl; 
+  std::cout<<"Total item pairs compared: " << item_pairs_compared << " total written to file: " << sum(written_pairs) << std::endl;
 
-  delete[] relevant_items;
-  fclose(out_file);
+  logstream(LOG_INFO)<<"Going to sort and merge output files " << std::endl;
+  std::string dname= dirname(strdup(argv[0]));
+  system(("bash " + dname + "/topk.sh " + std::string(basename(strdup((training+"-rec").c_str())))).c_str()); 
+
+
   return 0;
 }

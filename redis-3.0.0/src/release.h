@@ -1,3 +1,3 @@
-#define REDIS_GIT_SHA1 "c16c6b17"
-#define REDIS_GIT_DIRTY "16298"
-#define REDIS_BUILD_ID "tenansix-1551196561"
+#define REDIS_GIT_SHA1 "4168ce29"
+#define REDIS_GIT_DIRTY "270"
+#define REDIS_BUILD_ID "cacofonix-1552861199"

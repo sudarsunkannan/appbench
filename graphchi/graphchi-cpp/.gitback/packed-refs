@@ -1,0 +1,9 @@
+# pack-refs with: peeled fully-peeled sorted 
+cd960212ebc171bacbd3169e4c9bcd44e680aadb refs/remotes/origin/cached-blocks
+1850259c69718cc754f2e4b69bbc70857d0a0738 refs/remotes/origin/chivector-with-header
+31fd5c07085d09c23cd3a796dedfea956a3f0f78 refs/remotes/origin/dot-products
+6461c89f217f63482e2468d776bb942067f8288c refs/remotes/origin/master
+0fca09f784a94b400e9e1891a903dd2d9b4f72da refs/remotes/origin/new-preprocessor
+1ee44f909d674df1f124231f12c3bf460963c811 refs/remotes/origin/research
+3bf22fc4c6adee87fd91ae11a363f850cce98a72 refs/remotes/origin/tmp-create-adjlist-shard
+5df7deb62fa4c11e12a10d967905e0a5aa973c85 refs/tags/beforemerge

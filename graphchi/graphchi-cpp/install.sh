@@ -45,5 +45,5 @@ tar -xjf $EIGEN_FILE
 rm -fR ./src/Eigen
 mv eigen-eigen-*/Eigen ./src
 cd toolkits/collaborative_filtering
-make -j16
+make 
 cd ../../

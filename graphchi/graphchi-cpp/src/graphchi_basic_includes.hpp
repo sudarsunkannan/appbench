@@ -84,6 +84,8 @@ namespace graphchi {
             }
             t = strtok(NULL, delims);
         }
+        
+        
     }
     
     
