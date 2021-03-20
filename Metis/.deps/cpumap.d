@@ -1,8 +1,8 @@
 obj/cpumap.o: lib/cpumap.cc /usr/include/stdc-predef.h config.h \
- /gauls/sudarsun/appbench/Metis/lib/cpumap.hh
+ /localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/cpumap.hh
 
 /usr/include/stdc-predef.h:
 
 config.h:
 
-/gauls/sudarsun/appbench/Metis/lib/cpumap.hh:
+/localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/cpumap.hh:

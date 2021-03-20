@@ -16,21 +16,8 @@ FlushDisk()
 }
 
 
-LoadtoRamDisk()
-{
-  #remout ramdisk
-  sudo umount /tmp/ramdisk/
-  ~/codes/nvmalloc/nvkernel_test_code/ramdisk_create.sh 2048
-  cp $SHARED_DATA/$DATA /tmp/ramdisk
-  SHARED_DATA=/tmp/ramdisk
-}
-
-
 cd $APPBASE
 FlushDisk
-#PerformMigration
-#LD_PRELOAD=/usr/lib/libmigration.so 
-#/usr/bin/time -v 
 $APPPREFIX $APP $DATA 
 set +x
 exit

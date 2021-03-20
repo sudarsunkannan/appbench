@@ -2,7 +2,7 @@
 
 # Set variable, setup packages and generate data
 source ./setvars.sh
-#git clone https://github.com/SudarsunKannan/leveldb
+git clone https://github.com/SudarsunKannan/leveldb
 ./createdata.sh
 
 INSTALL_SYSTEM_LIBS(){

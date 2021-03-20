@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #get data
-mkdir $APPBASE/$SHARED_DATA
-cd $APPBASE/$SHARED_DATA
+mkdir $SHARED_DATA
+cd $SHARED_DATA
 
 GRAPHDATAURL=https://snap.stanford.edu/data/bigdata/communities
 

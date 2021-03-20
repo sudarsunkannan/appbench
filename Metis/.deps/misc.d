@@ -1,5 +1,5 @@
 obj/misc.o: micro/misc.cc /usr/include/stdc-predef.h config.h \
- /gauls/sudarsun/appbench/Metis/lib/bench.hh \
+ /localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/bench.hh \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -123,7 +123,7 @@ obj/misc.o: micro/misc.cc /usr/include/stdc-predef.h config.h \
  /usr/include/c++/7/bits/alloc_traits.h \
  /usr/include/c++/7/bits/memoryfwd.h \
  /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
- /gauls/sudarsun/appbench/Metis/lib/test_util.hh \
+ /localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/test_util.hh \
  /usr/include/c++/7/iostream /usr/include/c++/7/ostream \
  /usr/include/c++/7/ios /usr/include/c++/7/iosfwd \
  /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/postypes.h \
@@ -174,7 +174,7 @@ obj/misc.o: micro/misc.cc /usr/include/stdc-predef.h config.h \
 
 config.h:
 
-/gauls/sudarsun/appbench/Metis/lib/bench.hh:
+/localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/bench.hh:
 
 /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h:
 
@@ -482,7 +482,7 @@ config.h:
 
 /usr/include/c++/7/limits:
 
-/gauls/sudarsun/appbench/Metis/lib/test_util.hh:
+/localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/test_util.hh:
 
 /usr/include/c++/7/iostream:
 

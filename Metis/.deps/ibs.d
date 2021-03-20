@@ -42,10 +42,10 @@ obj/ibs.o: lib/ibs.cc /usr/include/stdc-predef.h config.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
- /gauls/sudarsun/appbench/Metis/lib/cpumap.hh \
- /gauls/sudarsun/appbench/Metis/lib/ibs.hh /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/cpumap.hh \
+ /localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/ibs.hh \
+ /usr/include/inttypes.h /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h \
+ /usr/include/stdint.h /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
 
@@ -147,9 +147,9 @@ config.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman-shared.h:
 
-/gauls/sudarsun/appbench/Metis/lib/cpumap.hh:
+/localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/cpumap.hh:
 
-/gauls/sudarsun/appbench/Metis/lib/ibs.hh:
+/localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/ibs.hh:
 
 /usr/include/inttypes.h:
 

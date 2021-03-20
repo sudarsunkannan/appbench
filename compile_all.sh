@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-BASE=$CODEBASE
+BASE=$APPBENCH
 
 
 #create empty file
@@ -42,6 +42,9 @@ cd leveldb
 make clean
 make -j8
 
+cd $BASE
+cd gtc-benchmark
+scripts/compile_gtc.sh
 exit
 
 

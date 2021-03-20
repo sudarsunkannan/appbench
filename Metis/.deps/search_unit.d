@@ -1,5 +1,6 @@
 obj/search_unit.o: micro/search_unit.cc /usr/include/stdc-predef.h \
- config.h /gauls/sudarsun/appbench/Metis/lib/bsearch.hh \
+ config.h \
+ /localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/bsearch.hh \
  /usr/include/assert.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -62,7 +63,7 @@ obj/search_unit.o: micro/search_unit.cc /usr/include/stdc-predef.h \
 
 config.h:
 
-/gauls/sudarsun/appbench/Metis/lib/bsearch.hh:
+/localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/bsearch.hh:
 
 /usr/include/assert.h:
 

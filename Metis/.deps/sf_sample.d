@@ -73,7 +73,7 @@ obj/sf_sample.o: micro/sf_sample.cc /usr/include/stdc-predef.h config.h \
  /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /gauls/sudarsun/appbench/Metis/lib/bench.hh \
+ /localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/bench.hh \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -305,7 +305,7 @@ config.h:
 
 /usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
-/gauls/sudarsun/appbench/Metis/lib/bench.hh:
+/localhome/sudarsun/projects/CASH/applications/appbench/Metis/lib/bench.hh:
 
 /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h:
 
