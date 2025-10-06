@@ -10,7 +10,7 @@ RUNNOW="${RUNNOW:-1}"
 # If OUTPUTDIR not set, create a timestamped default under $BASE
 OUTPUTDIR="${OUTPUTDIR:-$BASE/outputs/$(date +%Y%m%d-%H%M%S)}"
 mkdir -p "$OUTPUTDIR"
-rm -f "$OUTPUTDIR"/* 2>/dev/null || true
+#rm -f "$OUTPUTDIR"/* 2>/dev/null || true
 
 USAGE(){
   echo "Usage: $0 [maxhotpage] [BW] [outputdir] [app]"
