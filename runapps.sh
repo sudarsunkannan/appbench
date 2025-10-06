@@ -32,6 +32,13 @@ RUNAPP(){
 if [ -z "$4" ]
   then
 
+	APPBASE=$BASE/graph500-3.0.0/src
+	APP=graph500
+	echo "running $APP..."
+	RUNAPP
+	exit
+
+
 	APPBASE=$BASE/gtc-benchmark
 	APP=gtc
 	echo "running $APP..."

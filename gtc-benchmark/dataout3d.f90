@@ -95,10 +95,11 @@ Subroutine dataout3d
               enddo
            enddo
         enddo
+
         
 ! coordinate data file name
         if(myrank_toroidal < 10)then
-           write(fdum,'("NCD",a1,"coor.00",i1)')cdum(n),myrank_toroidal
+           write(fdum,'("CD",a1,"coor.00",i1)')cdum(n),myrank_toroidal
         elseif(myrank_toroidal < 100)then
            write(fdum,'("NCD",a1,"coor.0",i2)')cdum(n),myrank_toroidal
         else

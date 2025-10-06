@@ -58,10 +58,13 @@ CHARGEI:=chargei.o
 PUSHI:=pushi.o
 POISSON:=poisson.o
 SHIFTI:=shifti.o
-
+OPENMP=y
+INTEL=y
 # Default executable name on machines without OpenMP support
 CMD:=gtc
 LIB:=
+
+CC=mpicxx
 
 # In the next declaration, "uname" is a standard Unix command which prints
 # the name of the current system.
@@ -72,93 +75,27 @@ FFT:=fft_gl.o
 
 # We initialize to an empty string the variable that contains the compiler
 # option for the OpenMP directives.
-OMPOPT:=
+#OMPOPT:=-openmp
 
-ifeq ($(os),IRIX64)
-    # Flags for the SGI MIPSpro compilers (hecate)
-    # If we use "gmake OPENMP=y", the -mp flag is added to the compilation
-    # options to take into account the OpenMP directives in the code.
-    # If we specify "gmake SPEEDSHOP=y ...", the code is linked with the
-    # SPEEDSHOP library libss.so to recognize the "calipers" inserted in the
-    # code to do precise profiling of certain loops. Those calipers are
-    # used by the SPEEDSHOPpro profiling tool on IRIX (see: man ssrun).
-    CMP:=f90
-    F90C:=f90
-    OPT:=-64 -mips4 -Ofast -freeform -I/usr/pppl/include
-    LIB:=-lmpi
-    ifeq ($(OPENMP),y)
-       OMPOPT:=-mp
-       CMD:=gtc
-    endif
-    ifeq ($(DOUBLE_PRECISION),y)
-        OPT:=$(OPT) -DDOUBLE_PRECISION
-    endif
 
-    ifeq ($(SPEEDSHOP),y)
-       OPT:=$(OPT) -D__SPEEDSHOP
-       LIB:=$(LIB) -lss
-    endif
-    ifeq ($(DEBUG),y)
-       OPT:=-g $(OPT)
-    endif
-endif
-
-ifeq ($(os),AIX)
-    # Flags for the IBM AIX compiler (Machine IBM SP seaborg)
-    # stacksize:=0.5GB, datasize:=1.75GB
-    # We also define the "__NERSC" symbol to be passed to the preprocessor
-    # through the compiler option "-WF,-D__NERSC"
-    # -g -pg
-    CMP:=mpxlf90_r
-    OPT:= -qsuffix=cpp=F90 -WF,-D__NERSC \
-         -qsuffix=f=f90 -qfree=f90 -qinitauto \
-         -qarch=auto -qtune=auto -qcache=auto -qstrict -O3 -Q -u
-    # -O3 is recommended by IBM;  without -qstrict the compiler 
-    # might bend some IEEE rules and one has to check carefully the result;
-    # -qhot  improves nested loops 
-    ifdef 64BITS
-#       OPT:=-qdpc -qautodbl=dbl4 -q64 -WF,-DMPI_REAL=MPI_DOUBLE $(OPT)
-       OPT:=-q64 $(OPT)
-#       HOME_ETHIER:=/usr/common/homes/e/ethier
-       LIB:=~/timers/system_stats.o $(NAG) $(MASS) $(NETCDF)
-    else
-       OPT:=-bmaxstack:0x20000000 -bmaxdata:0x7000000 $(OPT)
-       LIB:=/usr/common/usg/timers/system_stats.o $(NAG) $(MASS) $(NETCDF)
-    endif
-    # If we use "gmake OPENMP=y" then we compile with mpxlf90_r and add
-    # the -qsmp=omp option to take into account the OpenMP directives.
-    ifdef OPENMP
-       CMP:=mpxlf90_r
-       OMPOPT:=-qsmp=omp -qnosave
-    endif
-    ifdef DEBUG
-       OPT:=-g $(OPT)
-    endif
-    ifdef ESSL
-       LIB:=$(LIB) -lessl_r
-       FFT=fft_essl.o
-    endif
-    ifeq ($(DOUBLE_PRECISION),y)
-        OPT:=$(OPT) -WF,-DDOUBLE_PRECISION
-    endif
-endif
 
 # Settings for Linux platform. The default is to use the LF95 compiler
 ifeq ($(os),Linux)
   # Flags for the Linux system
   # Default compiler and options: Lahey-Fujitsu compiler
     CMP:=mpif90
-    F90C:=pgf90
+    #OPT:=-D_USENVRAM
+    #F90C:=/opt/intel/bin/ifort
     ##OPT:=-O --ap --tpp --ntrace --staticlink -I/usr/local/lff95/include
   ##  OPT:=-O --ap --pca --trace
  # YX add the following netcdf lib
-    NETCDF := -lnetcdf -lnetcdff
-    LIB := -I/usr/pgi/linux86-64/6.1/include -L/usr/lib \
+    NETCDF := -lnetcdf  -lnetcdff 
+    LIB := -L/usr/lib \
                -I/usr/include $(NETCDF)
   ifeq ($(PGI),y)
     MPIMODULE:=/usr/pppl/pgi/5.2-1/mpich-1.2.6/include/f90base
     F90C:=pgf90
-    OPT:=-O -D__PGF90 -Mfree -Kieee
+    OPT:=-O -D__PGF90 -Mfree -Kieee 
  #   LIB:=
   endif
  ### ifeq ($(XT3),y)
@@ -194,74 +131,102 @@ ifeq ($(os),Linux)
   endif
 endif
 
-# Settings for the NEC SX-6 machine and Earth Simulator. For these machines,
-# a cross-compiler on a different platform is usually used. In that case,
-# the name returned by the $(os) command will not be SUPER-UX. The cross-
-# compiler for the SX machine is usually called "sxmpif90", and "esmpif90"
-# for the Earth Simulator.
-ifeq ($(os),SUPER-UX)
-    CMP:=sxmpif90
-    OPT:=-f4 -C vopt -Wf'-pvctl loopcnt=8000000 vwork=stack -L fmtlist mrgmsg transform source' -ftrace -R2 -D_SX
-    ###OPT:=-f4 -C vsafe -Wf,-pvctl loopcnt=10000000 -R2 -ftrace -D_SX
-   # The next line is for David Skinner's MPI profiling library
-    ##LIB:=-L/S/n003/home003/m0052/ipm/newer/ipm -lipm -mpiprof
-    ###LIB:=-Wl,-Z8G,-m
-    ifeq ($(DOUBLE_PRECISION),y)
-        OPT:=-DDOUBLE_PRECISION $(OPT)
-    endif
-    ifeq ($(FFTSX6),y)
-      FFT:=fft_sx6.o
-      LIB:=$(LIB) -lfft
-    endif
-    ifeq ($(DEBUG),y)
-       OPT:=-Cdebug $(OPT)
-    endif
-    SETUP:=setup_vec.o
-    CHARGEI:=chargei_vec.o
-    PUSHI:=pushi_vec.o
-    POISSON:=poisson_vec.o
-    SHIFTI:=shifti_vec.o
-endif
 
-# Settings for the CRAY-X1
-ifeq ($(os),UNICOS/mp)
-    CMP:=ftn
-    OPT:= -D_CRAYX1 -Ostream2 -Otask0 -rm
-    ##OPT:= -Ostream2 -Otask0 -rm -rd
-    ifeq ($(DEBUG),y)
-       OPT:=-g $(OPT)
-    endif
-    ifeq ($(DOUBLE_PRECISION),y)
-        OPT:=-DDOUBLE_PRECISION $(OPT)
-    endif
-    # Set options for FFT
-    ifeq ($(FFTCRAY),y)
-      FFT:=fft_cray.o
-    endif
-    SETUP:=setup_vec.o
-    CHARGEI:=chargei_vec.o
-    PUSHI:=pushi_vec.o
-    POISSON:=poisson_vec.o
-    SHIFTI:=shifti_vec.o
-endif
 
 ##################################################################
 # We add ".F90" to the list of suffixes to allow source files on which the
 # co-processor will be run automatically.
 .SUFFIXES: .o .f90 .F90
 
+INCLUDE=$(NVMALLOC_HOME)
+src_path=$(NVMALLOC_HOME)
+LIB_PATH=$(NVMALLOC_HOME)
+
+CFLAGS := -g -I$(INCLUDE) -Wall -pipe -fvisibility=hidden \
+      -funroll-loops  -Wno-implicit -Wno-uninitialized \
+      -Wno-unused-function -Wno-unused-variable  -lm -lssl -lcrypt  -fPIC
+
+NVLIBS= -lpthread -lm  -lssl -lcrypt  #-larmci #-lsnappy
+
+
+# See source code comments to avoid memory leaks when enabling MALLOC_MAG.
+#CPPFLAGS := -DMALLOC_PRODUCTION -DMALLOC_MAG
+CPPFLAGS := -DMALLOC_PRODUCTION -lstdc++
+#CPPFLAGS := $(CPPFLAGS) -D_COMPARE_PAGES 
+#CPPFLAGS := $(CPPFLAGS)	 -D_FAULT_STATS 
+#CPPFLAGS := $(CPPFLAGS) -D_ASYNC_RMT_CHKPT
+#CPPFLAGS := $(CPPFLAGS) -D_ASYNC_LCL_CHK
+#CPPFLAGS := $(CPPFLAGS) -D_NVSTATS
+#CPPFLAGS := $(CPPFLAGS) -D_USE_FAKE_NVMAP
+#CPPFLAGS := $(CPPFLAGS) -D_ARMCI_CHECKPOINT
+
+
+
+#OPT:= -cpp -D_NOCHECKPOINT $(OPT)  -D_GTC_STATS
+OPT:=  -cpp $(OPT) #-D_USENVRAM
+#OPT:= -DVALIDATE_CHKSM -cpp $(OPT)
+#OPT:= -cpp $(OPT) 
+#OPT:= -cpp -D_USESCR $(OPT) -lscrf
+#OPT:= $(OPT) -D_GTC_STATS
+#OPT:= $(OPT) -D_COMPARE_PAGES -lsnappy
+#OPT:= -cpp $(OPT) -D_SYNTHETIC
+#OPT:= -cpp $(OPT) -D_ASYNC_LCL_CHK
+#OPT:= -cpp $(OPT) -D_ARMCI_CHECKPOINT
+
+#OPT:= $(OPT) -D_USE_FAKE_NVMAP -D_ASYNC_RMT_CHKPT
+
+
+JEMALLOC_OBJS=  $(src_path)/jemalloc.o $(src_path)/arena.o $(src_path)/atomic.o \
+                $(src_path)/base.o $(src_path)/ckh.o $(src_path)/ctl.o $(src_path)/extent.o \
+                $(src_path)/hash.o $(src_path)/huge.o $(src_path)/mb.o \
+                $(src_path)/mutex.o $(src_path)/prof.o $(src_path)/quarantine.o \
+                $(src_path)/rtree.o $(src_path)/stats.o $(src_path)/tcache.o \
+                $(src_path)/util.o $(src_path)/tsd.o $(src_path)/chunk.o \
+                $(src_path)/bitmap.o $(src_path)/chunk_mmap.o $(src_path)/chunk_dss.o\
+		$(src_path)/gtthread_spinlocks.o \
+		$(src_path)/rbtree.o $(src_path)/nv_map.o $(src_path)/checkpoint.o	\
+		$(src_path)/util_func.o #$(src_path)/nv_rmtckpt.o 
+		#$(src_path)/armci_checkpoint.o \
+#$(src_path)/zone.o
+
+
 # List of all the object files needed to build the code
-OBJ:=module.o main.o function.o $(SETUP) ran_num_gen.o set_random_values.o \
+OBJ:=allocate.o module.o main.o function.o $(SETUP) ran_num_gen.o set_random_values.o \
     load.o restart.o diagnosis.o snapshot.o $(CHARGEI) $(POISSON) smooth.o \
     field.o $(PUSHI) $(SHIFTI) $(FFT) tracking.o \
-    dataout3d.o 
+    dataout3d.o  #c_io.o $(JEMALLOC_OBJS)
+
+
+
 ## mem_check.o \
 ##    output3d_serial.o output.o
 
 # selectmode.o volume.o 
-
+CC=mpicc
+CXX=mpicxx
 $(CMD): $(OBJ)
-	$(CMP) $(OMPOPT) $(OPT) -o $(CMD) $(OBJ) $(LIB) 
+	$(CMP) $(OMPOPT) $(OPT) -o $(CMD) $(OBJ) $(LIB) $(CPPFLAGS) $(CFLAGS) #$(NVLIBS)
+
+#c_io.o: $(src_path)/c_io.c
+#		$(CC) -c  $(src_path)/c_io.c $(CFLAGS) $(NVLIBS) $(CPPFLAGS) #$(src_path)/nv_rmtckpt.o 
+
+#$(src_path)/nv_map.o: $(src_path)/nv_map.cc 
+#	$(CXX) -c $(src_path)/nv_map.cc -o $(src_path)/nv_map.o $(NVLIBS) $(CPPFLAGS)
+
+#$(src_path)/rbtree.o: $(src_path)/rbtree.cc 
+#	$(CXX) -c $(src_path)/rbtree.cc -o $(src_path)/rbtree.o $(NVLIBS) $(CPPFLAGS)
+
+#$(src_path)/util_func.o: $(src_path)/util_func.cc 
+#	$(CXX) -c $(src_path)/util_func.cc -o $(src_path)/util_func.o $(NVLIBS) $(CPPFLAGS)
+
+
+#$(src_path)/checkpoint.o: $(src_path)/checkpoint.cc
+#	$(CXX) -c $(src_path)/checkpoint.cc -o  $(src_path)/checkpoint.o  $(NVLIBS) $(CPPFLAGS)
+
+#$(src_path)/armci_checkpoint.o: $(src_path)/armci_checkpoint.cc
+#	$(CXX) -c $(src_path)/armci_checkpoint.cc -o  $(src_path)/armci_checkpoint.o  $(NVLIBS) $(CPPFLAGS)
+
+
 
 module.o : module.F90
 	$(CMP) $(OMPOPT) $(OPT) -c module.F90
@@ -276,8 +241,14 @@ track_analysis: module.o track_analysis.o
 dataout3d.o: dataout3d.f90
 	$(CMP) $(OPT) ${LIB} -c dataout3d.f90
 
+restart.o: restart.f90
+	$(CMP) $(OPT) ${LIB} -c restart.f90
+
 ##mem_check.o: mem_check.c
 ##	cc -fastsse -c mem_check.c
+
+#c_io.o: nvram_lib/c_io.c
+#	 gcc -c -I/usr/include/mpi nvram_lib/c_io.c 
 
 .f90.o : module.o
 	$(CMP) $(OMPOPT) $(OPT) $(LIB) -c $<
@@ -297,13 +268,4 @@ PHI_dat_to_ncd: PHI_dat_to_ncd.f90
 
 clean:
 	rm -f $(CMD) $(OBJ) *.mod
-
-restartclean:
-	rm -f NCD*
-	rm -f PHI*
-	rm -f DATA_RESTART*
-	rm -f history.out
-	rm -f history_restart.out
-	rm -f sheareb.out
-	rm -f sheareb_restart.out
 

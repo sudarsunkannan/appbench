@@ -22,17 +22,25 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 program gtc
+
   use global_parameters
   use particle_array
   use particle_tracking
   use field_array
   use diagnosis_array
   implicit none
+   
+   
 
-  integer i,ierror
+  integer i,ierror, ierr, valid
   real(doubleprec) time(8),timewc(8),t0,dt,t0wc,dtwc,loop_time
   real(doubleprec) tracktcpu,tracktwc,tr0,tr0wc
   character(len=10) ic(8)
+  integer j
+
+          
+
+
 
 #ifdef __NERSC
 ! NERSC USG utilization statistics. This routine is available only on the
@@ -58,6 +66,9 @@ program gtc
   timewc(8)=t0wc
   istep=0
 
+
+  !call starttime(mype);
+
 ! input parameters, setup equilibrium, allocate memory 
   CALL SETUP
 
@@ -75,9 +86,19 @@ program gtc
   timewc(7)=timewc(7)+dtwc
   loop_time=t0wc
 
+#ifdef _USESCR
+   call SCR_INIT(ierr)
+#endif
+
 ! main time loop
   do istep=1,mstep
      do irk=1,2
+
+       !if(mype == 0) then
+        ! print *,"next iteration"
+       !endif
+
+
 
 ! idiag=0: do time history diagnosis
         idiag=mod(irk+1,2)+mod(istep,ndiag)
@@ -124,13 +145,14 @@ program gtc
         time(4)=time(4)+dt
         timewc(4)=timewc(4)+dtwc
 
-     	if(idiag==0)then
+!       idiag = 1
+       if(idiag==0)then
            CALL DIAGNOSIS
-           call DATAOUT3D
-        !!!  CALL VOLUME    !Original netCDF 3D potential data
+           !call DATAOUT3D
+        !!  CALL VOLUME    !Original netCDF 3D potential data
         !  CALL OUTPUT3D  !HDF5 parallel output of 3D potential data
-        !!!  CALL DATAOUT   !New version of netCDF 3D potential data
-     	endif
+        !!  CALL DATAOUT   !New version of netCDF 3D potential data
+      endif
 
      enddo
 
@@ -140,12 +162,40 @@ program gtc
      tracktcpu=tracktcpu+dt
      tracktwc=tracktwc+dtwc
 
+
+      valid=1;
+
+
+
+#ifndef _NOCHECKPOINT
 ! profile snapshots, write particle information to restart file
      if(mod(istep,mstep/msnap) .eq. 0)then
+     !   PRINT *, "CALLING SNAPSHOT",istep,mstep,msnap
+#ifdef _USESCR
+        call SCR_START_CHECKPOINT(ierr)
+#endif
         CALL SNAPSHOT
         if(track_particles==1 .and. nptrack>0)call write_tracked_particles
+#ifdef _USESCR
+        call SCR_COMPLETE_CHECKPOINT(valid, ierr)
+#endif
+        
+
      endif
+
+#endif
+
   enddo
+
+
+   !!call endtime(mype, istep);      
+
+  if(mype==0) then
+  !do  j=1,me 
+    !    write (*,*) zion(0,j) 
+  !enddo
+
+  endif 	
 
   call timer(t0,dt,t0wc,dtwc)
   loop_time=t0wc-loop_time
@@ -169,13 +219,17 @@ program gtc
      write(stdout,'(8(1pe10.3))')timewc
      write(stdout,'("MAIN LOOP TIME(SEC):",f12.3)')loop_time
      write(stdout,'("TOTAL CPU TIME USAGE (SEC):",f12.3)')time(8)
-     write(stdout,'("TOTAL WALL CLOCK TIME(SEC):",f12.3)')timewc(8)
+     write(*,'("TOTAL WALL CLOCK TIME(SEC):",f12.3)')timewc(8)
      if(track_particles==1)write(stdout,'("PARTICLE TRACKING TIME(SEC):",f12.3)')tracktwc
      if(stdout /= 6 .and. stdout /= 0)close(stdout)
   endif
 
 #ifdef __NERSC
 !  call system_stats()
+#endif
+
+#ifdef _USESCR
+  call SCR_FINALIZE(ierr)
 #endif
 
 ! MPI finalize
