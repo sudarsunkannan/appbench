@@ -29,6 +29,16 @@
 
 #include <new>
 
+#if !defined(HL_NOEXCEPT)
+#  if __cplusplus >= 201703L
+#    define HL_NOEXCEPT noexcept
+#    define HL_THROW_BAD_ALLOC
+#  else
+#    define HL_NOEXCEPT throw()
+#    define HL_THROW_BAD_ALLOC throw(std::bad_alloc)
+#  endif
+#endif
+
 //class std::bad_alloc;
 
 namespace HL {
@@ -36,7 +46,8 @@ namespace HL {
   template <class Super>
   class ExceptionHeap : public Super {
   public:
-    inline void * malloc (size_t sz) throw (std::bad_alloc) {
+    //inline void * malloc (size_t sz) throw (std::bad_alloc) {
+    inline void * malloc (size_t sz) HL_THROW_BAD_ALLOC {
       void * ptr = Super::malloc (sz);
       if (ptr == NULL) {
 	throw new std::bad_alloc;

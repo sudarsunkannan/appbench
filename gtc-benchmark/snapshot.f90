@@ -21,7 +21,6 @@ subroutine snapshot
   use particle_decomp
   use field_array
   use diagnosis_array
-  use mpi
   implicit none
   
   integer,parameter :: mbin_psi=5, mbin_u=41
@@ -40,9 +39,6 @@ subroutine snapshot
 
 ! write particle data for re-run
   call restart_write
-
-
-goto 1000
 
 ! number of poloidal grid
   jm=mtheta(mpsi/2)
@@ -346,9 +342,6 @@ goto 1000
      close(snapout)
   endif
 
-1000 i = i + 1
-
-
 ! record program end time
   if(istep .eq. mstep)then
      call date_and_time(date,time)
@@ -361,7 +354,6 @@ goto 1000
   
 101 format(i6)
 102 format(e10.4)
- 
- 
+  
 end subroutine snapshot
 

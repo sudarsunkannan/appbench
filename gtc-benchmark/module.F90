@@ -42,10 +42,6 @@ module global_parameters
        zetamin,umax,tite,rc,rw,tauii,qion,qelectron,aion,aelectron
   integer,dimension(:),allocatable :: mtheta
   real(wp),dimension(:),allocatable :: deltat
-   
-  !NVRAM changes
-  !integer usenvram  
-  !usenvram = 0
 
 #ifdef _SX
 ! SX-6 trick to minimize bank conflict in chargei
@@ -58,43 +54,11 @@ end module global_parameters
 module particle_array
   use precision
   integer,dimension(:),allocatable :: kzion,kzelectron,jtelectron0,jtelectron1
-
-#ifdef _SYNTHETIC
-
-  integer, pointer :: jtion0(:,:),jtion1(:,:)      
-
-  real, pointer :: wpion(:,:), wtion0(:,:),wtion1(:,:)
-
-  real(wp),dimension(:),allocatable :: wzion,wzelectron,wpelectron,&
-       wtelectron0,wtelectron1
-#else
   integer,dimension(:,:),allocatable :: jtion0,jtion1
-
   real(wp),dimension(:),allocatable :: wzion,wzelectron,wpelectron,&
        wtelectron0,wtelectron1
   real(wp),dimension(:,:),allocatable :: wpion,wtion0,wtion1
-
-#endif
-
-
-#ifndef _USENVRAM
-
-	 real(wp),dimension(:,:),allocatable :: zion,zion0,zelectron,zelectron0,zelectron1
-#else
-  	real, pointer :: zion(:,:) 
-	real, pointer :: zion0(:,:)
-	real, pointer :: zelectron(:,:)
-	real, pointer :: zelectron0(:,:)
-
-#ifdef _SYNTHETIC
-         real, pointer :: zelectron1(:,:)
-#else
-	real(wp),dimension(:,:),allocatable ::zelectron1
-#endif
-
-#endif
-
-
+  real(wp),dimension(:,:),allocatable :: zion,zion0,zelectron,zelectron0,zelectron1
 end module particle_array
 
 module particle_tracking
@@ -106,52 +70,14 @@ end module particle_tracking
 
 module field_array
   use precision
-  !integer,parameter :: mmpsi=192
-  !integer,dimension(:),allocatable :: itran,igrid
-  !integer,dimension(:,:,:),allocatable :: jtp1,jtp2
-  !real(wp),dimension(:),allocatable :: phi00,phip00,rtemi,rteme,rden,qtinv,&
-   !    pmarki,pmarke,zonali,zonale,gradt
-  !real(wp),dimension(:,:),allocatable :: phi,densityi,densitye,markeri,&
-   !    markere,pgyro,tgyro,dtemper,heatflux,phit
-
   integer,parameter :: mmpsi=192
   integer,dimension(:),allocatable :: itran,igrid
-
-#ifdef _SYNTHETIC
-     integer, pointer :: jtp1(:,:,:)
-     integer,dimension(:,:,:),allocatable :: jtp2
-#else
   integer,dimension(:,:,:),allocatable :: jtp1,jtp2
-#endif
-
-  real(wp),dimension(:),allocatable :: phi00,rtemi,rteme,rden,qtinv,&
-       pmarki,pmarke,gradt
-
-
-#ifdef _SYNTHETIC
-  real(wp),dimension(:,:),allocatable :: densityi,markeri,&
-       pgyro,tgyro,dtemper,heatflux
-        
-        real, pointer :: phit(:,:)
-        real, pointer :: densitye(:,:)
-        real, pointer :: markere(:,:)
-#else
-  real(wp),dimension(:,:),allocatable :: densityi,densitye,markeri,&
+  real(wp),dimension(:),allocatable :: phi00,phip00,rtemi,rteme,rden,qtinv,&
+       pmarki,pmarke,zonali,zonale,gradt
+  real(wp),dimension(:,:),allocatable :: phi,densityi,densitye,markeri,&
        markere,pgyro,tgyro,dtemper,heatflux,phit
-#endif
-
-
-   real, pointer :: phip00(:) 
-   real, pointer :: zonali(:)
-   real, pointer :: zonale(:)
-   real, pointer :: phi(:,:)
-
-  !NVRAM changes
-  !real(wp),dimension(:,:,:),allocatable :: evector,wtp1,wtp2,phisave
-  real(wp),dimension(:,:,:),allocatable :: evector,wtp1,wtp2
-  real, pointer :: phisave(:,:,:)
-
-
+  real(wp),dimension(:,:,:),allocatable :: evector,wtp1,wtp2,phisave
   real(wp) :: Total_field_energy(3)
 
 #ifdef _SX
@@ -171,17 +97,8 @@ module diagnosis_array
   real(wp) efluxi,efluxe,pfluxi,pfluxe,ddeni,ddene,dflowi,dflowe,&
        entropyi,entropye,efield,eradial,particles_energy(2),eflux(mflux),&
        rmarker(mflux),amp_mode(2,num_mode,2)
-  !real(wp),dimension(:),allocatable :: hfluxpsi,hfluxpse,rdtemi,pfluxpsi,rdteme
-  real(wp),dimension(:),allocatable :: hfluxpsi,hfluxpse
+  real(wp),dimension(:),allocatable :: hfluxpsi,hfluxpse,rdtemi,pfluxpsi,rdteme
   real(wp),dimension(:,:,:),allocatable :: eigenmode
   real(wp) etracer,ptracer(4)
-
-
-  real, pointer :: pfluxpsi(:), rdteme(:),rdtemi(:)
-
-
-
-
-
 end module diagnosis_array
 

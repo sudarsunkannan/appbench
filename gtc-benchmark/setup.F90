@@ -40,19 +40,13 @@ end module particle_decomp
   use field_array
   use diagnosis_array
   use particle_tracking
-  use Allocator !dkkd
-
   implicit none
 
   integer i,j,k,ierror,ij,mid_theta,ip,jt,indp,indt,mtest,micell,mecell
   integer mi_local,me_local
   real(wp) r0,b0,temperature,tdum,r,q,sint,dtheta_dx,rhoi,b,zdum,&
        edensity0,delr,delt,rmax,rmin,wt
-
   CHARACTER(LEN=10) date, time
-  CHARACTER(LEN=10) varname
-  integer cmtsize
-
   namelist /run_parameters/ numberpe,mi,mgrid,mid_theta,mtdiag,delr,delt,&
        ulength,utime,gyroradius
 
@@ -102,50 +96,13 @@ end module particle_decomp
      tauii=0.532_wp*tauii
   endif
 
-
-
-
 ! allocate memory
-!NVRAM CHANGES
-
-
-!  if(usenvram == 1) then
-
-#ifdef _USENVRAM
-
-  varname = "zonali"
-  cmtsize = mpsi
-  call alloc_1d_real(zonali,mpsi,varname, mype, cmtsize)
-  varname = "zonale"
-  call alloc_1d_real(zonale,mpsi,varname, mype, cmtsize)
-  allocate(zonale(mpsi))
-  varname = "phip00"
-  call alloc_1d_real(phip00,mpsi,varname, mype, cmtsize)
-  varname = "pfluxpsi"
-  call alloc_1d_real(pfluxpsi,mpsi,varname, mype, cmtsize)
-  varname = "rdteme"
-  call alloc_1d_real(rdteme,mpsi,varname, mype, cmtsize)
-  varname = "rdtemi"
-  call alloc_1d_real(rdtemi,mpsi,varname, mype, cmtsize)
-
-
-  allocate (qtinv(0:mpsi),itran(0:mpsi),mtheta(0:mpsi),&
-     deltat(0:mpsi),rtemi(0:mpsi),rteme(0:mpsi),&
-     rden(0:mpsi),igrid(0:mpsi),pmarki(0:mpsi),&
-     pmarke(0:mpsi),phi00(0:mpsi),&
-     hfluxpsi(0:mpsi),hfluxpse(0:mpsi),gradt(mpsi),&
-     eigenmode(m_poloidal,num_mode,mpsi),STAT=mtest)
-
-#else
   allocate (qtinv(0:mpsi),itran(0:mpsi),mtheta(0:mpsi),&
      deltat(0:mpsi),rtemi(0:mpsi),rteme(0:mpsi),pfluxpsi(0:mpsi),rdtemi(0:mpsi),&
      rden(0:mpsi),igrid(0:mpsi),pmarki(0:mpsi),rdteme(0:mpsi),&
      pmarke(0:mpsi),phi00(0:mpsi),phip00(0:mpsi),&
      hfluxpsi(0:mpsi),hfluxpse(0:mpsi),zonali(0:mpsi),zonale(0:mpsi),gradt(mpsi),&
      eigenmode(m_poloidal,num_mode,mpsi),STAT=mtest)
-
-#endif
-
   if (mtest /= 0) then
      write(0,*)mype,'*** Cannot allocate qtinv: mtest=',mtest
      call MPI_ABORT(MPI_COMM_WORLD,1,ierror)
@@ -207,49 +164,12 @@ end module particle_decomp
 	if(stdout /= 6 .and. stdout /= 0)close(stdout)
   end if	
 
-   
-  !NVRAM changes
-#ifdef _USENVRAM
-
-     varname = "phi"
-     cmtsize = mzeta * mgrid
-     call alloc_2d_real(phi,mzeta,mgrid,varname, mype, cmtsize)
-
-#ifdef _SYNTHETIC
-
-     varname = "jtp1"
-     cmtsize = 2*mgrid*mzeta
-     call alloc_3d_int(jtp1,2,mgrid,mzeta,varname, mype, cmtsize)
-
-  allocate(pgyro(4,mgrid),tgyro(4,mgrid),markeri(mzeta,mgrid),&
-     densityi(0:mzeta,mgrid),phi(0:mzeta,mgrid),evector(3,0:mzeta,mgrid),&
-     jtp2(2,mgrid,mzeta),wtp1(2,mgrid,mzeta),&
-     wtp2(2,mgrid,mzeta),dtemper(mgrid,mzeta),heatflux(mgrid,mzeta),&
-     STAT=mtest)
-
-#else
-     !phi(0:mzeta,mgrid)
-  ! allocate memory
+! allocate memory
   allocate(pgyro(4,mgrid),tgyro(4,mgrid),markeri(mzeta,mgrid),&
      densityi(0:mzeta,mgrid),phi(0:mzeta,mgrid),evector(3,0:mzeta,mgrid),&
      jtp1(2,mgrid,mzeta),jtp2(2,mgrid,mzeta),wtp1(2,mgrid,mzeta),&
      wtp2(2,mgrid,mzeta),dtemper(mgrid,mzeta),heatflux(mgrid,mzeta),&
      STAT=mtest)
-
-#endif 
-!SYNTHETIC
-
-#else 
-
-     allocate(pgyro(4,mgrid),tgyro(4,mgrid),markeri(mzeta,mgrid),& !,phi(0:mzeta,mgrid), &
-     densityi(0:mzeta,mgrid),phi(0:mzeta,mgrid),evector(3,0:mzeta,mgrid),&
-     jtp1(2,mgrid,mzeta),jtp2(2,mgrid,mzeta),wtp1(2,mgrid,mzeta),&
-     wtp2(2,mgrid,mzeta),dtemper(mgrid,mzeta),heatflux(mgrid,mzeta),&
-     STAT=mtest)
-
-#endif
-
-
   if (mtest /= 0) then
      write(0,*)mype,'*** setup: Cannot allocate pgyro: mtest=',mtest
      call MPI_ABORT(MPI_COMM_WORLD,1,ierror)
@@ -314,131 +234,20 @@ end module particle_decomp
      nparam=6
   endif
 
-!NVRAM CHANGES
-#ifdef _USENVRAM
-!   if(usenvram == 1) then
-
-   varname = "zion"
-   cmtsize = (nparam -1) * (mi-1)
-   call alloc_2d_real(zion,nparam,mimax,varname, mype, cmtsize)
-   varname = "zion0"
-
-#ifndef _SYNTHETIC
-   cmtsize = (mi-1) 
-   call alloc_2d_real(zion0,nparam,mimax,varname, mype, cmtsize)
-#endif
-
-
-#ifdef _SYNTHETIC
-   call alloc_2d_real(zion0,nparam,mimax,varname, mype, cmtsize)
-   varname = "jtion0"
-   cmtsize = (4 -1) * (mimax -1)
-   call alloc_2d_int(jtion0,4,mimax,varname, mype, cmtsize)
-   varname = "jtion1"
-   call alloc_2d_int(jtion1,4,mimax,varname, mype, cmtsize)
-   varname = "wpion"
-   call alloc_2d_real(wpion,4,mimax,varname, mype, cmtsize)
-   varname = "wtion0"
-   call alloc_2d_real(wtion0,4,mimax,varname, mype, cmtsize)
-   varname = "wtion1"
-   call alloc_2d_real(wtion1,4,mimax,varname, mype, cmtsize)
-
-   allocate (kzion(mimax),wzion(mimax),STAT=mtest)  
-#else
-
-    allocate(jtion0(4,mimax),&
-     jtion1(4,mimax),kzion(mimax),wzion(mimax),wpion(4,mimax),&
-     wtion0(4,mimax),wtion1(4,mimax),STAT=mtest)  
-#endif
-
-   
-#else
-     allocate(zion(nparam,mimax),zion0(nparam,mimax),jtion0(4,mimax),&
+! allocate memory
+  allocate(zion(nparam,mimax),zion0(nparam,mimax),jtion0(4,mimax),&
      jtion1(4,mimax),kzion(mimax),wzion(mimax),wpion(4,mimax),&
      wtion0(4,mimax),wtion1(4,mimax),STAT=mtest)
-#endif
- 
-
   if (mtest /= 0) then
      write(0,*)mype,'*** Cannot allocate zion: mtest=',mtest
      call MPI_ABORT(MPI_COMM_WORLD,1,ierror)
   endif
-
-
   if(nhybrid>0)then
-     !NVRAM CHANGES
-#ifdef _USENVRAM
-     !if(usenvram == 1) then
-
-
-#ifdef _SYNTHETIC
-        cmtsize = 6 * me
-        varname = "zelectron"
-        call alloc_2d_real(zelectron,6,memax,varname, mype, cmtsize)
-        varname = "zelectron0"
-        call alloc_2d_real(zelectron0,6,memax,varname, mype, cmtsize)
-        varname = "zelectron1"
-        call alloc_2d_real(zelectron1,6,memax,varname, mype, cmtsize)
-        !varname = "jtelectron0"
-        !cmtsize =memax;
-        !call alloc_1d_real(jtelectron0,memax,varname, mype, cmtsize)
-        !varname = "jtelectron"
-        !cmtsize =memax;
-        !call alloc_1d_real(jtelectron,memax,varname, mype, cmtsize)
-        !varname = "jtelectron1"
-        !cmtsize =memax;
-        !call alloc_1d_real(jtelectron1,memax,varname, mype, cmtsize)
-        allocate(jtelectron0(memax),&
-        jtelectron1(memax),kzelectron(memax),wzelectron(memax),&
-        wpelectron(memax),wtelectron0(memax),wtelectron1(memax),STAT=mtest)
-        !markere(mzeta,mgrid),densitye(0:mzeta,mgrid),STAT=mtest)
-        !phit(0:mzeta,mgrid),STAT=mtest)
-
-        varname = "densitye"
-        cmtsize = mzeta * mgrid
-        call alloc_2d_real(densitye,mzeta,mgrid,varname,mype,cmtsize)
-
-        varname = "markere"
-        cmtsize = mzeta * mgrid
-        call alloc_2d_real(markere,mzeta,mgrid,varname,mype,cmtsize)
-
-
-        varname = "phit"
-        cmtsize = mzeta * mgrid
-        call alloc_2d_real(phit,mzeta,mgrid,varname,mype,cmtsize)
-
-        varname = "phisave"
-        cmtsize = mzeta * mgrid * 2*nhybrid
-        call alloc_3d_real(phisave,mzeta,mgrid,2*nhybrid,varname,mype,cmtsize)
-#else        
-        cmtsize = 6 * me
-        varname = "zelectron"
-        call alloc_2d_real(zelectron,6,memax,varname, mype, cmtsize)
-
-        cmtsize = me
-        varname = "zelectron0"
-        call alloc_2d_real(zelectron0,6,memax,varname, mype, cmtsize)
-
-        allocate(jtelectron0(memax),&
-        jtelectron1(memax),kzelectron(memax),wzelectron(memax),&
-        wpelectron(memax),wtelectron0(memax),wtelectron1(memax),&
-        markere(mzeta,mgrid),densitye(0:mzeta,mgrid),zelectron1(6,memax),&
-        phit(0:mzeta,mgrid),STAT=mtest)
-        varname = "phisave"
-        cmtsize = mzeta * mgrid * 2*nhybrid
-        call alloc_3d_real(phisave,mzeta,mgrid,2*nhybrid,varname,mype,cmtsize)
-
-!_SYNTHETIC
-#endif 
-
-#else
-        allocate(zelectron(6,memax),zelectron0(6,memax),jtelectron0(memax),&
+     allocate(zelectron(6,memax),zelectron0(6,memax),jtelectron0(memax),&
         jtelectron1(memax),kzelectron(memax),wzelectron(memax),&
         wpelectron(memax),wtelectron0(memax),wtelectron1(memax),&
         markere(mzeta,mgrid),densitye(0:mzeta,mgrid),zelectron1(6,memax),&
         phisave(0:mzeta,mgrid,2*nhybrid),phit(0:mzeta,mgrid),STAT=mtest)
-#endif
-
      if(mtest /= 0) then
         write(0,*)mype,'*** Cannot allocate zelectron: mtest=',mtest
         call MPI_ABORT(MPI_COMM_WORLD,1,ierror)
@@ -555,24 +364,24 @@ end subroutine setup
 
   if(mype==0) then
 ! Default control parameters
-    irun=0                ! 0 for initial run, any non-zero value for restart
-    mstep=10            ! # of time steps
-    msnap=10              ! # of snapshots
-    ndiag=1               ! do diag when mod(istep,ndiag)=0
+    irun=0                 ! 0 for initial run, any non-zero value for restart
+    mstep=1500             ! # of time steps
+    msnap=1                ! # of snapshots
+    ndiag=4                ! do diag when mod(istep,ndiag)=0
     nonlinear=1.0          ! 1.0 nonlinear run, 0.0 linear run
-    nhybrid=1              ! 0: adiabatic electron, >1: kinetic electron
+    nhybrid=0              ! 0: adiabatic electron, >1: kinetic electron
     paranl=0.0             ! 1: keep parallel nonlinearity
     mode00=1               ! 1 include (0,0) mode, 0 exclude (0,0) mode
 
 ! run size (both mtheta and mzetamax should be multiples of # of PEs)
-    tstep=0.1              ! time step (unit=L_T/v_th), tstep*\omega_transit<0.1 
+    tstep=0.2              ! time step (unit=L_T/v_th), tstep*\omega_transit<0.1 
     micell=2               ! # of ions per grid cell
-    mecell=2              ! # of electrons per grid cell
-    mpsi=100                ! total # of radial grid points
+    mecell=2               ! # of electrons per grid cell
+    mpsi=90                ! total # of radial grid points
     mthetamax=640          ! poloidal grid, even and factors of 2,3,5 for FFT
     mzetamax=64            ! total # of toroidal grid points, domain decomp.
     npartdom=1             ! number of particle domain partitions per tor dom.
-    ncycle=20               ! subcycle electron
+    ncycle=5               ! subcycle electron
      
 ! run geometry
     a=0.358                ! minor radius, unit=R_0

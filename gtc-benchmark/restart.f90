@@ -28,13 +28,6 @@ subroutine restart_write
   real(wp) dum
   integer i,j,mquantity,mflx,n_mode,mstepfinal,noutputs
   integer save_restart_files,ierr
-  
-  integer filesize, valid, writeunit
-  character*1024 fname_tmp, file_suffix, fname
-  character*1024 :: basefname = "rank_"
-  
-  valid = 1;
-
 
   !save_restart_files=1
   save_restart_files=0
@@ -49,46 +42,22 @@ subroutine restart_write
 !!  endif
 !!!!!!!!!!!!!************************
 
-#ifdef _USENVRAM1
-
-      call nvchkpt_all(mype);
-      write(222)mi,me,ntracer 
-      if(mype==0)write(222)etracer,ptracer
-#else
-
-
   if(mype < 10)then
-     write(cdum,'("DATA_RESTART.0000",i1)')(mype)
+     write(cdum,'("DATA_RESTART.0000",i1)')mype
   elseif(mype < 100)then
-     write(cdum,'("DATA_RESTART.000",i2)')(mype)
+     write(cdum,'("DATA_RESTART.000",i2)')mype
   elseif(mype < 1000)then
-     write(cdum,'("DATA_RESTART.00",i3)')(mype)
+     write(cdum,'("DATA_RESTART.00",i3)')mype
   elseif(mype < 10000)then
-     write(cdum,'("DATA_RESTART.0",i4)')(mype)
+     write(cdum,'("DATA_RESTART.0",i4)')mype
   else
-     write(cdum,'("DATA_RESTART.",i5)')(mype)
+     write(cdum,'("DATA_RESTART.",i5)')mype
   endif 
 
-#ifdef _USESCR
-    writeunit = mype
-    write(file_suffix, '(i5.5)') writeunit
-    fname_tmp = trim(basefname) // trim(file_suffix) // ".ckpt"
-    fname = trim(basefname) // trim(file_suffix) // ".ckpt"
-   call SCR_ROUTE_FILE(fname_tmp, fname, ierr)
-    valid = 1
-    open(unit=writeunit,file=fname,form='unformatted', action='write')
 
-      write(writeunit)mi,me,ntracer,rdtemi,rdteme,pfluxpsi,phi,phip00,zonali,zonale
-      if(mype==0)write(writeunit)etracer,ptracer
-      write(writeunit)zion(1:nparam,1:mi),zion0(6,1:mi)
-      if(nhybrid>0)write(writeunit)phisave,zelectron(1:6,1:me),zelectron0(6,1:me)
-      close(writeunit)
-
-#else
   if(save_restart_files==1)then
      write(restart_dir,'("STEP_",i0)')(mstepall+istep)
-     !if(mype==0)
-     call system("mkdir "//restart_dir)
+     if(mype==0)call system("mkdir "//restart_dir)
      call MPI_BARRIER(MPI_COMM_WORLD,ierr)
      file_name=trim(restart_dir)//'/'//trim(cdum)
      open(222,file=file_name,status='replace',form='unformatted')
@@ -96,38 +65,13 @@ subroutine restart_write
      open(222,file=cdum,status='replace',form='unformatted')
   endif
 
-      write(222)mi,me,ntracer,rdtemi,rdteme,pfluxpsi,phi,phip00,zonali,zonale
-      if(mype==0)write(222)etracer,ptracer
+! record particle information for future restart run
 
-#ifdef _SYNTHETIC
-     write(222)zion(1:nparam,1:mi),zion0(1:nparam,1:mi)
-     write(222)jtion0(1:nparam,1:mi),jtion1(1:nparam,1:mi),wpion(1:nparam,1:mi),wtion0(1:nparam,1:mi),wtion1(1:nparam,1:mi)
-     if(nhybrid>0)write(222)zelectron(1:nparam,1:mi),zelectron0(1:nparam,1:mi),zelectron1(1:nparam,1:mi)
-
-#else
-      write(222)zion(1:nparam,1:mi),zion0(6,1:mi)
-      if(nhybrid>0)write(222)phisave,zelectron(1:6,1:me),zelectron0(6,1:me)
-
-!SYNTHETIC
-#endif
-
-       close(222)
-#endif
-    !filesize =nparam*mimax 
-    !call write_io(cdum, zion, filesize,1)
-    !call write_io(cdum, zion0, filesize,0)
-    !call write_io(cdum, zonali, mpsi,0)
-    !call write_io(cdum, zonale, mpsi,0)
-    !call write_io(cdum, phip00, mpsi,0)
-    !call write_io(cdum, pfluxpsi, mpsi,0)
-    !call write_io(cdum, rdteme, mpsi,0)
-    !call write_io(cdum, rdtemi, mpsi,0)
-    !filesize = mzeta * mgrid
-    ! call write_io(cdum, phi, filesize,0)
-    !close(222) 
-    !return 
-
-
+  write(222)mi,me,ntracer,rdtemi,rdteme,pfluxpsi,phi,phip00,zonali,zonale
+  if(mype==0)write(222)etracer,ptracer
+  write(222)zion(1:nparam,1:mi),zion0(6,1:mi)
+  if(nhybrid>0)write(222)phisave,zelectron(1:6,1:me),zelectron0(6,1:me)
+  close(222)
 
 ! S.Ethier 01/30/04 Save a copy of history.out and sheareb.out for restart
   if(mype==0 .and. istep<=mstep)then
@@ -167,10 +111,6 @@ subroutine restart_write
      if(istep==mstep)close(444)
   endif
 
-
-#endif
-
-
 101 format(i6)
 102 format(e12.6)
 
@@ -187,8 +127,6 @@ subroutine restart_read
 
   integer m
   character(len=18) cdum
-  character(len=18) varname
-
 
 
 !!!!********************************************
@@ -216,22 +154,16 @@ subroutine restart_read
      write(cdum,'("DATA_RESTART.",i5)')mype
   endif
 
+
+
   open(333,file=cdum,status='old',form='unformatted')
 
 ! read particle information to restart previous run
-  !if(usenvram == 0) then
-
-#ifdef _USENVRAM1
-    read(333)mi,me,ntracer
-    if(mype==0)read(333)etracer,ptracer
-#else
-    read(333)mi,me,ntracer,rdtemi,rdteme,pfluxpsi,phi,phip00,zonali,zonale
-    read(333)zion(1:nparam,1:mi),zion0(6,1:mi)
-    if(nhybrid>0)read(333)phisave,zelectron(1:6,1:me),zelectron0(6,1:me)
-#endif
+  read(333)mi,me,ntracer,rdtemi,rdteme,pfluxpsi,phi,phip00,zonali,zonale
+  if(mype==0)read(333)etracer,ptracer
+  read(333)zion(1:nparam,1:mi),zion0(6,1:mi)
+  if(nhybrid>0)read(333)phisave,zelectron(1:6,1:me),zelectron0(6,1:me)
   close(333)
-
-  print *,"USING RESTART CODE"
 
   return
 
@@ -250,7 +182,6 @@ subroutine restart_read
         endif
      enddo
   endif
-
 
 end subroutine restart_read
 

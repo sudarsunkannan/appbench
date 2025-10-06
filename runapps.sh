@@ -32,6 +32,13 @@ RUNAPP(){
 if [ -z "$4" ]
   then
 
+	APPBASE=$BASE/gtc-benchmark
+	APP=gtc
+	echo "running $APP..."
+	RUNAPP
+	exit
+
+
 	APPBASE=$BASE/Metis
 	APP=Metis
 	echo "running $APP..."
@@ -53,7 +60,7 @@ if [ -z "$4" ]
 	APP=leveldb
 	echo "running $APP..."
 	RUNAPP
-	exit
+
 
 	#APPBASE=$BASE/memcached
 	#APP=memcached

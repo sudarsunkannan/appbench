@@ -59,7 +59,7 @@ ifeq ($(uname_S),SunOS)
 endif
 
 LUA_CFLAGS+= -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL $(CFLAGS)
-LUA_LDFLAGS+= $(LDFLAGS) -lhoard
+LUA_LDFLAGS+= $(LDFLAGS) #-lhoard
 # lua's Makefile defines AR="ar rcu", which is unusual, and makes it more
 # challenging to cross-compile lua (and redis).  These defines make it easier
 # to fit redis into cross-compilation environments, which typically set AR.

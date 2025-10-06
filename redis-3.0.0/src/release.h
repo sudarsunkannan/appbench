@@ -1,3 +1,3 @@
-#define REDIS_GIT_SHA1 "84106b17"
-#define REDIS_GIT_DIRTY "2363"
-#define REDIS_BUILD_ID "panic-cloud-optane-00-1616270863"
+#define REDIS_GIT_SHA1 "4f724ae5"
+#define REDIS_GIT_DIRTY "15403"
+#define REDIS_BUILD_ID "memexpand.cs.rutgers.edu-1759604333"

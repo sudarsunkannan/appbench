@@ -3,7 +3,7 @@ WARN= -Wall
 OPT= -Os
 
 R_CFLAGS= $(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS)
-R_LDFLAGS= $(LDFLAGS) -lhoard
+R_LDFLAGS= $(LDFLAGS) #-lhoard
 DEBUG= -g
 
 R_CC=$(CC) $(R_CFLAGS)

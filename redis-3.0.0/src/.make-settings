@@ -5,6 +5,6 @@ MALLOC=libc
 CFLAGS=
 LDFLAGS=
 REDIS_CFLAGS=
-REDIS_LDFLAGS=-lhoard
+REDIS_LDFLAGS=
 PREV_FINAL_CFLAGS=-std=c99 -pedantic -Wall -W -O2 -g -ggdb -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src
-PREV_FINAL_LDFLAGS= -lhoard -g -ggdb -rdynamic
+PREV_FINAL_LDFLAGS= -g -ggdb -rdynamic

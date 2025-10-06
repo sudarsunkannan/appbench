@@ -1,6 +1,7 @@
 #!/bin/bash
 export CODEBASE=$PWD
 export APPBENCH=$PWD
+export APPBASE=$PWD
 export SHARED_DATA=$APPBENCH/shared_data
 export SHARED_LIBS=$APPBENCH/shared_libs
 export OUTPUTDIR=$APPBENCH/output
@@ -9,3 +10,5 @@ mkdir $OUTPUTDIR
 export QUARTZSCRIPTS=$SHARED_LIBS/quartz/scripts
 export APPPREFIX=""
 #export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
+export NUM_PROCS=128
+export GRAPH500SCALE=28

@@ -53,8 +53,8 @@
 #include <sys/utsname.h>
 #include <locale.h>
 
-#define HETEROMEM
-#include <migration.h>
+//#define HETEROMEM
+//#include <migration.h>
 
 /* Our shared "common" objects */
 
