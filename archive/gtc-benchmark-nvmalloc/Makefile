@@ -239,7 +239,7 @@ track_analysis: module.o track_analysis.o
 ##output3d_serial.o: output3d_serial.f90
 ##	$(CMP) $(OPT) ${HDF5_FLIB} -c output3d_serial.f90
 dataout3d.o: dataout3d.f90
-	$(CMP) $(OPT) ${LIB} -c dataout3d.f90
+	$(CMP) $(OPT) ${LIB} -fallow-argument-mismatch  -c dataout3d.f90
 
 restart.o: restart.f90
 	$(CMP) $(OPT) ${LIB} -c restart.f90
