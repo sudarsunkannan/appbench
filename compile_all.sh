@@ -108,8 +108,8 @@ add_task "leveldb" \
 "cd \"$BASE/leveldb\" && make clean && make -j\"$JOBS\""
 
 # GTC benchmark
-add_task "gtc-benchmark" \
-"cd \"$BASE/gtc-benchmark\" && scripts/compile_gtc.sh"
+add_task "gtc" \
+"cd \"$BASE/gtc\" && scripts/compile_gtc.sh"
 
 # Graph500 (auto-detect dir; try common MPI targets with MPICC)
 add_task "graph500" "

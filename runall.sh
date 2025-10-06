@@ -109,7 +109,7 @@ run_graph500(){
 }
 
 run_gtc(){
-  APPBASE="$BASE/gtc-benchmark"
+  APPBASE="$BASE/gtc"
   APP="gtc"
   echo "running $APP..."
   RUNAPP
