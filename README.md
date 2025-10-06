@@ -1,16 +1,35 @@
 # appbench
-This benchmark contains applications that were analyzed as a part of HeteroOS paper to understand the 
-impact of heterogeneous memory (with different performance characteristics) on cloud-based applications.
-The applications were chosen from the CloudSuite benchmark and includes a mix of CPU, memory, and IO intensive 
-applications. 
 
-Current list of applications:
+This benchmark suite was used in the HeteroOS study to analyze how heterogeneous memory (with different performance characteristics) impacts cloud applications. The suite mixes CPU-, memory-, and IO-intensive workloads.
 
-- Graphchi - graph compute engine
-- Metis - in-memory map-reduce
-- Redis - in-memory key-value store
+## Applications
 
-*More applications will be added shortly*
+Core:
+- **Graphchi** — graph compute engine (PageRank, etc.)
+- **Metis** — in-memory MapReduce
+- **Redis** — in-memory key-value store
+- **LevelDB** — LSM key-value store
+- **Graph500** — MPI BFS (TEPS benchmark)
+- **GTC benchmark** — scientific kernel (MPI/OpenMP variants exist)
+
+Optional / extras (present in repo/scripts, may be environment-dependent):
+- **Phoenix 2.0** — MapReduce suite (core + `word_count`)
+- **xstream_release** — helper workload (uses `.ini` configs)
+
+> The compile / run scripts let you run **all** or **only the apps you name**.
+
+---
+
+## Prerequisites
+
+- Build tools: `gcc g++ gfortran make cmake pkg-config`
+- MPI (pick one): **MPICH** or **Open MPI**
+- Other common libs on Ubuntu/Debian:
+  ```bash
+  sudo apt update
+  sudo apt install build-essential git \
+       mpich libmpich-dev    # or: openmpi-bin libopenmpi-dev
+
 
 Setup 
 ------
@@ -27,19 +46,39 @@ Generate data and install required packages
 
 Compile and run all applications
 --------------------------------
-Compile all required shared libraries, allocators (Hoard), and applications
+# Build all shared libs and apps
 ```
-	./compile_all.sh
+./compile_all.sh
 ```
-Run all applications
+
+# List known app keys
 ```
-	./runapps.sh
+./compile_all.sh list
+```
+
+# Build only some apps
+```
+./compile_all.sh graph500 leveldb
+```
+
+# Run all apps
+
+```
+./run_all.sh
+
+# List app keys
+./run_all.sh list
+
+# Run only some apps
+./run_all.sh graph500 redis
+
+# Pin outputs to a specific directory
+OUTPUTDIR=$APPBENCH/outputs/myrun ./run_all.sh graph500
 ```
 
 
 Collect results
 ---------------
-
 Application results are in the output directory. To simply extract results, use the following command:
 ```
         $APPBENCH/extract_result.sh
