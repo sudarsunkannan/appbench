@@ -168,7 +168,7 @@ if [[ -n "$APP_ARG" ]]; then
     graphchi)      run_graphchi ;;
     redis)         run_redis ;;
     leveldb)       run_leveldb ;;
-    xstream* )     run_xstream ;;
+#    xstream* )     run_xstream ;;
     *)
       echo "Unknown app: $APP_ARG"
       echo "Valid: graph500 gtc Metis graphchi redis leveldb xstream_release"
@@ -185,4 +185,4 @@ run_metis
 run_graphchi
 run_redis
 run_leveldb
-run_xstream
+#run_xstream

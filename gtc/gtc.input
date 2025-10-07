@@ -8,8 +8,8 @@
   paranl=0.0
   mode00=1
   tstep=0.1,
-  micell=2,
-  mecell=2,
+  micell=64,
+  mecell=64,
   mpsi=20, 
   mthetamax=640,
   mzetamax=64,
