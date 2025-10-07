@@ -42,6 +42,7 @@ Setup environmental variables
 Generate data and install required packages
 ```
 	./setup.sh
+    ./create_large_data.sh 
 ```
 
 Compile and run all applications
