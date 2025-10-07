@@ -10,5 +10,5 @@ mkdir $OUTPUTDIR
 export QUARTZSCRIPTS=$SHARED_LIBS/quartz/scripts
 export APPPREFIX=""
 #export APPPREFIX=$QUARTZSCRIPTS/runenv.sh
-export NUM_PROCS=128
+export NUM_PROCS=64
 export GRAPH500SCALE=28
