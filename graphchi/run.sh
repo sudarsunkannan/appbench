@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
-DATA=com-orkut.ungraph.txt
-#DATA=com-youtube.ungraph.txt
+#DATA=com-orkut.ungraph.txt
+DATA=com-friendster.ungraph.txt
 INPUT=$SHARED_DATA/$DATA
 APPBASE=$APPBENCH/graphchi/graphchi-cpp/bin/example_apps
 APP=$APPBASE/pagerank

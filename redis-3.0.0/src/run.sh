@@ -18,7 +18,8 @@ CLIENTS="${CLIENTS:-100}"          # -c
 PIPELINE="${PIPELINE:-64}"        # -P
 DATASIZE="${DATASIZE:-2048}"      # -d (bytes)
 TESTS="${TESTS:-get,set}"         # -t
-OUTPUT="${OUTPUT:-${OUTPUTDIR:-$PWD}/redis_bench_$(date +%Y%m%d-%H%M%S).log}"
+#OUTPUT="${OUTPUT:-${OUTPUTDIR:-$PWD}/redis_bench_$(date +%Y%m%d-%H%M%S).log}"
+OUTPUT="${OUTPUT:-${OUTPUTDIR:-$PWD}/redis}"
 APPPREFIX="${APPPREFIX:-}"        # e.g., $QUARTZSCRIPTS/runenv.sh
 FLUSH="${FLUSH:-0}"               # set FLUSH=1 to drop caches (needs sudo)
 
