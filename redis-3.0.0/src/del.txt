@@ -1,0 +1,267 @@
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.9.0+ (root@pm-sdv2) (gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) ) #2890 SMP Mon Jan 18 14:00:23 PST 2016
+[    0.000000] Command line: root=/dev/xvda selinux=0 fastboot xencons=xvc console=xvc0
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Centaur CentaurHauls
+[    0.000000] ACPI in unprivileged domain disabled
+[    0.000000] *************************max_pages 131072000, extra_pages 4716544, max_pfn 524288, last_pfn 0, mem_end 2147483648 
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] Xen: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] Xen: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] Xen: [mem 0x0000000000100000-0x00000001007fffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] DMI not present or invalid.
+[    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000000] No AGP bridge found
+[    0.000000] e820: last_pfn = 0x100800 max_arch_pfn = 0x400000000
+[    0.000000] e820: last_pfn = 0x100000 max_arch_pfn = 0x400000000
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] Base memory trampoline at [ffff88000009a000] 9a000 size 24576
+[    0.000000] direct_gbpages(1). cpu_has_gbpages(0).GB pages not supported.
+[    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+[    0.000000]  [mem 0x00000000-0x000fffff] page 4k
+[    0.000000] init_memory_mapping: [mem 0x7fe00000-0x7fffffff]
+[    0.000000]  [mem 0x7fe00000-0x7fffffff] page 4k
+[    0.000000] BRK [0x020d4000, 0x020d4fff] PGTABLE
+[    0.000000] BRK [0x020d5000, 0x020d5fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x7c000000-0x7fdfffff]
+[    0.000000]  [mem 0x7c000000-0x7fdfffff] page 4k
+[    0.000000] BRK [0x020d6000, 0x020d6fff] PGTABLE
+[    0.000000] BRK [0x020d7000, 0x020d7fff] PGTABLE
+[    0.000000] BRK [0x020d8000, 0x020d8fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x00100000-0x7bffffff]
+[    0.000000]  [mem 0x00100000-0x7bffffff] page 4k
+[    0.000000] init_memory_mapping: [mem 0x80000000-0x1007fffff]
+[    0.000000]  [mem 0x80000000-0x1007fffff] page 4k
+[    0.000000] RAMDISK: [mem 0x024e7000-0x1ea7bfff]
+[    0.000000] NUMA turned off
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x00000001007fffff]
+[    0.000000] Initmem setup node 0 [mem 0x00000000-0x1007fffff]
+[    0.000000]   NODE_DATA [mem 0x7f8f0000-0x7f8f4fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x00001000-0x00ffffff]
+[    0.000000]   DMA32    [mem 0x01000000-0xffffffff]
+[    0.000000]   Normal   [mem 0x100000000-0x1007fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00001000-0x0009ffff]
+[    0.000000]   node   0: [mem 0x00100000-0x1007fffff]
+[    0.000000] On node 0 totalpages: 1050527
+[    0.000000]   DMA zone: 96 pages used for memmap
+[    0.000000]   DMA zone: 21 pages reserved
+[    0.000000]   DMA zone: 3999 pages, LIFO batch:0
+[    0.000000]   DMA32 zone: 24480 pages used for memmap
+[    0.000000]   DMA32 zone: 1044480 pages, LIFO batch:31
+[    0.000000]   Normal zone: 48 pages used for memmap
+[    0.000000]   Normal zone: 2048 pages, LIFO batch:0
+[    0.000000] SFI: Simple Firmware Interface v0.81 http://simplefirmware.org
+[    0.000000] smpboot: Allowing 6 CPUs, 0 hotplug CPUs
+[    0.000000] No local APIC present
+[    0.000000] APIC: disable apic facility
+[    0.000000] APIC: switched to apic NOOP
+[    0.000000] nr_irqs_gsi: 16
+[    0.000000] PM: Registered nosave memory: 00000000000a0000 - 0000000000100000
+[    0.000000] e820: cannot find a gap in the 32bit address range
+[    0.000000] e820: PCI devices with unassigned 32bit BARs may break!
+[    0.000000] e820: [mem 0x100900000-0x100cfffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on Xen
+[    0.000000] Xen version: 4.1.1 (preserve-AD)
+[    0.000000] setup_percpu: NR_CPUS:256 nr_cpumask_bits:256 nr_cpu_ids:6 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 28 pages/cpu @ffff88007f600000 s85824 r8192 d20672 u262144
+[    0.000000] pcpu-alloc: s85824 r8192 d20672 u262144 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 1 2 3 4 5 - - 
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 1025882
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: root=/dev/xvda selinux=0 fastboot xencons=xvc console=xvc0
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] __ex_table already sorted, skipping sort
+[    0.000000] Checking aperture...
+[    0.000000] No AGP bridge found
+[    0.000000] Memory: 1500020k/4202496k available (7140k kernel code, 388k absent, 2702088k reserved, 6128k data, 1260k init)
+[    0.000000] SLUB: Genslabs=15, HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	RCU dyntick-idle grace-period acceleration is enabled.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
+[    0.000000] NR_IRQS:16640 nr_irqs:320 16
+[    0.000000] Console: colour dummy device 80x25
+[    0.000000] console [tty0] enabled
+[    0.000000] console [hvc0] enabled
+[    0.000000] allocated 17301504 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] Xen: using vcpuop timer interface
+[    0.000000] installing Xen timer for CPU 0
+[    0.000000] tsc: Detected 2800.184 MHz processor
+[    0.004000] Calibrating delay loop (skipped), value calculated using timer frequency.. 5600.36 BogoMIPS (lpj=11200736)
+[    0.004000] pid_max: default: 32768 minimum: 301
+[    0.004000] Security Framework initialized
+[    0.004000] AppArmor: AppArmor initialized
+[    0.004000] Yama: becoming mindful.
+[    0.004000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.014183] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.018741] Mount-cache hash table entries: 256
+[    0.019549] Initializing cgroup subsys cpuacct
+[    0.019563] Initializing cgroup subsys memory
+[    0.019619] Initializing cgroup subsys devices
+[    0.019638] Initializing cgroup subsys freezer
+[    0.019645] Initializing cgroup subsys blkio
+[    0.019652] Initializing cgroup subsys perf_event
+[    0.019663] Initializing cgroup subsys hugetlb
+[    0.019818] CPU: Physical Processor ID: 0
+[    0.019825] CPU: Processor Core ID: 0
+[    0.019844] Last level iTLB entries: 4KB 512, 2MB 7, 4MB 7
+[    0.019844] Last level dTLB entries: 4KB 512, 2MB 32, 4MB 32
+[    0.019844] tlb_flushall_shift: 6
+[    0.043762] ftrace: allocating 27037 entries in 106 pages
+[    0.052398] cpu 0 spinlock event irq 17
+[    0.052468] Performance Events: unsupported p6 CPU model 26 no PMU driver, software events only.
+[    0.054296] NMI watchdog: disabled (cpu0): hardware events not enabled
+[    0.054558] installing Xen timer for CPU 1
+[    0.054595] cpu 1 spinlock event irq 24
+[    0.054702] SMP alternatives: switching to SMP code
+[    0.072279] installing Xen timer for CPU 2
+[    0.072304] cpu 2 spinlock event irq 31
+[    0.072966] installing Xen timer for CPU 3
+[    0.072999] cpu 3 spinlock event irq 38
+[    0.073613] installing Xen timer for CPU 4
+[    0.073631] cpu 4 spinlock event irq 45
+[    0.074168] installing Xen timer for CPU 5
+[    0.074182] cpu 5 spinlock event irq 52
+[    0.074407] Brought up 6 CPUs
+[    0.074694] devtmpfs: initialized
+[    0.078388] EVM: security.selinux
+[    0.078395] EVM: security.SMACK64
+[    0.078399] EVM: security.capability
+[    0.080427] Grant tables using version 2 layout.
+[    0.080483] Grant table initialized
+[    0.080626] regulator-dummy: no parameters
+[    0.080817] NET: Registered protocol family 16
+[    0.081036] PCI: setting up Xen PCI frontend stub
+[    0.081036] PCI: pci_cache_line_size set to 64 bytes
+[    0.084250] bio: create slab <bio-0> at 0
+[    0.084250] ACPI: Interpreter disabled.
+[    0.084250] xen/balloon: Initialising balloon driver.
+[    0.085275] PFN_UP(balloon_start): 524288, PFN_DOWN(balloon_size): 16448, balloon_start 2147483648, balloon_size 67371008
+[    0.085280] PFN_UP(hetero_start): 540736, PFN_DOWN(hetero_size): 509888, hetero_start: 2214854656, hetero_size: 2088501248
+[    0.085282] xen/heteromem: Initialising heteromem driver.
+[    0.085295] heteromem: Adding extramem[0]:2088501248, start 2214854656
+[    0.085295] xen/heteromem: calling heteromem_add_region
+[    0.085303] in heteromem_add_region...
+[    0.085304] heteromem_add_region maxpfn 1050624,  start_pfn + pages 1050624 extra_pfn_end 1050624
+[    0.183916] heteromem_add_region: appended 509888 pages heteromem_high pages 0, heteromem_low pages 509888 
+[    0.184181] xen-balloon: Initialising balloon driver.
+[    0.188248] vgaarb: loaded
+[    0.188639] SCSI subsystem initialized
+[    0.188698] libata version 3.00 loaded.
+[    0.188698] usbcore: registered new interface driver usbfs
+[    0.188698] usbcore: registered new interface driver hub
+[    0.188698] usbcore: registered new device driver usb
+[    0.188698] PCI: System does not support PCI
+[    0.188698] PCI: System does not support PCI
+[    0.188698] NetLabel: Initializing
+[    0.188698] NetLabel:  domain hash size = 128
+[    0.188698] NetLabel:  protocols = UNLABELED CIPSOv4
+[    0.188698] NetLabel:  unlabeled traffic allowed by default
+[    0.188698] Switching to clocksource xen
+[    0.205493] AppArmor: AppArmor Filesystem Enabled
+[    0.205543] pnp: PnP ACPI: disabled
+[    0.209277] NET: Registered protocol family 2
+[    0.210013] TCP established hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.211391] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.212551] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.212756] TCP: reno registered
+[    0.212835] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.213015] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.213317] NET: Registered protocol family 1
+[    0.213338] PCI: CLS 0 bytes, default 64
+[    0.213511] Trying to unpack rootfs image as initramfs...
+[    1.850654] debug: unmapping init [mem 0xffff8800024e7000-0xffff88001ea7bfff]
+[    1.890425] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[    1.891283] Scanning for low memory corruption every 60 seconds
+[    1.892324] Initialise module verification
+[    1.892473] audit: initializing netlink socket (disabled)
+[    1.892533] type=2000 audit(1460598727.807:1): initialized
+[    1.921603] bounce pool size: 64 pages
+[    1.921637] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    1.923883] VFS: Disk quotas dquot_6.5.2
+[    1.923967] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.924986] fuse init (API version 7.21)
+[    1.925197] msgmni has been set to 2929
+[    1.926218] Key type asymmetric registered
+[    1.926227] Asymmetric key parser 'x509' registered
+[    1.926305] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    1.926381] io scheduler noop registered
+[    1.926390] io scheduler deadline registered (default)
+[    1.926400] io scheduler cfq registered
+[    1.926531] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    1.926556] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    1.926629] vga16fb: initializing
+[    1.926633] vga16fb: mapped to 0xffff8800000a0000
+[    2.034317] Console: switching to colour frame buffer device 80x30
+[    2.093244] fb0: VGA16 VGA frame buffer device
+[    2.094465] intel_idle: does not run on family 6 model 26
+[    2.095373] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    2.099383] Linux agpgart interface v0.103
+[    2.102493] brd: module loaded
+[    2.104460] loop: module loaded
+[    2.149736] libphy: Fixed MDIO Bus: probed
+[    2.163427] blkfront: xvda: flush diskcache: enabled using persistent grants
+[    2.164842]  xvda: unknown partition table
+[    2.259351] tun: Universal TUN/TAP device driver, 1.6
+[    2.260655] blkfront: xvdb: flush diskcache: enabled using persistent grants
+[    2.261620]  xvdb: unknown partition table
+[    2.366172] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    2.402270] PPP generic driver version 2.4.2
+[    2.437954] Initialising Xen virtual ethernet driver.
+[    2.474964] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.512371] ehci-pci: EHCI PCI platform driver
+[    2.547753] ehci-platform: EHCI generic platform driver
+[    2.582940] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.618926] uhci_hcd: USB Universal Host Controller Interface driver
+[    2.655365] i8042: PNP: No PS/2 controller found. Probing ports directly.
+[    3.691749] i8042: No controller found
+[    3.728156] mousedev: PS/2 mouse device common for all mice
+[    3.824338] rtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0
+[    3.861377] rtc_cmos: probe of rtc_cmos failed with error -38
+[    3.898690] device-mapper: uevent: version 1.0.3
+[    3.936090] device-mapper: ioctl: 4.24.0-ioctl (2013-01-15) initialised: dm-devel@redhat.com
+[    4.011194] ledtrig-cpu: registered to indicate activity on CPUs
+[    4.049478] EFI Variables Facility v0.08 2004-May-17
+[    4.088011] ashmem: initialized
+[    4.125512] TCP: cubic registered
+[    4.162144] NET: Registered protocol family 10
+[    4.200438] NET: Registered protocol family 17
+[    4.237664] Key type dns_resolver registered
+[    4.275492] Loading module verification certificates
+[    4.312887] MODSIGN: Loaded cert 'Magrathea: Glacier signing key: 306abdf2c21f19943ce63f46670e086bd0ed691e'
+[    4.385981] registered taskstats version 1
+[    4.428988] Key type trusted registered
+[    4.470433] Key type encrypted registered
+[    4.511487] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[    4.561540] EDD information not available.
+[    4.596388] debug: unmapping init [mem 0xffffffff81cf7000-0xffffffff81e31fff]
+[    4.632613] Write protecting the kernel read-only data: 12288k
+[    4.671158] debug: unmapping init [mem 0xffff8800016fc000-0xffff8800017fffff]
+[    4.707728] debug: unmapping init [mem 0xffff880001b1e000-0xffff880001bfffff]
+[    4.843412] systemd-udevd[119]: starting version 204
+[   10.130606] kjournald starting.  Commit interval 5 seconds
+[   10.130652] EXT3-fs (xvda): mounted filesystem with ordered data mode
+[   10.717732] init: ureadahead main process (170) terminated with status 5
+[   10.940835] udevd[212]: starting version 173
+[   10.980743] EXT3-fs (xvda): using internal journal
+[   11.052162] coretemp: disagrees about version of symbol module_layout
+[   11.052232] coretemp: disagrees about version of symbol module_layout
+[   11.052564] coretemp: disagrees about version of symbol module_layout
+[   11.052848] coretemp: disagrees about version of symbol module_layout
+[   11.053101] coretemp: disagrees about version of symbol module_layout
+[   11.053221] coretemp: disagrees about version of symbol module_layout
+[   11.058853] intel_powerclamp: disagrees about version of symbol module_layout
+[   11.059972] intel_powerclamp: disagrees about version of symbol module_layout
+[   11.060006] intel_powerclamp: disagrees about version of symbol module_layout
+[   11.060702] intel_powerclamp: disagrees about version of symbol module_layout
+[   11.062020] intel_powerclamp: disagrees about version of symbol module_layout
+[   11.062955] intel_powerclamp: disagrees about version of symbol module_layout
+[   11.501331] init: failsafe main process (379) killed by TERM signal
